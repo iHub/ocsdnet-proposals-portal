@@ -59,8 +59,8 @@ $db['default']['username'] = 'ocsdnet_apply';
 $db['default']['password'] = 'OCSDNet2014';
 */
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'ocsdnet_staging';
-$db['default']['password'] = 'OCSDNet2014';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'geranimo';
 $db['default']['database'] = 'ocsdnet_staging';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

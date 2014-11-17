@@ -16,7 +16,7 @@
 |
 */
 //$config['base_url']	= 'http://localhost/ocsd-application';
-$config['base_url']	= 'http://www.staging.ocsdnet.org';
+$config['base_url']	= 'http://localhost/ocsdnet-proposals-portal/index.php';
 //$config['base_url']	= 'http://www.apply.ocsdnet.org';
 
 /*
