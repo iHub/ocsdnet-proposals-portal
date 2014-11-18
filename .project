@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>ocsdnet-proposals-portal</name>
+=======
+	<name>ocsdnet_portal</name>
+>>>>>>> ee8a56dcd3e519d0bf8aa2b9d5e248b929839abb
 	<comment></comment>
 	<projects>
 	</projects>
@@ -8,6 +12,9 @@
 	</buildSpec>
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
+<<<<<<< HEAD
 		<nature>com.aptana.editor.php.phpNature</nature>
+=======
+>>>>>>> ee8a56dcd3e519d0bf8aa2b9d5e248b929839abb
 	</natures>
 </projectDescription>
