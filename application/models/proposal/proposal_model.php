@@ -123,7 +123,7 @@ class Proposal_model extends CI_Model {
 
 	//Get proposals
 	function get_proposals($researcher_id) {
-		$this -> db -> select("id, study_title");
+		$this -> db -> select("*");
 		$this -> db -> from("proposals");
 		$this -> db -> where("researcher_id", $researcher_id);
 
@@ -250,6 +250,7 @@ class Proposal_model extends CI_Model {
 		if (is_null($id)) {
 			//Insert new proposal
 			$this -> db -> insert("proposals", $data);
+			return $this->db->insert_id();
 		} else {
 			//Update proposal
 			$this -> db -> where("id", $id);

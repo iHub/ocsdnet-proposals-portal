@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	alert('hi there');
+	
 	$('.project-info').bootstrapValidator({
         message: 'This value is not valid',
         feedbackIcons: {
@@ -8,7 +8,7 @@ $(document).ready(function() {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            project-title: {
+            title: {
                 message: 'The project title is not valid',
                 validators: {
                     notEmpty: {
@@ -25,7 +25,7 @@ $(document).ready(function() {
                     }
                 }
             },
-            project-duration: {
+            duration: {
                 validators: {
                     notEmpty: {
                         message: 'The project duration is required and cannot be empty'
@@ -33,22 +33,61 @@ $(document).ready(function() {
                     
                 }
             },
-             project-countries: {
+             countries: {
                 validators: {
                     notEmpty: {
-                        message: 'The project duration is required and cannot be empty'
+                        message: 'The project countries is required and cannot be empty'
                     }
                     
                 }
             },
-              project_budget: {
+            themes: {
                 validators: {
                     notEmpty: {
-                        message: 'The project duration is required and cannot be empty'
+                        message: 'Atleast one research theme has to be selected'
+                    }
+                    
+                }
+            },
+              budget: {
+                validators: {
+                    notEmpty: {
+                        message: 'The project budget is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             regions: {
+                validators: {
+                    notEmpty: {
+                        message: 'The project regions is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            justifythemes: {
+                validators: {
+                    notEmpty: {
+                        message: 'The project regions is required and cannot be empty'
                     }
                     
                 }
             }
         }
-    });
+    }).on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+			
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                data = JSON.parse(result);
+               	$('#proposal_id').text(data);
+            }, 'json');
+        });
 });

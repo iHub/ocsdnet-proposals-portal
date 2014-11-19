@@ -40,17 +40,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>public/new//img/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="index.html"><img src="<?php echo base_url(); ?>public/new/img/logo.png" alt="logo"></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <!--<li><a href="index.html">Item 1</a></li>
-                    <li><a href="about-us.html">Item 2</a></li>
-                     <li><a href="blog.html">Item 3</a></li> 
-                    <li><a href="portfolio.html">Item 4</a></li>
-                    <li><a href="services.html">Item 5</a></li>  
-                    <li><a href="contact-us.html">Item 6</a></li>
-                    <li><a href="#">Item 7</a></li>-->
+                   
                 </ul>
             </div>
         </div>
@@ -58,55 +52,57 @@
     <!-- Begin page content -->
     <section id="proposal-form">
         <div class="container">
+            <div id="proposal_id" style="display: none"><?php if($present){ echo $id;} ?></div>
             <div class="row">
                 <div class="col-md-12">
                     <div id="wizard" class="wizard clearfix">
                         <h3>General Project info</h3>
                         <section>
-                            <form role="form" class="project-info">
+                            <form role="form" class="project-info" action="<?php  echo base_url();  ?>index.php/proposal/projectinfo">
+                              <input type="hidden" name="proposal_id" value="<?php if($present){ echo $id;} ?>" />
                               <div class="form-group">
                                 <label for="projectTitle">Project Title</label>
-                                <input type="text" class="form-control" name="project-title" id="project-title" placeholder="">
+                                <input type="text" class="form-control" name="title" value="<?php if($present){ echo $title;} ?>" id="title" placeholder="">
                               </div>
                               <div class="form-group">
                                 <label for="projectTitle">Duration of the project</label><br/>
                                 <label for="projectTitle">The duration of your project should be stated in the number of months that require funding.</label>
-                                <input type="text" class="form-control" name="project-duration" id="project-duration" placeholder="">
+                                <input type="text" class="form-control" name="duration" value="<?php if($present){ echo $duration;} ?>" id="duration" placeholder="">
                               </div>
                               <div class="form-group">
                                 <label for="projectTitle">Countries included in this project</label><br/>
                                 <label for="projectTitle">This includes the countries in which the research will take place as well as the countries in which project collaborators currently reside.</label>
-                                <input type="text" class="form-control" name="project-countries" id="project-countries" placeholder="">
+                                <input type="text" class="form-control" value="<?php if($present){ echo $countries_covered;} ?>" name="countries" id="countries" placeholder="">
                               </div>
                               <div class="form-group">
                                   <label>Region(s) included in this project</label>
                                   <div class="checkbox">
                                       <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" name="regions" value="asia">
                                         Asia
                                       </label>     
                                   </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" name="regions" value="sub saharan africa">
                                         Sub-Saharan Africa
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" name="regions" value="latin america">
                                         Latin America
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" name="regions" value="middle east">
                                         Middle East
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" name="regions" value="caribbean">
                                         Caribbean
                                     </label>
                                  </div>
@@ -115,31 +111,31 @@
                                   <label>Research Themes *</label>
                                   <div class="checkbox">
                                       <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" name="themes" value="Them 1:Motivations (Incentives and Ideologies) ">
                                         Theme 1: Motivations (Incentives and Ideologies)
                                       </label>     
                                   </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" name="themes" value="Theme 2: Infrastructures and Technologies">
                                          Theme 2: Infrastructures and Technologies
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">Other
+                                        <input type="checkbox" name="themes" value="">Other
                                          Theme 3: Communities of Practice in Open and Collaborative Science
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox" name="themes" value="Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science">
                                          Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" value="">
+                                        <input type="checkbox"  name="themes" value="">
                                         Other
                                     </label>
                                      <input type="text" class="form-control" id="other" placeholder="">
@@ -148,11 +144,11 @@
                               <div class="form-group">
                                 <label for="projectTitle">Justification of Research Themes</label><br/>
                                 <label for="projectTitle">Justify how your project ties into the selected OCSDNet theme(s).</label>
-                                <textarea class="form-control" name="project_research_themes" rows="3"></textarea>
+                                <textarea class="form-control" name="justifythemes" rows="3"></textarea>
                               </div>
                               <div class="form-group">
                                 <label for="projectTitle">Total Budget Cost (CAD)</label>
-                                <input type="text" name="project_budget" class="form-control" id="project-title" placeholder="">
+                                <input type="text" name="budget" class="form-control" id="project-title" placeholder="">
                               </div>
                               <button type="submit" class="btn btn-default">Save</button>
                             </form>
