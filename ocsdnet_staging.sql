@@ -3,11 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
-<<<<<<< HEAD
--- Generation Time: Nov 15, 2014 at 09:12 AM
-=======
 -- Generation Time: Nov 13, 2014 at 05:23 AM
->>>>>>> ee8a56dcd3e519d0bf8aa2b9d5e248b929839abb
 -- Server version: 5.5.30
 -- PHP Version: 5.4.16
 

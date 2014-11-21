@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-	<title>Home | ocsdnet</title>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OCSDNET</title>
+<link rel="icon" href="images/favicon.png">
+<link href="css/demo_style.css" rel="stylesheet" type="text/css">
+<link href="css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="css/smart_wizard.css" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">    
     <link href="css/main.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
     <link href="css/sticky-footer.css" rel="stylesheet">
-    <link href="css/form.css" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
-    <!--[if lt IE 9]>
+    <link href="css/form.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+
+
+<!--[if lt IE 9]>
     <script src="/js/html5shiv.js"></script>
     <script src="/js/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
+</head><body>
   <header class="navbar navbar-inverse navbar-static-top wet-asphalt" role="banner">
         <div class="container">
             <div class="navbar-header">
@@ -39,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="/img/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -54,123 +46,174 @@
             </div>
         </div>
     </header>
-    <!-- Begin page content -->
-    <section id="proposal-form">
+    
+<!--<div class="demoHead">
+
+<div style="margin-top:15px;">
+<div style="float:left"><h3>Examples:</h3></div>
+    <div style="float:left" class="demoExampleLinks">
+      <a href="index.htm" class="btn selected">Basic Example</a>
+      <a href="smartwizard2-vertical.htm" class="btn">Vertical Style</a>
+      <a href="smartwizard2-multiple.htm" class="btn">Multiple Wizards</a>
+      <a href="smartwizard2-ajax.htm" class="btn">Ajax Contents</a>
+      <a href="smartwizard2-validation.htm" class="btn">Step Validation</a>
+      <a href="smartwizard-autostep.htm" class="btn">Auto Step buttons</a>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+
+</div>-->
+<section id="proposal-form">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                	<div id="wizard" class="wizard clearfix">
-                        <h3>General Project info</h3>
-                        <section>
-                            <form role="form">
-                              <div class="form-group">
-                                <label for="projectTitle">Project Title</label>
-                                <input type="text" class="form-control" id="project-title" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                <label for="projectTitle">Duration of the project</label><br/>
-                                <label for="projectTitle">The duration of your project should be stated in the number of months that require funding.</label>
-                                <input type="text" class="form-control" id="project-title" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                <label for="projectTitle">Countries included in this project</label><br/>
-                                <label for="projectTitle">This includes the countries in which the research will take place as well as the countries in which project collaborators currently reside.</label>
-                                <input type="text" class="form-control" id="project-title" placeholder="">
-                              </div>
-                              <div class="form-group">
-                              	  <label>Region(s) included in this project</label>
-                                  <div class="checkbox">
-                                      <label>
-                                        <input type="checkbox" value="">
-                                        Asia
-                                      </label>     
-                                  </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Sub-Saharan Africa
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Latin America
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Middle East
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Caribbean
-                                    </label>
-                                 </div>
-                              </div>
-                              <div class="form-group">
-                              	  <label>Research Themes *</label>
-                                  <div class="checkbox">
-                                      <label>
-                                        <input type="checkbox" value="">
-                                        Theme 1: Motivations (Incentives and Ideologies)
-                                      </label>     
-                                  </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                         Theme 2: Infrastructures and Technologies
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Other
-                                         Theme 3: Communities of Practice in Open and Collaborative Science
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                         Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        Other
-                                    </label>
-                                     <input type="text" class="form-control" id="other" placeholder="">
-                                 </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="projectTitle">Justification of Research Themes</label><br/>
-                                <label for="projectTitle">Justify how your project ties into the selected OCSDNet theme(s).</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="projectTitle">Total Budget Cost (CAD)</label>
-                                <input type="text" class="form-control" id="project-title" placeholder="">
-                              </div>
-                              <button type="submit" class="btn btn-default">Save</button>
-                            </form>
-                        </section>
-                        <h3>Team & Institution Info</h3>                        
-                        <section class="multi-one">
-                           <!-- <h3>Research Team and Institutional Information</h3>
-                            <h3>Primary Researcher Information</h3>-->
-                             <!-- multistep form -->
-                            <form id="msform">
-                                <!-- progressbar -->
-                                <ul id="progressbar">
-                                    <li class="active">Primary Researcher Info</li>
-                                    <li>Research Team Info</li>
-                                    <li>Proposed Institution</li>
-                                    <li>Participating Institutions</li>
+                    <table align="center" border="0" cellpadding="0" cellspacing="0">
+                    <tr><td> 
+                    <!-- Smart Wizard -->
+                            <h2>Proposal Application form</h2> 
+                            <div id="wizardmain" class="swMain">
+                                <ul>
+                                    <li><a href="#step-1">
+                                    <label class="stepNumber">1</label>
+                                    <span class="stepDesc">
+                                       Step 1<br />
+                                       <small>Step 1 description</small>
+                                    </span>
+                                </a></li>
+                                    <li><a href="#step-2">
+                                    <label class="stepNumber">2</label>
+                                    <span class="stepDesc">
+                                       Step 2<br />
+                                       <small>Step 2 description</small>
+                                    </span>
+                                </a></li>
+                                    <li><a href="#step-3">
+                                    <label class="stepNumber">3</label>
+                                    <span class="stepDesc">
+                                       Step 3<br />
+                                       <small>Step 3 description</small>
+                                    </span>                   
+                                 </a></li>
+                                    <li><a href="#step-4">
+                                    <label class="stepNumber">4</label>
+                                    <span class="stepDesc">
+                                       Step 4<br />
+                                       <small>Step 4 description</small>
+                                    </span>                   
+                                </a></li>
+                                <li><a href="#step-5">
+                                    <label class="stepNumber">5</label>
+                                    <span class="stepDesc">
+                                       Step 5<br />
+                                       <small>Step 5 description</small>
+                                    </span>                   
+                                </a></li>
                                 </ul>
-                                <!-- fieldsets -->
-                                <fieldset>
+                                <div id="step-1">	
+                                <!--<h2 class="StepTitle">Step 1 Content</h2>-->
+                                <section>
+                                                <form role="form">
+                                                  <div class="form-group">
+                                                    <label for="projectTitle">Project Title</label>
+                                                    <input type="text" class="form-control" id="project-title" placeholder="">
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="projectTitle">Duration of the project</label><br/>
+                                                    <label for="projectTitle">The duration of your project should be stated in the number of months that require funding.</label>
+                                                    <input type="text" class="form-control" id="project-title" placeholder="">
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="projectTitle">Countries included in this project</label><br/>
+                                                    <label for="projectTitle">This includes the countries in which the research will take place as well as the countries in which project collaborators currently reside.</label>
+                                                    <input type="text" class="form-control" id="project-title" placeholder="">
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label>Region(s) included in this project</label>
+                                                      <div class="checkbox">
+                                                          <label>
+                                                            <input type="checkbox" value="">
+                                                            Asia
+                                                          </label>     
+                                                      </div>
+                                                     <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">
+                                                            Sub-Saharan Africa
+                                                        </label>
+                                                     </div>
+                                                     <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">
+                                                            Latin America
+                                                        </label>
+                                                     </div>
+                                                     <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">
+                                                            Middle East
+                                                        </label>
+                                                     </div>
+                                                     <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">
+                                                            Caribbean
+                                                        </label>
+                                                     </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label>Research Themes *</label>
+                                                      <div class="checkbox">
+                                                          <label>
+                                                            <input type="checkbox" value="">
+                                                            Theme 1: Motivations (Incentives and Ideologies)
+                                                          </label>     
+                                                      </div>
+                                                     <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">
+                                                             Theme 2: Infrastructures and Technologies
+                                                        </label>
+                                                     </div>
+                                                     <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">Other
+                                                             Theme 3: Communities of Practice in Open and Collaborative Science
+                                                        </label>
+                                                     </div>
+                                                     <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">
+                                                             Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science
+                                                        </label>
+                                                     </div>
+                                                     <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" value="">
+                                                            Other
+                                                        </label>
+                                                         <input type="text" class="form-control" id="other" placeholder="">
+                                                     </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="projectTitle">Justification of Research Themes</label><br/>
+                                                    <label for="projectTitle">Justify how your project ties into the selected OCSDNet theme(s).</label>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="projectTitle">Total Budget Cost (CAD)</label>
+                                                    <input type="text" class="form-control" id="project-title" placeholder="">
+                                                  </div>
+                                                  <button type="submit" class="btn btn-default">Save</button>
+                                                </form>
+                                            </section>
+                            </div>
+                                <div id="step-2">
+                                <h2 class="StepTitle">Step 2 Content</h2>	
+                                  <div id="wizard"  class="wizard clearfix">
+                                  <h3>Keyboard</h3>
+                                  <section>
+                                      <form>
+                                      	<fieldset>
                                     <h2 class="fs-title">Research Team and Institutional Information</h2>
                                     <h3 class="fs-subtitle">Primary Researcher Information</h3>
                                     <div class="col-md-6">
@@ -218,10 +261,13 @@ credentials, funded research projects (including those supported by the IDRC), l
 									<a class="btn btn-default ">Download CV Template</a>
                                     <a class="btn btn-default ">Upload</a><br/>
                                     <a class="btn btn-default">Save</a>
-                                    <!--<input type="button" name="previous" class="previous action-button" value="Previous" />-->
-                                    <input type="button" name="RTI" class="next action-button" value="Next" />
                                 </fieldset>
-                                <fieldset>
+                                      </form>
+                                  </section>
+                                  <h3>Effects</h3>
+                                  <section>
+                                       <form>
+                                      <fieldset>
                                     <h2 class="fs-title">Research Team and Institutional Information</h2>
                                     <h3 class="fs-subtitle">Add Collaborators</h3>
                                     <div class="col-md-6">
@@ -274,11 +320,14 @@ credentials, funded research projects (including those supported by the IDRC), l
                                     <hr/>
                                     <a class="btn btn-default ">Add New Collaborator</a><br/>
                                     
-                                    <input type="button" name="previous" class="previous action-button" value="Previous" />
                                     <a class="btn btn-default">Save</a>
-                                    <input type="button" name="RTI" class="next action-button" value="Next" />
                                 </fieldset>
-                                <fieldset>
+                                      </form>
+                                  </section>
+                                  <h3>Pager</h3>
+                                  <section>
+                                       <form>
+                                      	<fieldset>
                                     <h2 class="fs-title">Research Team and Institutional Information</h2>
                                     <h3 class="fs-subtitle">Proposing Institution</h3>
                                     <p>The proposing institution receives and manages the project funds provided by the IDRC. Please indicate the contact information of 
@@ -303,13 +352,15 @@ the administration office to which funds may be dispensed should this applicatio
                                     <label for="piFoE">Finance Officer Email</label><br/>
                                     <label for="piFoR">Email address for the main point of contact for financials</label><br/>
                                     <input type="text" name="piFoE" placeholder="" /> 
-                                                                        
-                                    <input type="button" name="previous" class="previous action-button" value="Previous" />
                                     <a class="btn btn-default">Save</a>
-                                    <input type="button" name="RTI" class="next action-button" value="Next" />
                                     </div><br/>
-                                </fieldset>                               
-                                <fieldset>
+                                </fieldset>
+                                      </form>
+                                  </section>
+                                  <h3>Pager Four</h3>
+                                  <section>
+                                       <form>
+                                      	<fieldset>
                                     <h2 class="fs-title">Research Team and Institutional Information</h2>
                                     <h3>Participating Institutions</h3>
                                     <p>Participating institutions put forward the research proposal under the leadership of the proposing institution. Note that all funding will 
@@ -334,162 +385,184 @@ be disbursed directly to the proposing institution only.</p>
                                     <input type="button" name="RTI" class="next action-button" value="Next" />
                                     </div><br/>
                                 </fieldset>
-                            </form>
-
-                        </section>
-                        <h3>Proposed Study Info</h3>
-                        <section>
-                            <form role="form">
-                              <div class="form-group">
-                                <label for="researcherName">Research Project Abstract </label><br/>
-                                <p>Should not exceed 250 words</p>
-                                <textarea class="form-control" rows="3"></textarea>
+                                      </form>
+                                  </section>
                               </div>
-                              <div class="form-group">
-                                <label for="researcherName">Research Problem, Significance and Justification </label><br/>
-                                <p>WORD LIMIT: 1,000. Please provide a brief overview of relevant literature and highlight the knowledge gaps that this project will address. Indicate the size 
-and scope of the problem, as well as how the problem relates to the purpose and goals OCSDNet; broader national development priorities, and the research 
-and capacity needs of the countries involved.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="researcherName">Research Questions and Objectives</label><br/>
-                                <p>WORD LIMIT: 500. Outline your project’s central research question(s), subquestions, and objectives. There must be congruency between the questions, 
-objectives, research design and methods. You should highlight how the study’s questions and objectives will contribute to the research themes of the 
-OCSDNet.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="researcheDandM">Research Design and Methods</label><br/>
-                                <p>WORD LIMIT: 1,000. In this section, applicants should clearly indicate and justify the proposed study design. You should discuss how you intend to collect 
-the data that you will need to achieve the study’s objectives and answer the project’s research questions.  You should clearly outline how each data collection 
-activity will contribute to the study objectives.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="researcherName">Analysis and Synthesis</label><br/>
-                                <p>WORD LIMIT: 1,000. Describe how you intend to organize, examine and model data to arrive at conclusions and insights.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="researcherName">Outcomes and Outputs</label><br/>
-                                <p>WORD LIMIT: 700. Describe the major project outputs and intended outcomes. Your project outputs should creatively reflect the 
-principles of open and collaborative science.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="researcherName">Knowledge Translation and Dissemination</label><br/>
-                                <p>WORD LIMIT: 700. Describe how you will disseminate your outputs. To ensure that the results of your study are applied to address 
-development challenges, explain how you intend to package, disseminate and promote the application of your findings amongst 
-relevant stakeholder groups</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="researcherName">Network Connections and Interactions</label><br/>
-                                <p>WORD LIMIT: 500. Illustrate how you will contribute to the overall OCSDNet framework and themes. Draw on other initiatives and 
-approaches discussed at the OCSDNet workshop, if applicable.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="bibliography">Bibliography</label><br/>
-                                <p>APA syle</p>
-                                <input type="text" class="form-control" id="bibliography" placeholder="">
-                              </div>
-                              <button type="submit" class="btn btn-default">Save</button>
-                            </form>
-                        </section>
-                        <h3>Research Administration</h3>
-                        <section>
-                            <h2>Research Administration</h2>
-                            <form role="form">
-                              <div class="form-group">
-                                <label for="projectTimeline">Project Timeline </label><br/>
-                                <p>Upload the completed template document and use it to outline the key milestones and deadlines of your project. Each activity included in the schedule should 
-relate to a project objective and should provide a financial estimate that is corresponds with the proposed budget in Section 5</p>
-                                <input type="file" id="projectTimeline">
-                              </div>
-                              <div class="form-group">
-                                <label for="researchEthics">Research Ethics</label><br/>
-                                <p>WORD LIMIT: 500. Provide a plan for how you will obtain research ethics approval. All projects that include human subjects must ensure that their privacy, 
-dignity, and integrity are protected. An independent ethical review committee must approve the protocols. Funding will be contingent on the provision of a 
-formal written approval. Projects that will collect corporate or personal information must detail how informed consent will be obtained and confidentiality 
-maintained.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="internalPCM">Internal Project Communication and Management</label><br/>
-                                <p>WORD LIMIT: 500. Describe how the principal investigator and project collaborators will interact with one another on a regular basis. Explain how funds 
-will be managed and how administrative matters will be addressed.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="ChallengesAndRisks">Challenges and Risks</label><br/>
-                                <p>WORD LIMIT: 500. Describe any challenges or foreseeable risks that may arise and affect your project's progress. Explain how your project team will 
-manage these concerns should they arise. Outline the mechanisms that are in place to cope with any unforeseeable complications.</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="MandEplan">Monitoring and Evaluation Plan</label><br/>
-                                <p>WORD LIMIT: 500. Outline how you will consistently examine and assess your project throughout its life course. Your outline should 
-include your monitoring and evaluation questions and objectives, as well as a description of your data collection methods and the 
-data sources that you will use. Your outline should correspond with your project timeline</p>
-                                <textarea class="form-control" rows="3"></textarea>
-                              </div>
-                            </form>
-                        </section>
-                        <h3>Budget</h3>
-                        <section>
-                            <h2>Budget and Timetable</h2>
-                            <form role="form">
-                              <div class="form-group">
-                               <label for="parallelFunds">Parallel Funds</label><br/>
-                               <p>Parallel funds are funds for your project that are donated from other international donors or funding agencies. </p><br/>
-                               <p>Template</p>
-                               <button type="submit" class="btn btn-default">Download</button>
-                              </div>
-                              <button type="submit" class="btn btn-default">Save</button>
-                              <br/>
-                              <br/>
-                              <h2>Add Parallel Funding Source</h2>
-                              <div class="form-group">
-                                <label for="donor">Donor</label>
-                                <input type="text" class="form-control" id="donor" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="amount" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                <label for="currency">Currency</label>
-                                <input type="text" class="form-control" id="currency" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                <label for="timeFrame">Timeframe</label>
-                                <input type="text" class="form-control" id="timeFrame" placeholder="">
-                              </div>
-                              <hr/>
-                              <button type="submit" class="btn btn-default">Add new funding source</button>
-                              <br/>
-                              <br/>
-                              <hr/>
-                              <button type="submit" class="btn btn-default">Save</button>
-                            </form>
+                            </div>                      
+                                <div id="step-3">
+                                <h2 class="StepTitle">Step 3 Content</h2>	
+                                 <section>
+                                                <form role="form">
+                                                  <div class="form-group">
+                                                    <label for="researcherName">Research Project Abstract </label><br/>
+                                                    <p>Should not exceed 250 words</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="researcherName">Research Problem, Significance and Justification </label><br/>
+                                                    <p>WORD LIMIT: 1,000. Please provide a brief overview of relevant literature and highlight the knowledge gaps that this project will address. Indicate the size 
+                    and scope of the problem, as well as how the problem relates to the purpose and goals OCSDNet; broader national development priorities, and the research 
+                    and capacity needs of the countries involved.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="researcherName">Research Questions and Objectives</label><br/>
+                                                    <p>WORD LIMIT: 500. Outline your project’s central research question(s), subquestions, and objectives. There must be congruency between the questions, 
+                    objectives, research design and methods. You should highlight how the study’s questions and objectives will contribute to the research themes of the 
+                    OCSDNet.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="researcheDandM">Research Design and Methods</label><br/>
+                                                    <p>WORD LIMIT: 1,000. In this section, applicants should clearly indicate and justify the proposed study design. You should discuss how you intend to collect 
+                    the data that you will need to achieve the study’s objectives and answer the project’s research questions.  You should clearly outline how each data collection 
+                    activity will contribute to the study objectives.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="researcherName">Analysis and Synthesis</label><br/>
+                                                    <p>WORD LIMIT: 1,000. Describe how you intend to organize, examine and model data to arrive at conclusions and insights.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="researcherName">Outcomes and Outputs</label><br/>
+                                                    <p>WORD LIMIT: 700. Describe the major project outputs and intended outcomes. Your project outputs should creatively reflect the 
+                    principles of open and collaborative science.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="researcherName">Knowledge Translation and Dissemination</label><br/>
+                                                    <p>WORD LIMIT: 700. Describe how you will disseminate your outputs. To ensure that the results of your study are applied to address 
+                    development challenges, explain how you intend to package, disseminate and promote the application of your findings amongst 
+                    relevant stakeholder groups</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="researcherName">Network Connections and Interactions</label><br/>
+                                                    <p>WORD LIMIT: 500. Illustrate how you will contribute to the overall OCSDNet framework and themes. Draw on other initiatives and 
+                    approaches discussed at the OCSDNet workshop, if applicable.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="bibliography">Bibliography</label><br/>
+                                                    <p>APA syle</p>
+                                                    <input type="text" class="form-control" id="bibliography" placeholder="">
+                                                  </div>
+                                                  <button type="submit" class="btn btn-default">Save</button>
+                                                </form>
+                                            </section>   				          
+                            </div>
+                                <div id="step-4">
+                                <h3>Research Administration</h3>
+                                            <section>
+                                                <h2>Research Administration</h2>
+                                                <form role="form">
+                                                  <div class="form-group">
+                                                    <label for="projectTimeline">Project Timeline </label><br/>
+                                                    <p>Upload the completed template document and use it to outline the key milestones and deadlines of your project. Each activity included in the schedule should 
+                    relate to a project objective and should provide a financial estimate that is corresponds with the proposed budget in Section 5</p>
+                                                    <input type="file" id="projectTimeline">
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="researchEthics">Research Ethics</label><br/>
+                                                    <p>WORD LIMIT: 500. Provide a plan for how you will obtain research ethics approval. All projects that include human subjects must ensure that their privacy, 
+                    dignity, and integrity are protected. An independent ethical review committee must approve the protocols. Funding will be contingent on the provision of a 
+                    formal written approval. Projects that will collect corporate or personal information must detail how informed consent will be obtained and confidentiality 
+                    maintained.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="internalPCM">Internal Project Communication and Management</label><br/>
+                                                    <p>WORD LIMIT: 500. Describe how the principal investigator and project collaborators will interact with one another on a regular basis. Explain how funds 
+                    will be managed and how administrative matters will be addressed.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="ChallengesAndRisks">Challenges and Risks</label><br/>
+                                                    <p>WORD LIMIT: 500. Describe any challenges or foreseeable risks that may arise and affect your project's progress. Explain how your project team will 
+                    manage these concerns should they arise. Outline the mechanisms that are in place to cope with any unforeseeable complications.</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="MandEplan">Monitoring and Evaluation Plan</label><br/>
+                                                    <p>WORD LIMIT: 500. Outline how you will consistently examine and assess your project throughout its life course. Your outline should 
+                    include your monitoring and evaluation questions and objectives, as well as a description of your data collection methods and the 
+                    data sources that you will use. Your outline should correspond with your project timeline</p>
+                                                    <textarea class="form-control" rows="3"></textarea>
+                                                  </div>
+                                                </form>
+                                            </section>	
+                                                    
+                            </div>
+                                <div id="step-5">
+                                    <h2 class="StepTitle">Step 5 Content</h2> 
+                                    <h3>Budget</h3>
+                                                <div id="wizardsub"  class="wizardsub clearfix">
+                                  <h3>Keyboard</h3>
+                                  <section>
+                                      <form role="form">
+                                      <h2>Budget and Timetable</h2>
+                                                      <div class="form-group">
+                                                       <label for="parallelFunds">Parallel Funds</label><br/>
+                                                       <p>Parallel funds are funds for your project that are donated from other international donors or funding agencies. </p><br/>
+                                                       <p>Template</p>
+                                                       <button type="submit" class="btn btn-default">Download</button>
+                                                      </div>
+                                                      <button type="submit" class="btn btn-default">Save</button>
+                                                      <br/>
+                                                      <br/>
+                                      </form>
+                                  </section>
+                                  <h3>Effects</h3>
+                                  <section>
+                                       <form role="form">
+                                       	<h2>Add Parallel Funding Source</h2>
+                                                      <div class="form-group">
+                                                        <label for="donor">Donor</label>
+                                                        <input type="text" class="form-control" id="donor" placeholder="">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <label for="amount">Amount</label>
+                                                        <input type="text" class="form-control" id="amount" placeholder="">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <label for="currency">Currency</label>
+                                                        <input type="text" class="form-control" id="currency" placeholder="">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <label for="timeFrame">Timeframe</label>
+                                                        <input type="text" class="form-control" id="timeFrame" placeholder="">
+                                                      </div>
+                                                      <hr/>
+                                                      <button type="submit" class="btn btn-default">Add new funding source</button>
+                                                      <br/>
+                                                      <br/>
+                                                      <hr/>
+                                                      <button type="submit" class="btn btn-default">Save</button>
+                                       </form>
+                                  </section>
+                              </div>             
+                                </div>
+                            </div>
+                    <!-- End SmartWizard Content -->  		
                             
-                        </section>
-                    </div>
-                </div>
-            </div>
-         </div>
-     </section>
-
-    <div class="footer">
+                    </td></tr>
+                    </table>
+                   
+				</div>
+			</div>    		
+		</div>
+	</section>
+	 <div class="footer">
       <div class="container">
         <p class="text-muted">ocsdnet</p>
       </div>
     </div>
-	<script src="/js/jquery.js"></script>
-    <script src="/js/jquery.steps.min.js"></script>
-    <script>
+ <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.smartWizard.js"></script>
+<script type="text/javascript" src="js/jquery.steps.min.js"></script>
+
+<script>
             $("#wizard").steps({
                     			headerTag: "h3",
                     			bodyTag: "section",
@@ -507,12 +580,32 @@ data sources that you will use. Your outline should correspond with your project
                     			}
                     			});
     </script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.prettyPhoto.js"></script>
-    <!-- jQuery easing plugin -->
-<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
-<script src="/js/main.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+    <script>
+            $("#wizardsub").steps({
+                    			headerTag: "h3",
+                    			bodyTag: "section",
+                    			transitionEffect: "slideLeft",
+								titleTemplate: '<span class="numbers">Step#index#.</span><br/><p class="titlle">#title#</p>',
+                    			autoFocus: false,
+                    			  labels: {
+                    				cancel: "Cancel",
+                    				current: "",
+                    				pagination: "Pagination",
+                    				finish: "Finish",
+                    				next: "Next",
+                    				previous: "Prev",
+                    				loading: "Loading ..."
+                    			}
+                    			});
+    </script>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    	// Smart Wizard 	
+  		$('#wizardmain').smartWizard();
+           
+		});
+</script>
+</body>
 </html>
