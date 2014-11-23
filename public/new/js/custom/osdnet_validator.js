@@ -369,4 +369,92 @@ $(document).ready(function() {
                 $('#proposal_id').text(data);
             }, 'json');
         });
+
+    // Research admnistration form
+    $('.research-administration').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            projecttimeline: {
+                message: 'Project Timeline  is required',
+                validators: {
+                    notEmpty: {
+                        message: 'Research Project Abstract and cannot be empty'
+                    }
+                }
+            },
+            researchethics: {
+                validators: {
+                    notEmpty: {
+                        message: 'Research Ethics is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 500,
+                        message: 'Words cannot exceed 250'
+                    }
+                    
+                }
+            },
+             internalproject: {
+                validators: {
+                    notEmpty: {
+                        message: 'Internal Project Communication and Management'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 500,
+                        message: 'Words cannot exceed 500'
+                    }
+                    
+                }
+            },
+            challengesandrisks: {
+                validators: {
+                    notEmpty: {
+                        message: 'Challenges and Risks is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 1000,
+                        message: 'Words cannot exceed 500'
+                    }
+                    
+                }
+            },
+              monitoringevaluation: {
+                validators: {
+                    notEmpty: {
+                        message: 'Monitoring and Evaluation Plan is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 1000,
+                        message: 'Words cannot exceed 1000'
+                    }
+                    
+                }
+            }
+           
+            
+        }
+    }).on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+            alert( $form.serialize());
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+        });
 });
