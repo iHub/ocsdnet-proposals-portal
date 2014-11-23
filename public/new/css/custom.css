@@ -72,7 +72,7 @@ display: block;
 	border-radius: 10px;
 }
 .wizard>.actions {
-	position: relative;
+	/*position: relative;*/
 	display: block;
 	text-align: right;
 	width: 100%;
@@ -181,7 +181,7 @@ display: block;
 	border-radius: 10px;
 }
 .wizardsub>.actions {
-	position: relative;
+	/*position: relative;*/
 	display: block;
 	text-align: right;
 	width: 100%;
