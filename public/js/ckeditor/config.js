@@ -31,4 +31,18 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced';
+
+	config.extraPlugins = 'wordcount';
+	
+	config.wordcount = {
+
+    // Whether or not you want to show the Word Count
+       showWordCount: true,
+
+    // Whether or not you want to show the Char Count
+      showCharCount: false,
+
+     // Whether or not to include Html chars in the Char Count
+       countHTML: false
+    };
 };
