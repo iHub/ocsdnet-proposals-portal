@@ -379,7 +379,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                           <a class="btn btn-default ">Upload</a><br/>
                                           <p>Role in Proposed Project</p>
                                           <p>Please explain the specific role that this person will play in the proposed project</p><br/>
-                                          <textarea name="pdOa" placeholder="" rows="3"></textarea><br/>
+                                          <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea><br/>
                                           <hr/>
                                           <a class="btn btn-default ">Add New Collaborator</a><br/>
 
