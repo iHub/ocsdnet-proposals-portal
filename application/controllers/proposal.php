@@ -66,6 +66,10 @@ class Proposal extends CI_Controller {
 		echo json_encode($proposal_id);
 
 	}
+	public function researchinfo() {
+		$data = $_POST;
+		echo json_encode($data);
+	}
 	public function updater() {
 		$data = $_POST;
 		echo json_encode($data);

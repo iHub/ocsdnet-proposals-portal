@@ -10,10 +10,10 @@ class Auth_model extends CI_Model {
 		$this -> db -> where('email', $_POST['email']);
 		$query = $this -> db -> get($table);
 		$row = $query -> row();
-
 		$user_data = array();
 
 		$this -> session -> unset_userdata("user_data");
+		
 		if ($this -> password -> validate_password($_POST['password'], $row -> password)) {
 			$user_data['id'] = $row -> id;
 			$user_data['email'] = $row -> email;

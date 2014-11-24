@@ -47,22 +47,6 @@
         </div>
     </header>
 
-<!--<div class="demoHead">
-
-<div style="margin-top:15px;">
-<div style="float:left"><h3>Examples:</h3></div>
-    <div style="float:left" class="demoExampleLinks">
-      <a href="index.htm" class="btn selected">Basic Example</a>
-      <a href="smartwizard2-vertical.htm" class="btn">Vertical Style</a>
-      <a href="smartwizard2-multiple.htm" class="btn">Multiple Wizards</a>
-      <a href="smartwizard2-ajax.htm" class="btn">Ajax Contents</a>
-      <a href="smartwizard2-validation.htm" class="btn">Step Validation</a>
-      <a href="smartwizard-autostep.htm" class="btn">Auto Step buttons</a>
-    </div>
-    <div style="clear:both;"></div>
-  </div>
-
-</div>-->
 <section id="proposal-form">
         <div class="container">
             <div class="row">
@@ -92,21 +76,21 @@
                                     <span class="stepDesc">
                                        Step 3<br />
                                        <small>Proposed Study Info</small>
-                                    </span>                   
+                                    </span>
                                  </a></li>
                                     <li><a href="#step-4">
                                     <label class="stepNumber">4</label>
                                     <span class="stepDesc">
                                        Step 4<br />
                                        <small>Research Administration</small>
-                                    </span>                   
+                                    </span>
                                 </a></li>
                                 <li><a href="#step-5">
                                     <label class="stepNumber">5</label>
                                     <span class="stepDesc">
                                        Step 5<br />
                                        <small>Budget</small>
-                                    </span>                   
+                                    </span>
                                 </a></li>
                                 </ul>
                                 <div id="step-1">
@@ -215,77 +199,74 @@
                                   <div id="wizard"  class="wizard clearfix">
                                   <h3>Keyboard</h3>
                                   <section>
-                                      <form>
+                                      <form class="researcher-info" action="<?php echo base_url();?>index.php/proposal/researchinfo">
                                         <fieldset>
                                     <h2 class="fs-title">Research Team and Institutional Information</h2>
                                     <h3 class="fs-subtitle">Primary Researcher Information</h3>
                                     <div class="col-md-6">
                                       <div class="form-group">
                                         <label for="pdName">Name</label><br/>
-                                        <input type="text" name="fname" placeholder="" class="form-control"/>
+                                        <input type="text" name="researchername" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdEmail">Email</label><br/>
-                                        <input type="email" name="pdEmail" placeholder="" class="form-control"/>
+                                        <input type="email" name="researcheremail" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdPhoneNumber">Phone Number</label><br/>
-                                        <input type="number" name="pdphone" placeholder="" class="form-control"/>
+                                        <input type="number" name="researcherphone" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdD">Designation</label><br/>
-                                        <input type="text" name="pdD" placeholder="" class="form-control"/>
+                                        <input type="text" name="researcherdesignation" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdIoRn">Institution or organization name</label><br/>
-                                        <input type="text" name="pdIoRn" placeholder="" class="form-control"/>
+                                        <input type="text" name="researcherorganization" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdCoCi">Country of Citizenship</label><br/>
-                                        <input type="text" name="pdCoCi" placeholder="" class="form-control"/>
+                                        <input type="text" name="researchercountrycitizenship" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdOa">Office Address</label><br/>
-                                        <textarea name="pdOa" placeholder="" rows="3"></textarea>
+                                        <textarea name="researcheraddress" class="form-control" placeholder="" rows="3"></textarea>
                                       </div>
                                     </div>
                                     <div class="col-md-6">
                                       <div class="form-group">
                                         <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                        <input type="text" name="pd" placeholder=""class="form-control" />
+                                        <input type="text" name="researcheraffliation" placeholder=""class="form-control" />
                                       </div>
-                                      <div class="form-group">
-                                        <label for="pdCoc">Country of Citizenship</label><br/>
-                                        <input type="text" name="pdCoC" placeholder="" class="form-control"/>
-                                      </div>
+
                                       <div class="form-group">
                                         <label for="pd">Website</label><br/>
-                                        <input type="text" name="pdWebsite" placeholder="" class="form-control"/>
+                                        <input type="text" name="researcherwebsite" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdCoI">Country of incorporation</label><br/>
-                                        <input type="text" name="pdCoI" placeholder="" class="form-control"/>
+                                        <input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdCoR">Country of Residence</label><br/>
-                                        <input type="text" name="pdCoR" placeholder="" class="form-control"/>
+                                        <input type="text" name="researchercountryresidence" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdGender">Gender</label><br/>
                                         <label class="radio-inline">
-                                          <input type="radio" name="inlineRadioOptions" id="pdMale" value="option1"> Male
+                                          <input type="radio" name="researchergender" id="pdMale" value="option1"> Male
                                         </label>
                                         <label class="radio-inline">
-                                          <input type="radio" name="inlineRadioOptions" id="pdFemale" value="option2"> Female
+                                          <input type="radio" name="researchergender" id="pdFemale" value="option2"> Female
                                         </label><br/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                        <input type="text" name="pdAoEaI" placeholder="" class="form-control"/>
+                                        <input type="text" name="researcherexpertise" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                        <input type="text" name="pdRPoRO" placeholder="" class="form-control"/>
+                                         <input type="text" name="researcherpublications" placeholder="" class="form-control"/>
                                       </div>
                                     </div>
                                     <p>Qualifications and Experience</p>
@@ -293,7 +274,7 @@
 credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
                   <a class="btn btn-default ">Download CV Template</a>
                                     <a class="btn btn-default ">Upload</a><br/>
-                                    <a class="btn btn-default">Save</a>
+                                   <button type="submit" class="btn btn-default">Save</button>
                                 </fieldset>
                                       </form>
                                   </section>
@@ -306,70 +287,67 @@ credentials, funded research projects (including those supported by the IDRC), l
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <label for="pdName">Name</label><br/>
-                                              <input type="text" name="fname" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchername" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdEmail">Email</label><br/>
-                                              <input type="email" name="pdEmail" placeholder="" class="form-control"/>
+                                              <input type="email" name="researcheremail" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdPhoneNumber">Phone Number</label><br/>
-                                              <input type="number" name="pdphone" placeholder="" class="form-control"/>
+                                              <input type="number" name="researcherphone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdD">Designation</label><br/>
-                                              <input type="text" name="pdD" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherdesignation" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdIoRn">Institution or organization name</label><br/>
-                                              <input type="text" name="pdIoRn" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherorganization" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoCi">Country of incorporation</label><br/>
-                                              <input type="text" name="pdCoCi" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdOa">Office Address</label><br/>
-                                              <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea>
+                                              <textarea name="researcheraddress" placeholder="" rows="3" class="form-control"></textarea>
                                             </div>
                                           </div>
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                              <input type="text" name="pd" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchernameaffliation" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoc">Country of Citizenship</label><br/>
-                                              <input type="text" name="pdCoC" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchercitizenship" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pd">Website</label><br/>
-                                              <input type="text" name="pdWebsite" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherwebsite" placeholder="" class="form-control"/>
                                             </div>
-                                            <div class="form-group">
-                                              <label for="pdCoI">Country of incorporation</label><br/>
-                                              <input type="text" name="pdCoI" placeholder="" class="form-control"/>
-                                            </div>
+
                                             <div class="form-group">
                                               <label for="pdCoR">Country of Residence</label><br/>
-                                              <input type="text" name="pdCoR" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchercountryresidence" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdGender">Gender</label><br/>
                                               <label class="radio-inline">
-                                                <input type="radio" name="inlineRadioOptions" id="pdMale" value="option1"> Male
+                                                <input type="radio" name="researchernamegender" id="pdMale" value="option1"> Male
                                               </label>
                                               <label class="radio-inline">
-                                                <input type="radio" name="inlineRadioOptions" id="pdFemale" value="option2"> Female
+                                                <input type="radio" name="researchergender" id="pdFemale" value="option2"> Female
                                               </label><br/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                              <input type="text" name="pdAoEaI" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherexpertiseandinterests" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                              <input type="text" name="pdRPoRO" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherrevelantpublications" placeholder="" class="form-control"/>
                                             </div>
                                           </div>
                                           <p>Qualifications and Experience</p>
@@ -379,7 +357,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                           <a class="btn btn-default ">Upload</a><br/>
                                           <p>Role in Proposed Project</p>
                                           <p>Please explain the specific role that this person will play in the proposed project</p><br/>
-                                          <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea><br/>
+                                          <textarea name="researcherrole" placeholder="" rows="3" class="form-control"></textarea><br/>
                                           <hr/>
                                           <a class="btn btn-default ">Add New Collaborator</a><br/>
 
@@ -448,15 +426,15 @@ credentials, funded research projects (including those supported by the IDRC), l
                                           <div class="col-md-10 no-margin">
                                             <div class="form-group">
                                               <label for="pi3IN">Institution name</label><br/>
-                                              <input type="text" name="pi3IN" placeholder="" class="form-control"/>
+                                              <input type="text" name="institutionname" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3TN">Telephone Number </label><br/>
-                                              <input type="number" name="pdEmail" placeholder="" class="form-control"/>
+                                              <input type="number" name="institutionphone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3E">Email</label><br/>
-                                              <input type="email" name="pi3E" placeholder="" class="form-control"/>
+                                              <input type="email" name="institutionemail" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea>
@@ -468,7 +446,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Role in the project</label><br/>
-                                              <textarea name="pi3MA" placeholder="" rows="3" class="form-control"></textarea><br/>
+                                              <textarea name="institutionrole" placeholder="" rows="3" class="form-control"></textarea><br/>
                                               <hr/>
                                             </div>
                                               <a class="btn btn-default ">Add New Institution</a><br/>
@@ -702,14 +680,21 @@ data sources that you will use. Your outline should correspond with your project
       // Smart Wizard
       $('#wizardmain').smartWizard();
       CKEDITOR.replaceClass = 'ckeditor';
+     //  var editor = $('.ckeditor').ckeditor().editor;
+     // //
+     // //  var editor = CKEDITOR.instances['ckeditor'];
 
-    });
+     //  editor.on( 'keyup', function( event ) {
+     //      alert( e.getData() );
+     //  });
+  });
+
 </script>
    <script src="<?php echo base_url();?>public/new/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>public/new/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
-    <script src="<?php echo base_url();?>public/js/ckeditor/ckeditor.js"></script>
      <script src="<?php echo base_url();?>public/new/js/custom/osdnet_validator.js"></script>
      <script src="<?php echo base_url();?>public/new/js/custom/autosave.js"></script>
+     <script src="<?php echo base_url();?>public/js/ckeditor/ckeditor.js"></script>
     <script src="<?php echo base_url();?>public/new/js/jquery.prettyPhoto.js"></script>
     <!-- jQuery easing plugin -->
 <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
