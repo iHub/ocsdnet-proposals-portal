@@ -449,4 +449,143 @@ $(document).ready(function() {
                 console.log(result);
             }, 'json');
         });
+    $('.researcher-info').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            researchername: {
+                message: 'Name  is required',
+                validators: {
+                    notEmpty: {
+                        message: 'Name is required and cannot be empty'
+                    }
+                }
+            },
+            researcheremail: {
+                validators: {
+                    notEmpty: {
+                        message: 'Email is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             researcherphone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Phone number is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcherdesignation: {
+                validators: {
+                    notEmpty: {
+                        message: 'Designation is required and cannot be empty'
+                    }
+                    
+                }
+            },
+              researcherorganization: {
+                validators: {
+                    notEmpty: {
+                        message: 'Organization is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researchercountrycitizenship: {
+                validators: {
+                    notEmpty: {
+                        message: 'Country of citenship is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researchercountrycitizenship: {
+                validators: {
+                    notEmpty: {
+                        message: 'Country of citenship is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcheraddress: {
+                validators: {
+                    notEmpty: {
+                        message: 'Address is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             researcheraffliation: {
+                validators: {
+                    notEmpty: {
+                        message: 'Affliation is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             researcherwebsite: {
+                validators: {
+                    notEmpty: {
+                        message: 'Website is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             researchercountryincorporation: {
+                validators: {
+                    notEmpty: {
+                        message: 'Country of incorporation is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researchergender: {
+                validators: {
+                    notEmpty: {
+                        message: 'Gender is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcherexpertise: {
+                validators: {
+                    notEmpty: {
+                        message: 'Expertise is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcherpublications: {
+                validators: {
+                    notEmpty: {
+                        message: 'Research publications is required and cannot be empty'
+                    }
+                    
+                }
+            }
+
+           
+            
+        }
+    }).on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            //var bv = $form.data('bootstrapValidator');
+            alert( $form.serialize());
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                console.log(result);
+            }, 'json');
+        });
 });

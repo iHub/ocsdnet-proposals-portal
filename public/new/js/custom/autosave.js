@@ -2,14 +2,13 @@ $(document).ready(function() {
 	
 	typingHandler();
 	//autoSave();
+	textArea();
 
 });
 	function typingHandler(){
-		
-		$('textarea').keyup(function(e){
-			
-			var name=$(this).attr('name');
-			var value=$(this).val();
+	 
+		$('input').keyup(function(e){
+		   
 			var url=$(this).closest("form").attr('action');
 			var $form = $(this).closest("form").serialize();
 
@@ -25,3 +24,10 @@ $(document).ready(function() {
                 console.log(result);
             }, 'json');
 	}
+	function textArea(){
+		$('.ckeditor').keydown(function(e){
+		  console.log('hi');
+		});
+	}
+
+	  
