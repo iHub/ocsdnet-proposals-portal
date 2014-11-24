@@ -77,36 +77,36 @@
                                     <label class="stepNumber">1</label>
                                     <span class="stepDesc">
                                        Step 1<br />
-                                       <small>Step 1 description</small>
+                                       <small>General Project Info</small>
                                     </span>
                                 </a></li>
                                     <li><a href="#step-2">
                                     <label class="stepNumber">2</label>
                                     <span class="stepDesc">
                                        Step 2<br />
-                                       <small>Step 2 description</small>
+                                       <small>Team & Institution Info</small>
                                     </span>
                                 </a></li>
                                     <li><a href="#step-3">
                                     <label class="stepNumber">3</label>
                                     <span class="stepDesc">
                                        Step 3<br />
-                                       <small>Step 3 description</small>
-                                    </span>
+                                       <small>Proposed Study Info</small>
+                                    </span>                   
                                  </a></li>
                                     <li><a href="#step-4">
                                     <label class="stepNumber">4</label>
                                     <span class="stepDesc">
                                        Step 4<br />
-                                       <small>Step 4 description</small>
-                                    </span>
+                                       <small>Research Administration</small>
+                                    </span>                   
                                 </a></li>
                                 <li><a href="#step-5">
                                     <label class="stepNumber">5</label>
                                     <span class="stepDesc">
                                        Step 5<br />
-                                       <small>Step 5 description</small>
-                                    </span>
+                                       <small>Budget</small>
+                                    </span>                   
                                 </a></li>
                                 </ul>
                                 <div id="step-1">
@@ -220,43 +220,73 @@
                                     <h2 class="fs-title">Research Team and Institutional Information</h2>
                                     <h3 class="fs-subtitle">Primary Researcher Information</h3>
                                     <div class="col-md-6">
-                                    <label for="pdName">Name</label><br/>
-                                    <input type="text" name="fname" placeholder="" />
-                                    <label for="pdEmail">Email</label><br/>
-                                    <input type="email" name="pdEmail" placeholder="" />
-                                    <label for="pdPhoneNumber">Phone Number</label><br/>
-                                    <input type="number" name="pdphone" placeholder="" />
-                                    <label for="pdD">Designation</label><br/>
-                                    <input type="text" name="pdD" placeholder="" />
-                                    <label for="pdIoRn">Institution or organization name</label><br/>
-                                    <input type="text" name="pdIoRn" placeholder="" />
-                                    <label for="pdCoCi">Country of Citizenship</label><br/>
-                                    <input type="text" name="pdCoCi" placeholder="" />
-                                    <label for="pdOa">Office Address</label><br/>
-                                    <textarea name="pdOa" placeholder="" rows="3"></textarea>
+                                      <div class="form-group">
+                                        <label for="pdName">Name</label><br/>
+                                        <input type="text" name="fname" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdEmail">Email</label><br/>
+                                        <input type="email" name="pdEmail" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdPhoneNumber">Phone Number</label><br/>
+                                        <input type="number" name="pdphone" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdD">Designation</label><br/>
+                                        <input type="text" name="pdD" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdIoRn">Institution or organization name</label><br/>
+                                        <input type="text" name="pdIoRn" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdCoCi">Country of Citizenship</label><br/>
+                                        <input type="text" name="pdCoCi" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdOa">Office Address</label><br/>
+                                        <textarea name="pdOa" placeholder="" rows="3"></textarea>
+                                      </div>
                                     </div>
                                     <div class="col-md-6">
-                                    <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                    <input type="text" name="pd" placeholder="" />
-                                    <label for="pdCoc">Country of Citizenship</label><br/>
-                                    <input type="text" name="pdCoC" placeholder="" />
-                                    <label for="pd">Website</label><br/>
-                                    <input type="text" name="pdWebsite" placeholder="" />
-                                    <label for="pdCoI">Country of incorporation</label><br/>
-                                    <input type="text" name="pdCoI" placeholder="" />
-                                    <label for="pdCoR">Country of Residence</label><br/>
-                                    <input type="text" name="pdCoR" placeholder="" />
-                                    <label for="pdGender">Gender</label><br/>
-                                    <label class="radio-inline">
-                                      <input type="radio" name="inlineRadioOptions" id="pdMale" value="option1"> Male
-                                    </label>
-                                    <label class="radio-inline">
-                                      <input type="radio" name="inlineRadioOptions" id="pdFemale" value="option2"> Female
-                                    </label><br/>
-                                    <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                    <input type="text" name="pdAoEaI" placeholder="" />
-                                    <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                    <input type="text" name="pdRPoRO" placeholder="" />
+                                      <div class="form-group">
+                                        <label for="pd">IDRC Affiliation (if any)</label><br/>
+                                        <input type="text" name="pd" placeholder=""class="form-control" />
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdCoc">Country of Citizenship</label><br/>
+                                        <input type="text" name="pdCoC" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pd">Website</label><br/>
+                                        <input type="text" name="pdWebsite" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdCoI">Country of incorporation</label><br/>
+                                        <input type="text" name="pdCoI" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdCoR">Country of Residence</label><br/>
+                                        <input type="text" name="pdCoR" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdGender">Gender</label><br/>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="inlineRadioOptions" id="pdMale" value="option1"> Male
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="inlineRadioOptions" id="pdFemale" value="option2"> Female
+                                        </label><br/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
+                                        <input type="text" name="pdAoEaI" placeholder="" class="form-control"/>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
+                                        <input type="text" name="pdRPoRO" placeholder="" class="form-control"/>
+                                      </div>
                                     </div>
                                     <p>Qualifications and Experience</p>
                                     <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
@@ -270,124 +300,183 @@ credentials, funded research projects (including those supported by the IDRC), l
                                   <h3>Effects</h3>
                                   <section>
                                        <form>
-                                      <fieldset>
-                                    <h2 class="fs-title">Research Team and Institutional Information</h2>
-                                    <h3 class="fs-subtitle">Add Collaborators</h3>
-                                    <div class="col-md-6">
-                                    <label for="pdName">Name</label><br/>
-                                    <input type="text" name="fname" placeholder="" />
-                                    <label for="pdEmail">Email</label><br/>
-                                    <input type="email" name="pdEmail" placeholder="" />
-                                    <label for="pdPhoneNumber">Phone Number</label><br/>
-                                    <input type="number" name="pdphone" placeholder="" />
-                                    <label for="pdD">Designation</label><br/>
-                                    <input type="text" name="pdD" placeholder="" />
-                                    <label for="pdIoRn">Institution or organization name</label><br/>
-                                    <input type="text" name="pdIoRn" placeholder="" />
-                                    <label for="pdCoCi">Country of incorporation</label><br/>
-                                    <input type="text" name="pdCoCi" placeholder="" />
-                                    <label for="pdOa">Office Address</label><br/>
-                                    <textarea name="pdOa" placeholder="" rows="3"></textarea>
-                                    </div>
-                                    <div class="col-md-6">
-                                    <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                    <input type="text" name="pd" placeholder="" />
-                                    <label for="pdCoc">Country of Citizenship</label><br/>
-                                    <input type="text" name="pdCoC" placeholder="" />
-                                    <label for="pd">Website</label><br/>
-                                    <input type="text" name="pdWebsite" placeholder="" />
-                                    <label for="pdCoI">Country of incorporation</label><br/>
-                                    <input type="text" name="pdCoI" placeholder="" />
-                                    <label for="pdCoR">Country of Residence</label><br/>
-                                    <input type="text" name="pdCoR" placeholder="" />
-                                    <label for="pdGender">Gender</label><br/>
-                                    <label class="radio-inline">
-                                      <input type="radio" name="inlineRadioOptions" id="pdMale" value="option1"> Male
-                                    </label>
-                                    <label class="radio-inline">
-                                      <input type="radio" name="inlineRadioOptions" id="pdFemale" value="option2"> Female
-                                    </label><br/>
-                                    <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                    <input type="text" name="pdAoEaI" placeholder="" />
-                                    <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                    <input type="text" name="pdRPoRO" placeholder="" />
-                                    </div>
-                                    <p>Qualifications and Experience</p>
-                                    <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
-credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
-                  <a class="btn btn-default ">Download CV Template</a>
-                                    <a class="btn btn-default ">Upload</a><br/>
-                                    <p>Role in Proposed Project</p>
-                                    <p>Please explain the specific role that this person will play in the proposed project</p><br/>
-                                    <textarea name="pdOa" placeholder="" rows="3"></textarea><br/>
-                                    <hr/>
-                                    <a class="btn btn-default ">Add New Collaborator</a><br/>
+                                        <fieldset>
+                                          <h2 class="fs-title">Research Team and Institutional Information</h2>
+                                          <h3 class="fs-subtitle">Add Collaborators</h3>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="pdName">Name</label><br/>
+                                              <input type="text" name="fname" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdEmail">Email</label><br/>
+                                              <input type="email" name="pdEmail" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdPhoneNumber">Phone Number</label><br/>
+                                              <input type="number" name="pdphone" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdD">Designation</label><br/>
+                                              <input type="text" name="pdD" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdIoRn">Institution or organization name</label><br/>
+                                              <input type="text" name="pdIoRn" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdCoCi">Country of incorporation</label><br/>
+                                              <input type="text" name="pdCoCi" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdOa">Office Address</label><br/>
+                                              <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="pd">IDRC Affiliation (if any)</label><br/>
+                                              <input type="text" name="pd" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdCoc">Country of Citizenship</label><br/>
+                                              <input type="text" name="pdCoC" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pd">Website</label><br/>
+                                              <input type="text" name="pdWebsite" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdCoI">Country of incorporation</label><br/>
+                                              <input type="text" name="pdCoI" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdCoR">Country of Residence</label><br/>
+                                              <input type="text" name="pdCoR" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdGender">Gender</label><br/>
+                                              <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="pdMale" value="option1"> Male
+                                              </label>
+                                              <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="pdFemale" value="option2"> Female
+                                              </label><br/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
+                                              <input type="text" name="pdAoEaI" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
+                                              <input type="text" name="pdRPoRO" placeholder="" class="form-control"/>
+                                            </div>
+                                          </div>
+                                          <p>Qualifications and Experience</p>
+                                          <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
+      credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
+                        <a class="btn btn-default ">Download CV Template</a>
+                                          <a class="btn btn-default ">Upload</a><br/>
+                                          <p>Role in Proposed Project</p>
+                                          <p>Please explain the specific role that this person will play in the proposed project</p><br/>
+                                          <textarea name="pdOa" placeholder="" rows="3"></textarea><br/>
+                                          <hr/>
+                                          <a class="btn btn-default ">Add New Collaborator</a><br/>
 
-                                    <a class="btn btn-default">Save</a>
-                                </fieldset>
+                                          <a class="btn btn-default">Save</a>
+                                      </fieldset>
                                       </form>
                                   </section>
                                   <h3>Pager</h3>
                                   <section>
                                        <form>
                                         <fieldset>
-                                    <h2 class="fs-title">Research Team and Institutional Information</h2>
-                                    <h3 class="fs-subtitle">Proposing Institution</h3>
-                                    <p>The proposing institution receives and manages the project funds provided by the IDRC. Please indicate the contact information of
-the administration office to which funds may be dispensed should this application be accepted.</p>
-                                    <div class="col-md-10 no-margin">
-                                    <label for="piION">Institution/ Organization name</label><br/>
-                                    <input type="text" name="fname" placeholder="" />
-                                    <label for="piMA">Mailing Address</label><br/>
-                                    <label for="pdiMA">Including office or departmental name</label><br/>
-                                    <input type="text" name="pdEmail" placeholder="" />
-                                    <label for="piTN">Telephone Number</label><br/>
-                                    <input type="number" name="piphone" placeholder="" />
-                                    <label for="piE">Email</label><br/>
-                                    <input type="text" name="piE" placeholder="" />
-                                    <textarea name="pdOa" placeholder="" rows="3"></textarea>
-                                    <label for="piFoN">Finance Officer’s name</label><br/>
-                                    <label for="piFoN">Name for the main point of contact for financialse</label><br/>
-                                    <input type="text" name="piFoN" placeholder="" />
-                                    <label for="piFoPN">Finance Officer phone number</label><br/>
-                                    <label for="piFoPN">Phone number for the main point of contact for financials</label><br/>
-                                    <input type="text" name="piFoPN" placeholder="" />
-                                    <label for="piFoE">Finance Officer Email</label><br/>
-                                    <label for="piFoR">Email address for the main point of contact for financials</label><br/>
-                                    <input type="text" name="piFoE" placeholder="" />
-                                    <a class="btn btn-default">Save</a>
-                                    </div><br/>
-                                </fieldset>
+                                          <h2 class="fs-title">Research Team and Institutional Information</h2>
+                                          <h3 class="fs-subtitle">Proposing Institution</h3>
+                                          <p>The proposing institution receives and manages the project funds provided by the IDRC. Please indicate the contact information of
+      the administration office to which funds may be dispensed should this application be accepted.</p>
+                                          <div class="col-md-10 no-margin">
+                                            <div class="form-group">
+                                              <label for="piION">Institution/ Organization name</label><br/>
+                                              <input type="text" name="fname" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piMA">Mailing Address</label><br/>
+                                              <label for="pdiMA">Including office or departmental name</label><br/>
+                                              <input type="text" name="pdEmail" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piTN">Telephone Number</label><br/>
+                                              <input type="number" name="piphone" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piE">Email</label><br/>
+                                              <input type="text" name="piE" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piOE">Office Address</label><br/>
+                                              <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piFoN">Finance Officer’s name</label><br/>
+                                              <label for="piFoN">Name for the main point of contact for financialse</label><br/>
+                                              <input type="text" name="piFoN" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piFoPN">Finance Officer phone number</label><br/>
+                                              <label for="piFoPN">Phone number for the main point of contact for financials</label><br/>
+                                              <input type="text" name="piFoPN" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piFoE">Finance Officer Email</label><br/>
+                                              <label for="piFoR">Email address for the main point of contact for financials</label><br/>
+                                              <input type="text" name="piFoE" placeholder="" class="form-control"/>
+                                            </div>
+                                              <a class="btn btn-default">Save</a>
+                                          </div><br/>
+                                      </fieldset>
                                       </form>
                                   </section>
                                   <h3>Pager Four</h3>
                                   <section>
                                        <form>
                                         <fieldset>
-                                    <h2 class="fs-title">Research Team and Institutional Information</h2>
-                                    <h3>Participating Institutions</h3>
-                                    <p>Participating institutions put forward the research proposal under the leadership of the proposing institution. Note that all funding will
-be disbursed directly to the proposing institution only.</p>
-                                    <div class="col-md-10 no-margin">
-                                    <label for="pi3IN">Institution name</label><br/>
-                                    <input type="text" name="pi3IN" placeholder="" />
-                                    <label for="pi3TN">Telephone Number </label><br/>
-                                    <input type="number" name="pdEmail" placeholder="" />
-                                    <label for="pi3E">Email</label><br/>
-                                    <input type="email" name="pi3E" placeholder="" />
-                                    <textarea name="pdOa" placeholder="" rows="3"></textarea>
-                                    <label for="pi3MA">Mailing Address</label><br/>
-                                    <label for="pi3MA">Including office or departmental name</label><br/>
-                                    <input type="text" name="pi3MA" placeholder="" />
-                                    <label for="pi3MA">Role in the project</label><br/>
-                                    <textarea name="pi3MA" placeholder="" rows="3"></textarea><br/>
-                                    <hr/>
-                                    <a class="btn btn-default ">Add New Institution</a><br/>
-                                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                    <a class="btn btn-default">Save</a>
-                                    <input type="button" name="RTI" class="next action-button" value="Next" />
-                                    </div><br/>
-                                </fieldset>
+                                          <h2 class="fs-title">Research Team and Institutional Information</h2>
+                                          <h3>Participating Institutions</h3>
+                                          <p>Participating institutions put forward the research proposal under the leadership of the proposing institution. Note that all funding will
+      be disbursed directly to the proposing institution only.</p>
+                                          <div class="col-md-10 no-margin">
+                                            <div class="form-group">
+                                              <label for="pi3IN">Institution name</label><br/>
+                                              <input type="text" name="pi3IN" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pi3TN">Telephone Number </label><br/>
+                                              <input type="number" name="pdEmail" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pi3E">Email</label><br/>
+                                              <input type="email" name="pi3E" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pi3MA">Mailing Address</label><br/>
+                                              <label for="pi3MA">Including office or departmental name</label><br/>
+                                              <input type="text" name="pi3MA" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pi3MA">Role in the project</label><br/>
+                                              <textarea name="pi3MA" placeholder="" rows="3" class="form-control"></textarea><br/>
+                                              <hr/>
+                                            </div>
+                                              <a class="btn btn-default ">Add New Institution</a><br/>
+                                              <input type="button" name="previous" class="previous action-button" value="Previous" />
+                                              <a class="btn btn-default">Save</a>
+                                              <input type="button" name="RTI" class="next action-button" value="Next" />
+                                          </div><br/>
+                                      </fieldset>
                                       </form>
                                   </section>
                               </div>
