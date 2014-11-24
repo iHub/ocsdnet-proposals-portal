@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	
 	typingHandler();
 	//autoSave();
 
@@ -18,7 +19,7 @@ $(document).ready(function() {
 		})
 	}
 	function autoSave(url,$form){
-		console.log($form);
+
         $.post(url, $form, function(result) {
                 //data = JSON.parse(result);
                 console.log(result);

@@ -13,16 +13,8 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'The project title is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: 'The project title must be more than 6 and less than 30 characters long'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_]+$/,
-                        message: 'The project title can only consist of alphabetical, number and underscore'
                     }
+                    
                 }
             },
             duration: {
