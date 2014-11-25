@@ -6,6 +6,7 @@ class Auth_model extends CI_Model {
 
 	//User login
 	function login($table) {
+<<<<<<< HEAD
 		$this->db->select('*');
 		$this->db->where('email', $_POST['email']);
 		$query = $this->db->get($table);
@@ -21,6 +22,23 @@ class Auth_model extends CI_Model {
 			$user_data['last_name'] = $row->last_name;
 			$user_data['user_role_id'] = $row->user_role_id;
 			$this->session->set_userdata("user_data", $user_data);
+=======
+		$this -> db -> select('*');
+		$this -> db -> where('email', $_POST['email']);
+		$query = $this -> db -> get($table);
+		$row = $query -> row();
+		$user_data = array();
+
+		$this -> session -> unset_userdata("user_data");
+		
+		if ($this -> password -> validate_password($_POST['password'], $row -> password)) {
+			$user_data['id'] = $row -> id;
+			$user_data['email'] = $row -> email;
+			$user_data['first_name'] = $row -> first_name;
+			$user_data['last_name'] = $row -> last_name;
+			$user_data['user_role_id'] = $row -> user_role_id;
+			$this -> session -> set_userdata("user_data", $user_data);
+>>>>>>> 9759b068c5db665e2bef87dc7d574fe548b27a0a
 			$role_id = $user_data['user_role_id'];
 			switch ($role_id) {
 				case '1':

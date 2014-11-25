@@ -10,6 +10,9 @@
      
     <h4><?php echo $reviewer_status; ?></h4>    
     <table class="table table-hover table-bordered table-condensed">
+    <?php if (count($proposals)>0) {
+			
+		?>
     <thead>
         <tr>
             <th>#</th>
@@ -21,7 +24,10 @@
         </tr>
     </thead>
     <tbody>
-    	<?php for($i=0; $i<count($proposals); $i++): ?>
+    	<?php 
+    	
+    	
+    	for($i=0; $i<count($proposals); $i++): ?>
         <tr>
             <td><?php echo $i + 1; ?></td>
             <td><?php echo $proposals[$i]["study_title"]; ?></td>
@@ -38,7 +44,12 @@
                        
         </tr>
     	
-    	<?php endfor; ?>
+    	<?php endfor;
+		
+		}else{ ?>
+			
+			<tr><td>Once you are assigned proposals for review, they will appear here</td></tr>
+		<?php } ?>
     </tbody>
 </table>
 </div>
