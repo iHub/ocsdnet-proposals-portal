@@ -586,7 +586,7 @@ data sources that you will use. Your outline should correspond with your project
                                                        <label for="parallelFunds">Parallel Funds</label><br/>
                                                        <p>Parallel funds are funds for your project that are donated from other international donors or funding agencies. </p><br/>
                                                        <p>Template</p>
-                                                       <button type="submit" class="btn btn-default">Download</button>
+                                                       <a href="<?php echo base_url();?>public/templates/HILA.xlsx" download><button type="submit" class="btn btn-default">Download</button><a/>
                                                       </div>
                                                       <button type="submit" class="btn btn-default">Save</button>
                                                       <br/>
