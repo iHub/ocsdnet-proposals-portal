@@ -647,7 +647,7 @@ data sources that you will use. Your outline should correspond with your project
                           headerTag: "h3",
                           bodyTag: "section",
                           transitionEffect: "slideLeft",
-                titleTemplate: '<span class="numbers">Step#index#.</span><br/><p class="titlle">#title#</p>',
+                titleTemplate: '<span class="numbers">Step 2.#index#</span><br/><p class="titlle">#title#</p>',
                           autoFocus: false,
                             labels: {
                             cancel: "Cancel",
@@ -665,7 +665,7 @@ data sources that you will use. Your outline should correspond with your project
                           headerTag: "h3",
                           bodyTag: "section",
                           transitionEffect: "slideLeft",
-                titleTemplate: '<span class="numbers">Step#index#.</span><br/><p class="titlle">#title#</p>',
+                titleTemplate: '<span class="numbers">Step 5.#index#</span><br/><p class="titlle">#title#</p>',
                           autoFocus: false,
                             labels: {
                             cancel: "Cancel",
