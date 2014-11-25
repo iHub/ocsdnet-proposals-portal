@@ -9,4 +9,7 @@ class Budget_model extends CI_Model {
 			$this->db->insert("budgets", $data);
 			return $this->db->insert_id();
 	}
+    public function update(){
+        
+    }
 }

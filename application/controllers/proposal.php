@@ -64,17 +64,20 @@ class Proposal extends CI_Controller {
 	public function stepfour() {
 
 		$data['id'] = $_POST['proposal_id'];
-
-		$tmp_name = $_FILES["project_timelines"]["tmp_name"];
-		$name = $_FILES["project_timelines"]["name"];
-		$path = $uploaddir . $name;
+        $uploaddir = realpath(dirname(__DIR__));
+        $upload_array=explode("/application", $uploaddir);
+        $uploaddir = $upload_array[0]."/uploads";
+        $upload_path=base_url()."uploads";
+		$tmp_name = $_FILES["projecttimeline"]["tmp_name"];
+        
+		$name = $_FILES["projecttimeline"]["name"];
+		$path = $upload_path.'/'.$name;
 		$data["project_timelines"] = "";
-		$uploaddir = base_url() . "/uploads/budget";
+		
 		if (move_uploaded_file($tmp_name, "$uploaddir/$name")) {
 			$data["project_timelines"] = $path;
 		}
-		echo json_encode($data);
-		exit;
+		
 		$data['research_ethics'] = $_POST['researchethics'];
 		$data['internal_project_communication_and_management'] = $_POST['internalproject'];
 		$data['challenges_and_risks'] = $_POST['challengesandrisks'];
@@ -159,13 +162,7 @@ class Proposal extends CI_Controller {
 		$data = array();
 
 		$uploaddir = base_url() ."uploads/budget";
-		// if (file_exists($uploaddir)) {
-			// echo $uploaddir;
-// 
-		// } else {
-			// echo $uploaddir;
-		// }
-		// exit;
+		// if (fileExists($uploaddir)) {
 
 		$tmp_name = $_FILES["budget"]["tmp_name"];
 		$name = $_FILES["budget"]["name"];

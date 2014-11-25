@@ -82,6 +82,7 @@ $(document).ready(function() {
             
             $('#proposal_id').text(data);
             $('#gender_proposal').text(data);
+            alert('data saved');
         }, 'json');
     });
     $('.researcher-info').bootstrapValidator({
@@ -203,6 +204,14 @@ $(document).ready(function() {
                     }
 
                 }
+            },
+            researchercv: {
+                validators: {
+                    notEmpty: {
+                        message: 'File must be selected'
+                    }
+
+                }
             }
         }
     }).on('success.form.bv', function(e) {
@@ -214,11 +223,12 @@ $(document).ready(function() {
 
         // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-        alert($form.serialize());
+        
         // Use Ajax to submit form data
         $.post($form.attr('action'), $form.serialize(), function(result) {
             data = JSON.parse(result);
             $('#researcher_id').val(data);
+            alert('data saved');
         }, 'json');
     });
 
@@ -715,19 +725,23 @@ $(document).ready(function() {
         }
     }).on('success.form.bv', function(e) {
         // Prevent form submission
-        e.preventDefault();
-
-        // Get the form instance
+         e.preventDefault();
         var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-
+        var formData = new FormData($(this)[0]);
         // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
-            console.log(result);
-            alert('data saved')
-        }, 'json');
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function(data) {
+                alert(data)
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
     });
     $('.researcher-info').bootstrapValidator({
         message: 'This value is not valid',
@@ -950,18 +964,16 @@ $(document).ready(function() {
     }).on('success.form.bv', function(e) {
 
         e.preventDefault();
-
         // Get the form instance
         var $form = $(e.target);
-        alert($form);
-
         // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-
         // Use Ajax to submit form data
         $.post($form.attr('action'), $form.serialize(), function(result) {
-           
-            alert('data saved');
+            data = JSON.parse(result);
+            console.log(data);
+            alert('data saved ');
+
         }, 'json');
         
     });
