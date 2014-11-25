@@ -197,7 +197,7 @@
                                 <div id="step-2">
                                  <h2 class="StepTitle">Step 2 Content</h2>
                                   <div id="wizard"  class="wizard clearfix">
-                                  <h3>Keyboard</h3>
+                                  <h3>Primary Researcher Info</h3>
                                   <section>
                                       <form class="researcher-info" action="<?php echo base_url();?>index.php/proposal/researchinfo">
                                         <fieldset>
@@ -278,7 +278,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                 </fieldset>
                                       </form>
                                   </section>
-                                  <h3>Effects</h3>
+                                  <h3>Research Team Info</h3>
                                   <section>
                                        <form  class="collaborator-info" action="<?php echo base_url();?>index.php/proposal/collaboratorinfo">
                                         <fieldset>
@@ -367,7 +367,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                       </fieldset>
                                       </form>
                                   </section>
-                                  <h3>Pager</h3>
+                                  <h3>Proposed Study Info</h3>
                                   <section>
                                        <form class="institution-info" action="<?php echo base_url();?>index.php/proposal/institutioninfo">
                                         <fieldset>
@@ -418,7 +418,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                       </fieldset>
                                       </form>
                                   </section>
-                                  <h3>Pager Four</h3>
+                                  <h3>Participating Institutions</h3>
                                   <section>
                                        <form class="institution-supporting-info" action="<?php echo base_url();?>index.php/proposal/institutionparticipatinginfo">
                                         <fieldset>
@@ -578,7 +578,7 @@ data sources that you will use. Your outline should correspond with your project
                                    <h2 class="StepTitle">Step 5 Content</h2>
                                     <h3>Budget</h3>
                                                 <div id="wizardsub"  class="wizardsub clearfix">
-                                  <h3>Keyboard</h3>
+                                  <h3>Proposed budget and timetable</h3>
                                   <section>
                                       <form role="form">
                                       <h2>Budget and Timetable</h2>
@@ -593,7 +593,7 @@ data sources that you will use. Your outline should correspond with your project
                                                       <br/>
                                       </form>
                                   </section>
-                                  <h3>Effects</h3>
+                                  <h3>Parallel funds</h3>
                                   <section>
                                        <form role="form">
                                         <h2>Add Parallel Funding Source</h2>
