@@ -14,6 +14,10 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>public/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>public/js/form.js"></script>
+
+  <script src="<?php echo base_url(); ?>public/js/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url(); ?>public/js/plugins/datatables/DT_bootstrap.js"></script>
+  <script src="<?php echo base_url(); ?>public/js/plugins/tableCheckable/jquery.tableCheckable.js"></script>
 </head>
 
 <body>
