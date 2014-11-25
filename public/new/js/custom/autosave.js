@@ -7,7 +7,7 @@ $(document).ready(function() {
 });
 	function typingHandler(){
 	 
-		$('input').keyup(function(e){
+		$('inputi').keyup(function(e){
 		   
 			var url=$(this).closest("form").attr('action');
 			var $form = $(this).closest("form").serialize();

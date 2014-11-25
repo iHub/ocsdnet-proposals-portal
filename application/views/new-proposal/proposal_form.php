@@ -184,7 +184,7 @@
                               <div class="form-group">
                                 <label for="projectTitle">Justification of Research Themes</label><br/>
                                 <label for="projectTitle">Justify how your project ties into the selected OCSDNet theme(s).</label>
-                                <textarea class="form-control ckeditor" name="justifythemes" rows="3"></textarea>
+                                <textarea class="form-control ckeditor" name="justifythemes" rows="3"><?php if ($present) {echo $justification_of_research_themes;}?></textarea>
                               </div>
                               <div class="form-group">
                                 <label for="projectTitle">Total Budget Cost (CAD)</label>
@@ -214,7 +214,7 @@
                                       </div>
                                       <div class="form-group">
                                         <label for="pdPhoneNumber">Phone Number</label><br/>
-                                        <input type="number" name="researcherphone" placeholder="" class="form-control"/>
+                                        <input type="text" name="researcherphone" placeholder="" class="form-control"/>
                                       </div>
                                       <div class="form-group">
                                         <label for="pdD">Designation</label><br/>
@@ -254,10 +254,10 @@
                                       <div class="form-group">
                                         <label for="pdGender">Gender</label><br/>
                                         <label class="radio-inline">
-                                          <input type="radio" name="researchergender" id="pdMale" value="option1"> Male
+                                          <input type="radio" name="researchergender" id="pdMale" value="male"> Male
                                         </label>
                                         <label class="radio-inline">
-                                          <input type="radio" name="researchergender" id="pdFemale" value="option2"> Female
+                                          <input type="radio" name="researchergender" id="pdFemale" value="female"> Female
                                         </label><br/>
                                       </div>
                                       <div class="form-group">
@@ -280,74 +280,76 @@ credentials, funded research projects (including those supported by the IDRC), l
                                   </section>
                                   <h3>Effects</h3>
                                   <section>
-                                       <form>
+                                       <form  class="collaborator-info" action="<?php echo base_url();?>index.php/proposal/collaboratorinfo">
                                         <fieldset>
                                           <h2 class="fs-title">Research Team and Institutional Information</h2>
                                           <h3 class="fs-subtitle">Add Collaborators</h3>
                                           <div class="col-md-6">
+                                            <input type="hidden" id="researcher_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
                                             <div class="form-group">
                                               <label for="pdName">Name</label><br/>
-                                              <input type="text" name="researchername" placeholder="" class="form-control"/>
+                                              <input type="text" name="name" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdEmail">Email</label><br/>
-                                              <input type="email" name="researcheremail" placeholder="" class="form-control"/>
+                                              <input type="email" name="email" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdPhoneNumber">Phone Number</label><br/>
-                                              <input type="number" name="researcherphone" placeholder="" class="form-control"/>
+                                              <input type="number" name="phone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdD">Designation</label><br/>
-                                              <input type="text" name="researcherdesignation" placeholder="" class="form-control"/>
+                                              <input type="text" name="designation" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdIoRn">Institution or organization name</label><br/>
-                                              <input type="text" name="researcherorganization" placeholder="" class="form-control"/>
+                                              <input type="text" name="organization" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoCi">Country of incorporation</label><br/>
-                                              <input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
+                                              <input type="text" name="countryincorporation" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdOa">Office Address</label><br/>
-                                              <textarea name="researcheraddress" placeholder="" rows="3" class="form-control"></textarea>
+                                              <textarea name="address" placeholder="" rows="3" class="form-control"></textarea>
                                             </div>
                                           </div>
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                              <input type="text" name="researchernameaffliation" placeholder="" class="form-control"/>
+                                              <input type="text" name="affliation" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoc">Country of Citizenship</label><br/>
-                                              <input type="text" name="researchercitizenship" placeholder="" class="form-control"/>
+                                              <input type="text" name="citizenship" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pd">Website</label><br/>
-                                              <input type="text" name="researcherwebsite" placeholder="" class="form-control"/>
+                                              <input type="text" name="website" placeholder="" class="form-control"/>
                                             </div>
 
                                             <div class="form-group">
                                               <label for="pdCoR">Country of Residence</label><br/>
-                                              <input type="text" name="researchercountryresidence" placeholder="" class="form-control"/>
+                                              <input type="text" name="countryresidence" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdGender">Gender</label><br/>
                                               <label class="radio-inline">
-                                                <input type="radio" name="researchernamegender" id="pdMale" value="option1"> Male
+                                                <input type="radio" name="gender" id="pdMale" value="option1"> Male
                                               </label>
                                               <label class="radio-inline">
-                                                <input type="radio" name="researchergender" id="pdFemale" value="option2"> Female
+                                                <input type="radio" name="gender" id="pdFemale" value="option2"> Female
                                               </label><br/>
+                                               <input type="hidden" value="" name="gender"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                              <input type="text" name="researcherexpertiseandinterests" placeholder="" class="form-control"/>
+                                              <input type="text" name="expertiseandinterests" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                              <input type="text" name="researcherrevelantpublications" placeholder="" class="form-control"/>
+                                              <input type="text" name="revelantpublications" placeholder="" class="form-control"/>
                                             </div>
                                           </div>
                                           <p>Qualifications and Experience</p>
@@ -357,102 +359,105 @@ credentials, funded research projects (including those supported by the IDRC), l
                                           <a class="btn btn-default ">Upload</a><br/>
                                           <p>Role in Proposed Project</p>
                                           <p>Please explain the specific role that this person will play in the proposed project</p><br/>
-                                          <textarea name="researcherrole" placeholder="" rows="3" class="form-control"></textarea><br/>
+                                          <textarea name="role" placeholder="" rows="3" class="form-control"></textarea><br/>
                                           <hr/>
                                           <a class="btn btn-default ">Add New Collaborator</a><br/>
 
-                                          <a class="btn btn-default">Save</a>
+                                           <button type="submit" class="btn btn-default">Save</button>
                                       </fieldset>
                                       </form>
                                   </section>
                                   <h3>Pager</h3>
                                   <section>
-                                       <form>
+                                       <form class="institution-info" action="<?php echo base_url();?>index.php/proposal/institutioninfo">
                                         <fieldset>
                                           <h2 class="fs-title">Research Team and Institutional Information</h2>
                                           <h3 class="fs-subtitle">Proposing Institution</h3>
                                           <p>The proposing institution receives and manages the project funds provided by the IDRC. Please indicate the contact information of
       the administration office to which funds may be dispensed should this application be accepted.</p>
                                           <div class="col-md-10 no-margin">
+                                            <input type="hidden" id="institution_research_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
                                             <div class="form-group">
                                               <label for="piION">Institution/ Organization name</label><br/>
-                                              <input type="text" name="fname" placeholder="" class="form-control"/>
+                                              <input type="text" name="name" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="piMA">Mailing Address</label><br/>
                                               <label for="pdiMA">Including office or departmental name</label><br/>
-                                              <input type="text" name="pdEmail" placeholder="" class="form-control"/>
+                                              <textarea name="mailaddress" class="form-control"> </textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="piTN">Telephone Number</label><br/>
-                                              <input type="number" name="piphone" placeholder="" class="form-control"/>
+                                              <input type="number" name="phone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="piE">Email</label><br/>
-                                              <input type="text" name="piE" placeholder="" class="form-control"/>
+                                              <input type="text" name="email" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="piOE">Office Address</label><br/>
-                                              <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea>
+                                              <textarea name="address" placeholder="" rows="3" class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="piFoN">Finance Officer’s name</label><br/>
                                               <label for="piFoN">Name for the main point of contact for financialse</label><br/>
-                                              <input type="text" name="piFoN" placeholder="" class="form-control"/>
+                                              <input type="text" name="financename" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="piFoPN">Finance Officer phone number</label><br/>
                                               <label for="piFoPN">Phone number for the main point of contact for financials</label><br/>
-                                              <input type="text" name="piFoPN" placeholder="" class="form-control"/>
+                                              <input type="text" name="financephone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="piFoE">Finance Officer Email</label><br/>
                                               <label for="piFoR">Email address for the main point of contact for financials</label><br/>
-                                              <input type="text" name="piFoE" placeholder="" class="form-control"/>
+                                              <input type="text" name="financeemail" placeholder="" class="form-control"/>
                                             </div>
-                                              <a class="btn btn-default">Save</a>
+                                              <button type="submit" class="btn btn-default">Save</button>
                                           </div><br/>
                                       </fieldset>
                                       </form>
                                   </section>
                                   <h3>Pager Four</h3>
                                   <section>
-                                       <form>
+                                       <form class="institution-supporting-info" action="<?php echo base_url();?>index.php/proposal/institutionparticipatinginfo">
                                         <fieldset>
                                           <h2 class="fs-title">Research Team and Institutional Information</h2>
                                           <h3>Participating Institutions</h3>
                                           <p>Participating institutions put forward the research proposal under the leadership of the proposing institution. Note that all funding will
       be disbursed directly to the proposing institution only.</p>
                                           <div class="col-md-10 no-margin">
+                                             <input type="hidden" id="institution__supportresearch_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
                                             <div class="form-group">
                                               <label for="pi3IN">Institution name</label><br/>
-                                              <input type="text" name="institutionname" placeholder="" class="form-control"/>
+                                              <input type="text" name="name" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3TN">Telephone Number </label><br/>
-                                              <input type="number" name="institutionphone" placeholder="" class="form-control"/>
+                                              <input type="number" name="phone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3E">Email</label><br/>
-                                              <input type="email" name="institutionemail" placeholder="" class="form-control"/>
+                                              <input type="email" name="email" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
-                                              <textarea name="pdOa" placeholder="" rows="3" class="form-control"></textarea>
+                                              <label for="pi3TN">Address </label><br/>
+                                              <textarea name="address" placeholder="" rows="3" class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Mailing Address</label><br/>
                                               <label for="pi3MA">Including office or departmental name</label><br/>
-                                              <input type="text" name="pi3MA" placeholder="" class="form-control"/>
+                                              <input type="text" name="mailingaddress" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Role in the project</label><br/>
-                                              <textarea name="institutionrole" placeholder="" rows="3" class="form-control"></textarea><br/>
+                                              <textarea name="role" placeholder="" rows="3" class="form-control"></textarea><br/>
                                               <hr/>
                                             </div>
                                               <a class="btn btn-default ">Add New Institution</a><br/>
-                                              <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                              <a class="btn btn-default">Save</a>
-                                              <input type="button" name="RTI" class="next action-button" value="Next" />
+
+                                               <button type="submit" class="btn btn-default">Save</button>
+
                                           </div><br/>
                                       </fieldset>
                                       </form>
