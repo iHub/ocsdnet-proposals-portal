@@ -577,7 +577,7 @@ $(document).ready(function() {
 
                 }
             },
-            researchdesign: {
+            designmethods: {
                 validators: {
                     notEmpty: {
                         message: 'Research Design and Methods is required and cannot be empty'
@@ -736,7 +736,7 @@ $(document).ready(function() {
             data: formData,
             async: false,
             success: function(data) {
-                alert(data)
+                alert('form saved');
             },
             cache: false,
             contentType: false,
@@ -905,18 +905,15 @@ $(document).ready(function() {
         var $form = $(e.target);
         var bv = $form.data('bootstrapValidator');
         var formData = new FormData($(this)[0]);
-        // Use Ajax to submit form data
-//        $.post($form.attr('action'), formData, function(result) {
-//            console.log(result);
-//            alert('data saved');
-//        }, 'json');
         $.ajax({
             url: $form.attr('action'),
             type: 'POST',
             data: formData,
             async: false,
-            success: function(data) {
-                alert(data)
+            success: function(result) {
+                data = JSON.parse(result);
+                console.log(data);
+                alert('data saved ');
             },
             cache: false,
             contentType: false,

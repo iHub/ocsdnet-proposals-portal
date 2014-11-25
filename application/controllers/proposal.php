@@ -71,13 +71,17 @@ class Proposal extends CI_Controller {
 		$tmp_name = $_FILES["projecttimeline"]["tmp_name"];
         
 		$name = $_FILES["projecttimeline"]["name"];
-		$path = $upload_path.'/'.$name;
+        $name_array=explode('.',$name);
+        
+        $name_path=$name_array[0].time();
+        $file_name=$name_path.".".$name_array[1];
+        
+		$path = $upload_path.'/'.$file_name;
 		$data["project_timelines"] = "";
 		
-		if (move_uploaded_file($tmp_name, "$uploaddir/$name")) {
+		if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
 			$data["project_timelines"] = $path;
 		}
-		
 		$data['research_ethics'] = $_POST['researchethics'];
 		$data['internal_project_communication_and_management'] = $_POST['internalproject'];
 		$data['challenges_and_risks'] = $_POST['challengesandrisks'];
@@ -159,20 +163,28 @@ class Proposal extends CI_Controller {
 	}
 
 	public function budget() {
-		$data = array();
-
-		$uploaddir = base_url() ."uploads/budget";
-		// if (fileExists($uploaddir)) {
-
-		$tmp_name = $_FILES["budget"]["tmp_name"];
-		$name = $_FILES["budget"]["name"];
-		if (move_uploaded_file($tmp_name, "$uploaddir/$name")) {
-			$proposal_id = $_POST['proposal_id'];
-			$data['budget_url'] = $name;
-			$data['id'] = $proposal_id;
-			$proposal_id = $this->proposal_model->save_study_info($data);
-
-		}
+		
+		$uploaddir = realpath(dirname(__DIR__));
+        $upload_array=explode("/application", $uploaddir);
+        $uploaddir = $upload_array[0]."/uploads";
+        $upload_path=base_url()."uploads";
+        $tmp_name = $_FILES["budget"]["tmp_name"];
+        $name = $_FILES["budget"]["name"];
+        $name_array=explode('.',$name);
+        $name_path=$name_array[0].time();
+        $file_name=$name_path.".".$name_array[1];
+        $path = $upload_path.'/'.$file_name;
+        $data["budget_url"] = "";
+        $data['id']= $_POST['proposal_id'];
+        
+        if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
+            $data["budget_url"] = $path;
+            
+        }
+       $proposal_id=$this->proposal_model->save_study_info($data);
+       echo json_encode($proposal_id);
+       
+		
 
 	}
 	public function funding() {

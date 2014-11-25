@@ -208,7 +208,7 @@
                                           <div class="col-md-6">
                                             <div class="form-group">
                                               <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                              <input type="text" name="researcheraffliation" placeholder=""class="form-control" />
+                                              <input type="text" name="researcheraffliation" placeholder="" class="form-control" />
                                             </div>
 
                                       <div class="form-group">
@@ -462,7 +462,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                                     <p>
                                                         Should not exceed 250 words
                                                     </p>
-                                                    <textarea name="researchproject"class="form-control ckeditor" rows="3"><?php
+                                                    <textarea name="researchproject" class="form-control ckeditor" rows="3"><?php
                                                     if ($present) {
                                                         echo $research_project_abstract;
                                                     }
@@ -504,7 +504,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                                         the data that you will need to achieve the study’s objectives and answer the project’s research questions.  You should clearly outline how each data collection
                                                         activity will contribute to the study objectives.
                                                     </p>
-                                                    <textarea name="researchdesign" class="form-control ckeditor" rows="3"></textarea>
+                                                    <textarea name="designmethods" class="form-control ckeditor" rows="3"></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="researcherName">Analysis and Synthesis</label>
@@ -669,7 +669,7 @@ credentials, funded research projects (including those supported by the IDRC), l
 													<div class="form-group">
 														<input type="hidden" value="<?php
                                                         if ($present) {
-                                                            echo $research_problem_significance_and_justification;
+                                                            echo $id;
                                                         }
 														?>" id="budget_proposal" name="proposal_id"/>
 														<label for="parallelFunds">Parallel Funds</label>
@@ -715,6 +715,9 @@ credentials, funded research projects (including those supported by the IDRC), l
                                                                 Save
                                                             </button>
 												</form>
+												 <button type="submit" id="add-funding" class="btn btn-default">
+                                                                Add new Funding Source
+                                                            </button>
 											</section>
 										</div>
 									</div>
