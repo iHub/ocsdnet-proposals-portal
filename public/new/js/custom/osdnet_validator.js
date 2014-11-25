@@ -100,6 +100,146 @@ $(document).ready(function() {
                     
                 }
             },
+            researcheremail: {
+                validators: {
+                    notEmpty: {
+                        message: 'Email is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             researcherphone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Phone is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcherdesignation: {
+                validators: {
+                    notEmpty: {
+                        message: 'Designation is required and cannot be empty'
+                    }
+                    
+                }
+            },
+              researcherorganization: {
+                validators: {
+                    notEmpty: {
+                        message: 'Institution is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             researchercountrycitizenship: {
+                validators: {
+                    notEmpty: {
+                        message: 'Country is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcheraddress: {
+                validators: {
+                    notEmpty: {
+                        message: 'The address  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcheraffliation: {
+                validators: {
+                    notEmpty: {
+                        message: 'The affliation  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcherwebsite: {
+                validators: {
+                    notEmpty: {
+                        message: 'The affliation  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researchercountryincorporation: {
+                validators: {
+                    notEmpty: {
+                        message: 'The Country incorporation  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researchercountryresidence: {
+                validators: {
+                    notEmpty: {
+                        message: 'The Country residence  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researchergender: {
+                validators: {
+                    notEmpty: {
+                        message: 'The gender  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcherexpertise: {
+                validators: {
+                    notEmpty: {
+                        message: 'The expertise  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            researcherpublications: {
+                validators: {
+                    notEmpty: {
+                        message: 'The publications  is required and cannot be empty'
+                    }
+                    
+                }
+            }
+        }
+    }).on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+            alert( $form.serialize());
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                data = JSON.parse(result);
+                $('#researcher_id').val(data);
+            }, 'json');
+        });
+
+    $('.collaborator-info').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                message: 'The name is required',
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required and cannot be empty'
+                    },
+                   
+                    
+                }
+            },
             email: {
                 validators: {
                     notEmpty: {
@@ -124,7 +264,7 @@ $(document).ready(function() {
                     
                 }
             },
-              institution: {
+              organization: {
                 validators: {
                     notEmpty: {
                         message: 'Institution is required and cannot be empty'
@@ -132,7 +272,7 @@ $(document).ready(function() {
                     
                 }
             },
-             country: {
+             citizenship: {
                 validators: {
                     notEmpty: {
                         message: 'Country is required and cannot be empty'
@@ -156,7 +296,7 @@ $(document).ready(function() {
                     
                 }
             },
-            website: {
+           website: {
                 validators: {
                     notEmpty: {
                         message: 'The affliation  is required and cannot be empty'
@@ -172,7 +312,7 @@ $(document).ready(function() {
                     
                 }
             },
-            countryresidence: {
+           countryresidence: {
                 validators: {
                     notEmpty: {
                         message: 'The Country residence  is required and cannot be empty'
@@ -188,7 +328,7 @@ $(document).ready(function() {
                     
                 }
             },
-            expertise: {
+            expertiseandinterests: {
                 validators: {
                     notEmpty: {
                         message: 'The expertise  is required and cannot be empty'
@@ -196,7 +336,7 @@ $(document).ready(function() {
                     
                 }
             },
-            publications: {
+            revelantpublications: {
                 validators: {
                     notEmpty: {
                         message: 'The publications  is required and cannot be empty'
@@ -214,13 +354,193 @@ $(document).ready(function() {
 
             // Get the BootstrapValidator instance
             var bv = $form.data('bootstrapValidator');
+            
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                data = JSON.parse(result);
+                $('#research_id').val(data);          
+                $('#institution_research_id').val(data);
+                $('#institution__supportresearch_id').val(data);
+                alert('data saved')
+            }, 'json');
+        });
+     $('.institution-info').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                message: 'The name is required',
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required and cannot be empty'
+                    },
+                   
+                    
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Email is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Phone is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            mailaddress: {
+                validators: {
+                    notEmpty: {
+                        message: 'Mailing address is required and cannot be empty'
+                    }
+                    
+                }
+            },
+              financename: {
+                validators: {
+                    notEmpty: {
+                        message: 'Finance person name is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             financephone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Finance phone nameis required and cannot be empty'
+                    }
+                    
+                }
+            },
+            address: {
+                validators: {
+                    notEmpty: {
+                        message: 'The address  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            
+           financeemail: {
+                validators: {
+                    notEmpty: {
+                        message: 'The finance person email  is required and cannot be empty'
+                    }
+                    
+                }
+            }
+          
+        }
+    }).on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
             alert( $form.serialize());
             // Use Ajax to submit form data
             $.post($form.attr('action'), $form.serialize(), function(result) {
                 data = JSON.parse(result);
-                $('#proposal_id').text(data);
+                $('#research_id').val(data);
+                alert('data saved')
             }, 'json');
         });
+    $('.institution-supporting-info').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                message: 'The name is required',
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required and cannot be empty'
+                    },
+                   
+                    
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'Email is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'Phone is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            mailaddress: {
+                validators: {
+                    notEmpty: {
+                        message: 'Mailing address is required and cannot be empty'
+                    }
+                    
+                }
+            },
+             
+            address: {
+                validators: {
+                    notEmpty: {
+                        message: 'The address  is required and cannot be empty'
+                    }
+                    
+                }
+            },
+            role: {
+                validators: {
+                    notEmpty: {
+                        message: 'The Role in project  is required and cannot be empty'
+                    }
+                    
+                }
+            }
+            
+           
+          
+        }
+    }).on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+            alert( $form.serialize());
+            // Use Ajax to submit form data
+            $.post($form.attr('action'), $form.serialize(), function(result) {
+                data = JSON.parse(result);
+                $('#research_id').val(data);
+                alert('data saved')
+            }, 'json');
+        });
+
+
+
     $('.proposed-study-info').bootstrapValidator({
         message: 'This value is not valid',
         feedbackIcons: {
@@ -234,12 +554,7 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'Research Project Abstract and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 250,
-                        message: 'Words cannot exceed 250'
-                    },
+                    }
                    
                     
                 }
@@ -248,11 +563,6 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'Research Problem, Significance and Justification is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 1000,
-                        message: 'Words cannot exceed 250'
                     }
                     
                 }
@@ -261,11 +571,6 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'Research Questions and Objectives'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 500,
-                        message: 'Words cannot exceed 500'
                     }
                     
                 }
@@ -274,11 +579,6 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'Research Design and Methods is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 1000,
-                        message: 'Words cannot exceed 500'
                     }
                     
                 }
@@ -300,11 +600,6 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'Output and outcomes is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 700,
-                        message: 'Words cannot exceed 1000'
                     }
                     
                 }
@@ -313,11 +608,6 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         translationdissemination: 'Knowledge Translation and Dissemination is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 700,
-                        message: 'Words cannot exceed 700'
                     }
                     
                 }
@@ -326,11 +616,6 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: 'The Network Connections and Interactions is required and cannot be empty'
-                    },
-                     stringLength: {
-                        min: 6,
-                        max: 500,
-                        message: 'Words cannot exceed 700'
                     }
                     
                 }
@@ -354,11 +639,13 @@ $(document).ready(function() {
 
             // Get the BootstrapValidator instance
             var bv = $form.data('bootstrapValidator');
-            alert( $form.serialize());
+            console.log($form.serialize());
             // Use Ajax to submit form data
             $.post($form.attr('action'), $form.serialize(), function(result) {
                 data = JSON.parse(result);
-                $('#proposal_id').text(data);
+                console.log(data);
+                alert('data saved ')
+                
             }, 'json');
         });
 
@@ -443,10 +730,11 @@ $(document).ready(function() {
 
             // Get the BootstrapValidator instance
             var bv = $form.data('bootstrapValidator');
-            alert( $form.serialize());
+            
             // Use Ajax to submit form data
             $.post($form.attr('action'), $form.serialize(), function(result) {
                 console.log(result);
+                alert('data saved')
             }, 'json');
         });
     $('.researcher-info').bootstrapValidator({
@@ -581,11 +869,12 @@ $(document).ready(function() {
             var $form = $(e.target);
 
             // Get the BootstrapValidator instance
-            //var bv = $form.data('bootstrapValidator');
-            alert( $form.serialize());
+            var bv = $form.data('bootstrapValidator');
+            
             // Use Ajax to submit form data
             $.post($form.attr('action'), $form.serialize(), function(result) {
                 console.log(result);
+                alert('data saved');
             }, 'json');
         });
 });

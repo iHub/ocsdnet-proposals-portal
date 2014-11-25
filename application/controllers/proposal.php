@@ -6,9 +6,11 @@ class Proposal extends CI_Controller {
 		//$user_data = $this -> session -> userdata("user_data");
 
 		$this->load->model("proposal/proposal_model");
+		$this->load->model("users/user_model");
 	}
 
 	public function index() {
+
 		$user_data = $this->session->userdata("user_data");
 
 		$id = $user_data['id'];
@@ -23,6 +25,8 @@ class Proposal extends CI_Controller {
 		} else {
 			$data['present'] = 0;
 		}
+
+		$data['researcher_id'] = $id;
 
 		$this->load->view("new-proposal/proposal_form", $data);
 	}
@@ -67,8 +71,72 @@ class Proposal extends CI_Controller {
 
 	}
 	public function researchinfo() {
-		$data = $_POST;
-		echo json_encode($data);
+		$data['first_name'] = $_POST['researchername'];
+		$data['gender'] = $_POST['researchergender'];
+		$data['email'] = $_POST['researcheremail'];
+		$data['telephone'] = $_POST['researcherphone'];
+		$data['designation'] = $_POST['researcherdesignation'];
+		$data['organization'] = $_POST['researcherorganization'];
+		$data['country_of_incorporation'] = $_POST['researchercountryincorporation'];
+		$data['office_address'] = $_POST['researcheraddress'];
+		$data['idrc_affiliation'] = $_POST['researcheraffliation'];
+		$data['country_of_citizenship'] = $_POST['researchercountrycitizenship'];
+		$data['website'] = $_POST['researcherwebsite'];
+		$data['idrc_affiliation'] = $_POST['researcheraffliation'];
+		$data['country_of_residence'] = $_POST['researchercountryresidence'];
+		$data['expertise'] = $_POST['researcherexpertise'];
+		$data['relevant_publications'] = $_POST['researcherpublications'];
+
+		$user_data = $this->session->userdata("user_data");
+		$id = $user_data['id'];
+
+		$researcher_id = $this->user_model->save($data, $id);
+		echo json_encode($id);
+	}
+	public function collaboratorinfo() {
+		$data['first_name'] = $_POST['name'];
+		$data['gender'] = $_POST['gender'];
+		$data['email'] = $_POST['email'];
+		$data['telephone'] = $_POST['phone'];
+		$data['designation'] = $_POST['designation'];
+		$data['organization'] = $_POST['organization'];
+		$data['country_of_incorporation'] = $_POST['countryincorporation'];
+		$data['office_address'] = $_POST['address'];
+		$data['country_of_citizenship'] = $_POST['citizenship'];
+		$data['website'] = $_POST['website'];
+		$data['idrc_affiliation'] = $_POST['affliation'];
+		$data['country_of_residence'] = $_POST['countryresidence'];
+		$data['expertise'] = $_POST['expertiseandinterests'];
+		$data['relevant_publications'] = $_POST['revelantpublications'];
+		$data['researcher_id'] = $_POST['researcher_id'];
+		$data['role_in_project'] = $_POST['role'];
+
+		$collaborator_id = $this->user_model->save($data);
+		echo json_encode($collaborator_id);
+	}
+	public function institutioninfo() {
+		$data['first_name'] = $_POST['name'];
+		$data['email'] = $_POST['email'];
+		$data['telephone'] = $_POST['phone'];
+		$data['mailing_address'] = $_POST['mailaddress'];
+		$data['finance_name'] = $_POST['financename'];
+		$data['office_address'] = $_POST['address'];
+		$data['finance_email'] = $_POST['financeemail'];
+		$data['finance_phone'] = $_POST['financephone'];
+		$data['researcher_id'] = $_POST['researcher_id'];
+		$institution_id = $this->user_model->save($data);
+		echo json_encode($institution_id);
+	}
+	public function institutionparticipatinginfo() {
+		$data['first_name'] = $_POST['name'];
+		$data['email'] = $_POST['email'];
+		$data['telephone'] = $_POST['phone'];
+		$data['mailing_address'] = $_POST['mailingaddress'];
+		$data['office_address'] = $_POST['address'];
+		$data['role_in_project'] = $_POST['role'];
+		$data['researcher_id'] = $_POST['researcher_id'];
+		$institution_id = $this->user_model->save($data);
+		echo json_encode($institution_id);
 	}
 	public function updater() {
 		$data = $_POST;
