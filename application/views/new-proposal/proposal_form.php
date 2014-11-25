@@ -97,100 +97,108 @@
                                 <!--<h2 class="StepTitle">Step 1 Content</h2>-->
                                 <section>
                                <form role="form" class="project-info" action="<?php echo base_url();?>index.php/proposal/projectinfo">
-                              <input type="hidden" name="proposal_id" class="form-control"  value="<?php if ($present) {echo $id;}?>" />
-                              <div class="form-group">
-                                <label for="projectTitle">Project Title</label>
-                                <input type="text" class="form-control" id="title" name="title" value="<?php if ($present) {echo $title;}?>" id="title" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                <label for="projectTitle">Duration of the project</label><br/>
-                                <label for="projectTitle">The duration of your project should be stated in the number of months that require funding.</label>
-                                <input type="text" class="form-control" name="duration" value="<?php if ($present) {echo $duration;}?>" id="duration" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                <label for="projectTitle">Countries included in this project</label><br/>
-                                <label for="projectTitle">This includes the countries in which the research will take place as well as the countries in which project collaborators currently reside.</label>
-                                <input type="text" class="form-control" value="<?php if ($present) {echo $countries_covered;}?>" name="countries" id="countries" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                  <label>Region(s) included in this project</label>
-                                  <div class="checkbox">
-                                      <label>
-                                        <input type="checkbox"  name="regions" value="asia">
-                                        Asia
-                                      </label>
-                                  </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"  name="regions" value="sub saharan africa">
-                                        Sub-Saharan Africa
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="regions" value="latin america">
-                                        Latin America
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="regions" value="middle east">
-                                        Middle East
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="regions" value="caribbean">
-                                        Caribbean
-                                    </label>
-                                 </div>
-                                  <input type="hiden" name="regions" class="form-control" id="other" placeholder="">
-                              </div>
-                              <div class="form-group">
-                                  <label>Research Themes *</label>
-                                  <div class="checkbox">
-                                      <label>
-                                        <input type="checkbox"  name="themes" value="Them 1:Motivations (Incentives and Ideologies) ">
-                                        Theme 1: Motivations (Incentives and Ideologies)
-                                      </label>
-                                  </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"  name="themes" value="Theme 2: Infrastructures and Technologies">
-                                         Theme 2: Infrastructures and Technologies
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"  name="themes" value="">Other
-                                         Theme 3: Communities of Practice in Open and Collaborative Science
-                                    </label>
-                                 </div>
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="themes" value="Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science">
-                                         Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science
-                                    </label>
-                                 </div>
-                                 <input type="hiden" name="themes" class="form-control" id="other" placeholder="">
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"  name="themes" value="">
-                                        Other
-                                    </label>
-                                     <input type="text" class="form-control" id="other" placeholder="">
-                                 </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="projectTitle">Justification of Research Themes</label><br/>
-                                <label for="projectTitle">Justify how your project ties into the selected OCSDNet theme(s).</label>
-                                <textarea class="form-control ckeditor" name="justifythemes" rows="3"><?php if ($present) {echo $justification_of_research_themes;}?></textarea>
-                              </div>
-                              <div class="form-group">
-                                <label for="projectTitle">Total Budget Cost (CAD)</label>
-                                <input type="text" name="budget" value="<?php if ($present) {echo $budget;}?>" class="form-control" id="project-title" placeholder="">
-                              </div>
-                              <button type="submit" class="btn btn-default">Save</button>
+	                              <div class="row">
+	                              	<div class="col-md-8 no-margin">
+	                              	<input type="hidden" name="proposal_id" class="form-control"  value="<?php if ($present) {echo $id;}?>" />
+	                              	</div>
+	                              </div> 
+	                             <div class="col-md-8 no-margin">
+	                              	<div class="form-group">	                                
+	                                  <label for="projectTitle">Project Title</label>                                
+	                                  <input type="text" class="form-control" id="title" name="title" value="<?php if ($present) {echo $title;}?>" id="title" placeholder="">
+	                                </div>
+	                              </div>
+	                              <div class="form-group">	                              
+	                                <label for="projectTitle">Duration of the project</label><br/>
+	                                <p class="lable-description">The duration of your project should be stated in the number of months that require funding.</p>
+	                                <div class="col-md-8 no-margin">
+                                  <input type="text" class="form-control" name="duration" value="<?php if ($present) {echo $duration;}?>" id="duration" placeholder="">
+	                                 </div>
+	                              </div>  
+	                              <div class="form-group">
+	                                <label for="projectTitle">Countries included in this project</label><br/>
+	                                <p class="lable-description">This includes the countries in which the research will take place as well as the countries in which project collaborators currently reside.</p>
+	                                <input type="text" class="form-control" value="<?php if ($present) {echo $countries_covered;}?>" name="countries" id="countries" placeholder="">
+	                              </div>
+	                              <div class="form-group">
+	                                  <label>Region(s) included in this project</label>
+	                                  <div class="checkbox">
+	                                      <label>
+	                                        <input type="checkbox"  name="regions" value="asia">
+	                                        Asia
+	                                      </label>
+	                                  </div>
+	                                 <div class="checkbox">
+	                                    <label>
+	                                        <input type="checkbox"  name="regions" value="sub saharan africa">
+	                                        Sub-Saharan Africa
+	                                    </label>
+	                                 </div>
+	                                 <div class="checkbox">
+	                                    <label>
+	                                        <input type="checkbox" name="regions" value="latin america">
+	                                        Latin America
+	                                    </label>
+	                                 </div>
+	                                 <div class="checkbox">
+	                                    <label>
+	                                        <input type="checkbox" name="regions" value="middle east">
+	                                        Middle East
+	                                    </label>
+	                                 </div>
+	                                 <div class="checkbox">
+	                                    <label>
+	                                        <input type="checkbox" name="regions" value="caribbean">
+	                                        Caribbean
+	                                    </label>
+	                                 </div>
+	                                  <input type="hiden" name="regions" class="form-control" id="other" placeholder="">
+	                              </div>
+	                              <div class="form-group">
+	                                  <label>Research Themes *</label>
+	                                  <div class="checkbox">
+	                                      <label>
+	                                        <input type="checkbox"  name="themes" value="Them 1:Motivations (Incentives and Ideologies) ">
+	                                        Theme 1: Motivations (Incentives and Ideologies)
+	                                      </label>
+	                                  </div>
+	                                 <div class="checkbox">
+	                                    <label>
+	                                        <input type="checkbox"  name="themes" value="Theme 2: Infrastructures and Technologies">
+	                                         Theme 2: Infrastructures and Technologies
+	                                    </label>
+	                                 </div>
+	                                 <div class="checkbox">
+	                                    <label>
+	                                        <input type="checkbox"  name="themes" value="">Other
+	                                         Theme 3: Communities of Practice in Open and Collaborative Science
+	                                    </label>
+	                                 </div>
+	                                 <div class="checkbox">
+	                                    <label>
+	                                        <input type="checkbox" name="themes" value="Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science">
+	                                         Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science
+	                                    </label>
+	                                 </div>
+	                                 <input type="hiden" name="themes" class="form-control" id="other" placeholder="">
+	                                 <div class="checkbox">
+	                                    <label>
+	                                        <input type="checkbox"  name="themes" value="">
+	                                        Other
+	                                    </label>
+	                                     <input type="text" class="form-control" id="other" placeholder="">
+	                                 </div>
+	                              </div>
+	                              <div class="form-group">
+	                                <label for="projectTitle">Justification of Research Themes</label><br/>
+	                                <p class="lable-description">Justify how your project ties into the selected OCSDNet theme(s).</p>
+	                                <textarea class="form-control ckeditor" name="justifythemes" rows="3"><?php if ($present) {echo $justification_of_research_themes;}?></textarea>
+	                              </div>
+	                              <div class="form-group">
+	                                <label for="projectTitle">Total Budget Cost (CAD)</label>
+	                                <input type="text" name="budget" value="<?php if ($present) {echo $budget;}?>" class="form-control" id="project-title" placeholder="">
+	                              </div>
+	                              <button type="submit" class="btn btn-default">Save</button>
                             </form>
                                             </section>
                             </div>
@@ -201,81 +209,83 @@
                                   <section>
                                       <form class="researcher-info" action="<?php echo base_url();?>index.php/proposal/researchinfo">
                                         <fieldset>
-                                    <h2 class="fs-title">Research Team and Institutional Information</h2>
-                                    <h3 class="fs-subtitle">Primary Researcher Information</h3>
-                                    <div class="col-md-6">
-                                      <div class="form-group">
-                                        <label for="pdName">Name</label><br/>
-                                        <input type="text" name="researchername" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdEmail">Email</label><br/>
-                                        <input type="email" name="researcheremail" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdPhoneNumber">Phone Number</label><br/>
-                                        <input type="text" name="researcherphone" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdD">Designation</label><br/>
-                                        <input type="text" name="researcherdesignation" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdIoRn">Institution or organization name</label><br/>
-                                        <input type="text" name="researcherorganization" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdCoCi">Country of Citizenship</label><br/>
-                                        <input type="text" name="researchercountrycitizenship" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdOa">Office Address</label><br/>
-                                        <textarea name="researcheraddress" class="form-control" placeholder="" rows="3"></textarea>
-                                      </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <div class="form-group">
-                                        <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                        <input type="text" name="researcheraffliation" placeholder=""class="form-control" />
-                                      </div>
+                                          <h2 class="fs-title">Research Team and Institutional Information</h2>
+                                          <h3  class="fs-subtitle">Primary Researcher Information</h3>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="pdName">Name</label><br/>
+                                              <input type="text" name="researchername" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdEmail">Email</label><br/>
+                                              <input type="email" name="researcheremail" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdPhoneNumber">Phone Number</label><br/>
+                                              <input type="text" name="researcherphone" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdD">Designation</label><br/>
+                                              <input type="text" name="researcherdesignation" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdIoRn">Institution or organization name</label><br/>
+                                              <input type="text" name="researcherorganization" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdCoCi">Country of Citizenship</label><br/>
+                                              <input type="text" name="researchercountrycitizenship" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdOa">Office Address</label><br/>
+                                              <textarea name="researcheraddress" class="form-control" placeholder="" rows="3"></textarea>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-group">
+                                              <label for="pd">IDRC Affiliation (if any)</label><br/>
+                                              <input type="text" name="researcheraffliation" placeholder=""class="form-control" />
+                                            </div>
 
-                                      <div class="form-group">
-                                        <label for="pd">Website</label><br/>
-                                        <input type="text" name="researcherwebsite" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdCoI">Country of incorporation</label><br/>
-                                        <input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdCoR">Country of Residence</label><br/>
-                                        <input type="text" name="researchercountryresidence" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdGender">Gender</label><br/>
-                                        <label class="radio-inline">
-                                          <input type="radio" name="researchergender" id="pdMale" value="male"> Male
-                                        </label>
-                                        <label class="radio-inline">
-                                          <input type="radio" name="researchergender" id="pdFemale" value="female"> Female
-                                        </label><br/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                        <input type="text" name="researcherexpertise" placeholder="" class="form-control"/>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                         <input type="text" name="researcherpublications" placeholder="" class="form-control"/>
-                                      </div>
-                                    </div>
-                                    <p>Qualifications and Experience</p>
-                                    <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
-credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
-                  <a class="btn btn-default ">Download CV Template</a>
-                                    <a class="btn btn-default ">Upload</a><br/>
-                                   <button type="submit" class="btn btn-default">Save</button>
-                                </fieldset>
+                                            <div class="form-group">
+                                              <label for="pd">Website</label><br/>
+                                              <input type="text" name="researcherwebsite" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdCoI">Country of incorporation</label><br/>
+                                              <input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdCoR">Country of Residence</label><br/>
+                                              <input type="text" name="researchercountryresidence" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdGender">Gender</label><br/>
+                                              <label class="radio-inline">
+                                                <input type="radio" name="researchergender" id="pdMale" value="male"> Male
+                                              </label>
+                                              <label class="radio-inline">
+                                                <input type="radio" name="researchergender" id="pdFemale" value="female"> Female
+                                              </label><br/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
+                                              <input type="text" name="researcherexpertise" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
+                                               <input type="text" name="researcherpublications" placeholder="" class="form-control"/>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-12">
+                                          <p>Qualifications and Experience</p>
+                                          <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
+      credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
+                        <a class="btn btn-default ">Download CV Template</a>
+                                          <a class="btn btn-default ">Upload</a><br/><br/>                                         
+                                          <button type="submit" class="btn btn-default">Save</button>
+                                         </div>
+                                        </fieldset>
                                       </form>
                                   </section>
                                   <h3>Research Team Info</h3>
@@ -352,18 +362,19 @@ credentials, funded research projects (including those supported by the IDRC), l
                                               <input type="text" name="revelantpublications" placeholder="" class="form-control"/>
                                             </div>
                                           </div>
-                                          <p>Qualifications and Experience</p>
+                                          <div class="col-md-12">
+                                          <p><strong>Qualifications and Experience</strong> </p>
                                           <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
       credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
                         <a class="btn btn-default ">Download CV Template</a>
-                                          <a class="btn btn-default ">Upload</a><br/>
-                                          <p>Role in Proposed Project</p>
-                                          <p>Please explain the specific role that this person will play in the proposed project</p><br/>
+                                          <a class="btn btn-default ">Upload</a><br/><br/>
+                                          <p><strong>Role in Proposed Project</strong></p>
+                                          <p>Please explain the specific role that this person will play in the proposed project</p>
                                           <textarea name="role" placeholder="" rows="3" class="form-control"></textarea><br/>
                                           <hr/>
-                                          <a class="btn btn-default ">Add New Collaborator</a><br/>
-
+                                          <a class="btn btn-default ">Add New Collaborator</a><br/><br/>
                                            <button type="submit" class="btn btn-default">Save</button>
+                                           </div>
                                       </fieldset>
                                       </form>
                                   </section>
@@ -383,7 +394,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                             </div>
                                             <div class="form-group">
                                               <label for="piMA">Mailing Address</label><br/>
-                                              <label for="pdiMA">Including office or departmental name</label><br/>
+                                              <p class="lable-description">Including office or departmental name</p><br/>
                                               <textarea name="mailaddress" class="form-control"> </textarea>
                                             </div>
                                             <div class="form-group">
@@ -400,17 +411,17 @@ credentials, funded research projects (including those supported by the IDRC), l
                                             </div>
                                             <div class="form-group">
                                               <label for="piFoN">Finance Officer’s name</label><br/>
-                                              <label for="piFoN">Name for the main point of contact for financialse</label><br/>
+                                              <p class="lable-description" >Name for the main point of contact for financialse</p><br/>
                                               <input type="text" name="financename" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="piFoPN">Finance Officer phone number</label><br/>
-                                              <label for="piFoPN">Phone number for the main point of contact for financials</label><br/>
+                                              <p class="lable-description" >Phone number for the main point of contact for financials</p><br/>
                                               <input type="text" name="financephone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="piFoE">Finance Officer Email</label><br/>
-                                              <label for="piFoR">Email address for the main point of contact for financials</label><br/>
+                                              <p class="lable-description" >Email address for the main point of contact for financials</p><br/>
                                               <input type="text" name="financeemail" placeholder="" class="form-control"/>
                                             </div>
                                               <button type="submit" class="btn btn-default">Save</button>
@@ -446,7 +457,7 @@ credentials, funded research projects (including those supported by the IDRC), l
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Mailing Address</label><br/>
-                                              <label for="pi3MA">Including office or departmental name</label><br/>
+                                              <p class="lable-description">Including office or departmental name</p><br/>
                                               <input type="text" name="mailingaddress" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
@@ -635,7 +646,7 @@ data sources that you will use. Your outline should correspond with your project
   </section>
    <div class="footer">
       <div class="container">
-        <p class="text-muted">ocsdnet</p>
+        <p class="footer-text"><a href="http://ocsdnet.org/"> ocsdnet </a></p>
       </div>
     </div>
  <script type="text/javascript" src="<?php echo base_url();?>public/new/js/jquery-2.0.0.min.js"></script>
