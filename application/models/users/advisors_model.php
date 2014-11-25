@@ -183,6 +183,8 @@ class Advisors_model extends CI_Model {
 	}
 
 	function save_tabs($tab_id) {
+		print_r($tab_id);
+		exit;
 		$data = array();
 		$proposal_id = $this -> session -> userdata("proposal_id");
 		$data['proposal_id'] = $proposal_id;
