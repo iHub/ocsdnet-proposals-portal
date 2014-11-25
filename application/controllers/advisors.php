@@ -66,7 +66,7 @@ class Advisors extends CI_Controller {
 		$this -> data["css"] = div_selector($this -> tab_divs, ".tab1");
 		$this -> data["tab_data"] = $this -> advisors_model -> get_tab_data($tab_id);
 		$this -> session -> unset_userdata("proposal_id");
-		$rewiew_data = $this -> advisors_model -> get_review_data($id);
+		//$rewiew_data = $this -> advisors_model -> get_review_data($id);
 		$this -> data['review_data'] = $this -> advisors_model -> get_review_data($id);
 		$this -> session -> set_userdata("proposal_id", $id);
 		$reviews = $this -> advisors_model -> get_proposal_review($id);
