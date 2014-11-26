@@ -10,6 +10,7 @@ Class User_model extends CI_Model {
 		if ($id) {
 			$this->db->where("id", $id);
 			$this->db->update('users', $data);
+            return $id;
 		} else {
 			$this->db->insert("users", $data);
 			return $this->db->insert_id();
