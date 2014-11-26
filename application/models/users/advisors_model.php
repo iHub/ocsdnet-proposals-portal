@@ -35,7 +35,7 @@ class Advisors_model extends CI_Model {
 
 	//Get proposals assigned to this user
 	function get_proposals($reviewer_id) {
-		$this -> db -> select("id, study_title, reviewer_id, review_status");
+		$this -> db -> select("id, study_title, reviewer_id, review_status,researcher_id");
 		$this -> db -> from("proposals");
 		$this -> db -> where("reviewer_id", $reviewer_id);
 		$this -> db -> where("status", "complete");
@@ -47,7 +47,16 @@ class Advisors_model extends CI_Model {
 		if ($query -> num_rows() > 0) {
 			$proposals = $query -> result_array();
 		}
+		foreach ($proposals as $key => $value) {
+			
+		$this -> db -> where("id", $value['researcher_id']);
+		$query = $this -> db -> get("users");
 
+		if ($query -> num_rows() > 0) {
+			$proposals[$key]['researcher'] = $query -> row_array();
+		}
+		}
+		
 		return $proposals;
 	}
 
@@ -78,7 +87,6 @@ class Advisors_model extends CI_Model {
 			$researcher_id = $proposal_data["researcher_id"];
 			$preview_data['proposal'] = $proposal_data;
 		}
-
 		//Researcher
 		$this -> db -> where("id", $researcher_id);
 		$query = $this -> db -> get("users");
@@ -175,6 +183,8 @@ class Advisors_model extends CI_Model {
 	}
 
 	function save_tabs($tab_id) {
+		print_r($tab_id);
+		exit;
 		$data = array();
 		$proposal_id = $this -> session -> userdata("proposal_id");
 		$data['proposal_id'] = $proposal_id;

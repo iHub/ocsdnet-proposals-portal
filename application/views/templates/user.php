@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>OCSD Net - Open and Collaborative Science</title>
 
+<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/target-admin.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
 <link href="<?php echo base_url(); ?>public/css/normalize.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url(); ?>public/fonts/stylesheet.css" rel="stylesheet" type="text/css">
@@ -14,6 +15,9 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>public/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>public/js/form.js"></script>
+  <script src="<?php echo base_url(); ?>public/js/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url(); ?>public/js/plugins/datatables/DT_bootstrap.js"></script>
+  <script src="<?php echo base_url(); ?>public/js/plugins/tableCheckable/jquery.tableCheckable.js"></script>
 </head>
 
 <body>
