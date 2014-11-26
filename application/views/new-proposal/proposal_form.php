@@ -819,7 +819,7 @@
                             cancel: "Cancel",
                             current: "",
                             pagination: "Pagination",
-                            finish: "Finish",
+                            finish: "",
                             next: "Next",
                             previous: "Prev",
                             loading: "Loading ..."
@@ -837,7 +837,7 @@
                             cancel: "Cancel",
                             current: "",
                             pagination: "Pagination",
-                            finish: "Finish",
+                            finish: "",
                             next: "Next",
                             previous: "Prev",
                             loading: "Loading ..."
