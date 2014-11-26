@@ -244,8 +244,9 @@
                                         <p>Qualifications and Experience</p>
                                         <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
     credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
-                                     <input type="file" name="researchercv"/><br/>
-                                     <a href="" class="btn btn-default " download>Download CV Template</a><br/><br/>                                            
+                                     
+                                     <a href="" class="btn btn-default " download>Download CV Template</a><br/><br/>
+                                     <input type="file" name="researchercv"/><br/>                                            
                                     <button type="submit" class="btn btn-default">Save</button>
                                                         
                                                         
