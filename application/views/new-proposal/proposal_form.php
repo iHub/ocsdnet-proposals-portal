@@ -441,7 +441,7 @@
                                             <div class="form-group">
                                               <label for="pi3MA">Mailing Address</label><br/>
                                               <p class="lable-description">Including office or departmental name</p><br/>
-                                              <input type="text" name="mailingaddress" placeholder="" class="form-control"/>
+                                                <textarea name="mailaddress" class="form-control ckeditor" rows="3"> </textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Role in the project</label><br/>
@@ -575,7 +575,7 @@
                                                     <label for="bibliography">Bibliography</label>
                                                     <br/>
                                                     <p>
-                                                        APA syle
+                                                        APA style
                                                     </p>
                                                     <textarea type="text" name="bibliography" class="form-control ckeditor" id="bibliography" rows="3" value="<?php
                                                     if ($present) {
