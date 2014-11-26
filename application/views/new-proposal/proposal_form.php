@@ -2,22 +2,22 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>OCSDNET</title>
-		<link rel="icon" href="images/favicon.png">
-		<link href="<?php echo base_url(); ?>public/new/css/demo_style.css" rel="stylesheet" type="text/css">
-		<link href="<?php echo base_url(); ?>public/new/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-		<link href="<?php echo base_url(); ?>public/new/css/smart_wizard.css" rel="stylesheet" type="text/css">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>OCSDNET</title>
+        <link rel="icon" href="images/favicon.png">
+        <link href="<?php echo base_url(); ?>public/new/css/demo_style.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>public/new/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>public/new/css/smart_wizard.css" rel="stylesheet" type="text/css">
 
-		<link href="<?php echo base_url(); ?>public/new/css/bootstrap.min.css" rel="stylesheet">
-		<link href="<?php echo base_url(); ?>public/new/css/font-awesome.min.css" rel="stylesheet">
-		<link href="<?php echo base_url(); ?>public/new/css/prettyPhoto.css" rel="stylesheet">
-		<link href="<?php echo base_url(); ?>public/new/css/animate.css" rel="stylesheet">
-		<link href="<?php echo base_url(); ?>public/new/css/main.css" rel="stylesheet">
-		<link href="<?php echo base_url(); ?>public/new/css/sticky-footer.css" rel="stylesheet">
-		<link href="<?php echo base_url(); ?>public/new/css/form.css" rel="stylesheet" type="text/css">
-		<link href="<?php echo base_url(); ?>public/new/css/custom.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>public/new/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>public/new/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>public/new/css/prettyPhoto.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>public/new/css/animate.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>public/new/css/main.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>public/new/css/sticky-footer.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>public/new/css/form.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url(); ?>public/new/css/custom.css" rel="stylesheet" type="text/css">
 
 <section id="proposal-form">
         <div class="container">
@@ -170,7 +170,7 @@
                                   <div id="wizard"  class="wizard clearfix">
                                   <h3>Primary Researcher Info</h3>
                                   <section>
-                                      <form class="researcher-info" action="<?php echo base_url();?>index.php/proposal/researchinfo">
+                                      <form class="researcher-info" action="<?php echo base_url();?>index.php/proposal/researchinfo" enctype="multipart/form-data">
                                         <fieldset>
                                           <h2 class="fs-title">Research Team and Institutional Information</h2>
                                           <h3  class="fs-subtitle">Primary Researcher Information</h3>
@@ -228,6 +228,7 @@
                                                 <input type="radio" name="researchergender" id="pdFemale" value="female"> Female
                                               </label><br/>
                                             </div>
+
                                            <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
                                               <textarea type="text" name="researcherexpertise" placeholder="" class="form-control ckeditor" rows="3"></textarea>
@@ -244,12 +245,10 @@
                                         <p>Qualifications and Experience</p>
                                         <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
     credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
-                                     
-                                     <a href="" class="btn btn-default " download>Download CV Template</a><br/><br/>
-                                     <input type="file" name="researchercv"/><br/>                                            
+                                        <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>    
+                                     <input type="file" name="researchercv"/><br/>
                                     <button type="submit" class="btn btn-default">Save</button>
-                                                        
-                                                        
+         
                                 </fieldset>
 
                                       </form>
@@ -315,9 +314,7 @@
                                               <textarea name="address" placeholder="" rows="3" class="form-control ckeditor"></textarea>
                                             </div>
                                           </div>
-                                          <div class="col-md-6">
-
-                                            
+                                          <div class="col-md-6">                                     
                                             <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label>
                                               <br/>
@@ -352,14 +349,12 @@
               															Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
               															credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.
               														</p>
-                                          <input type="file" name="researchercv" /><br/>
-              														 <a href="" class="btn btn-default " download>Download CV Template</a><br/><br/>
-                                           <button type="submit" class="btn btn-default">Save</button>                                           
+              														 <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>
+                                                                      <input type="file" name="researchercv" /><br/>
+              														
+                                           <button type="submit" class="btn btn-default">Save and Add New</button>                                           
               														</div>
-                                          <div class="col-md-12">
-                                          <hr>
-                                          <a href="javascript:;">Add another team member</a>
-                                          </div>
+                                          
               													</fieldset>
               												</form>
               											</section>
@@ -451,22 +446,22 @@
                                               <textarea name="role" placeholder="" rows="3" class="form-control ckeditor"></textarea><br/>
                                               <hr/>
                                             </div>
-                                              <a class="btn btn-default ">Add New Institution</a><br/>
+                                              <a class="btn btn-default ">Save and Add New Institution</a><br/>
 
-														<button type="submit" class="btn btn-default">
-															Save
-														</button>
-													</fieldset>
-												</form>
-											</section>
-											
-										</div>
-									</div>
-									<div id="step-3">
-										<h2 class="StepTitle">Step 3 Content</h2>
-										<section>
-											<form role="form" class="proposed-study-info" action="<?php echo base_url(); ?>index.php/proposal/stepthree">
-												<input type="hidden" name="proposal_id" value="<?php if ($present) { echo $id;} ?>"/>
+                                                        <button type="submit" class="btn btn-default">
+                                                            Save
+                                                        </button>
+                                                    </fieldset>
+                                                </form>
+                                            </section>
+                                            
+                                        </div>
+                                    </div>
+                                    <div id="step-3">
+                                        <h2 class="StepTitle">Step 3 Content</h2>
+                                        <section>
+                                            <form role="form" class="proposed-study-info" action="<?php echo base_url(); ?>index.php/proposal/stepthree">
+                                                <input type="hidden" name="proposal_id" value="<?php if ($present) { echo $id;} ?>"/>
                                                  <div class="form-group">
                                                     <label for="researcherName">Research Project Abstract </label>
                                                     <br/>
@@ -592,13 +587,13 @@
                                                  </form>
                                         </section>
 
-									</div>
-									<div id="step-4">
-										<h3>Research Administration</h3>
-										<section>
-											<h2>Research Administration</h2>
-											<form role="form" class="research-administration" action="<?php echo base_url(); ?>index.php/proposal/stepfour">
-												<input type="hidden" name="proposal_id" value="<?php
+                                    </div>
+                                    <div id="step-4">
+                                        <h3>Research Administration</h3>
+                                        <section>
+                                            <h2>Research Administration</h2>
+                                            <form role="form" class="research-administration" action="<?php echo base_url(); ?>index.php/proposal/stepfour">
+                                                <input type="hidden" name="proposal_id" value="<?php
                                                 if ($present) {
                                                     echo $id;
                                                 }
@@ -610,7 +605,7 @@
 														Upload the completed template document and use it to outline the key milestones and deadlines of your project. Each activity included in the schedule should
 														relate to a project objective and should provide a financial estimate that is corresponds with the proposed budget in Section 5
 													</p>
-                          <a href="" class="btn btn-default " download>Download Timeline Template</a><br/><br/>
+                                                 <a href="<?php echo base_url(); ?>public/templates/ProjectTimelineTemplate.docx" class="btn btn-default " download>Download Timeline Template</a><br/><br/>
 													<input type="file" name="projecttimeline" id="projectTimeline"><br/>
 
 												</div>
@@ -628,52 +623,52 @@
                                                         echo $research_ethics;
                                                     }
                                                                                                                     ?></textarea>
-												</div>
-												<div class="form-group">
-													<label for="internalPCM">Internal Project Communication and Management</label>
-													<br/>
-													<p>
-														WORD LIMIT: 500. Describe how the principal investigator and project collaborators will interact with one another on a regular basis. Explain how funds
-														will be managed and how administrative matters will be addressed.
-													</p>
-													<textarea class="form-control ckeditor" name="internalproject" rows="3"><?php
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="internalPCM">Internal Project Communication and Management</label>
+                                                    <br/>
+                                                    <p>
+                                                        WORD LIMIT: 500. Describe how the principal investigator and project collaborators will interact with one another on a regular basis. Explain how funds
+                                                        will be managed and how administrative matters will be addressed.
+                                                    </p>
+                                                    <textarea class="form-control ckeditor" name="internalproject" rows="3"><?php
                                                     if ($present) {
                                                         echo $internal_project_communication_and_management;
                                                     }
                                                                                                                     ?></textarea>
-												</div>
-												<div class="form-group">
-													<label for="ChallengesAndRisks">Challenges and Risks</label>
-													<br/>
-													<p>
-														WORD LIMIT: 500. Describe any challenges or foreseeable risks that may arise and affect your project's progress. Explain how your project team will
-														manage these concerns should they arise. Outline the mechanisms that are in place to cope with any unforeseeable complications.
-													</p>
-													<textarea class="form-control ckeditor" name="challengesandrisks" rows="3"><?php
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="ChallengesAndRisks">Challenges and Risks</label>
+                                                    <br/>
+                                                    <p>
+                                                        WORD LIMIT: 500. Describe any challenges or foreseeable risks that may arise and affect your project's progress. Explain how your project team will
+                                                        manage these concerns should they arise. Outline the mechanisms that are in place to cope with any unforeseeable complications.
+                                                    </p>
+                                                    <textarea class="form-control ckeditor" name="challengesandrisks" rows="3"><?php
                                                     if ($present) {
                                                         echo $challenges_and_risks;
                                                     }
                                                                                                                     ?></textarea>
-												</div>
-												<div class="form-group">
-													<label for="MandEplan">Monitoring and Evaluation Plan</label>
-													<br/>
-													<p>
-														WORD LIMIT: 500. Outline how you will consistently examine and assess your project throughout its life course. Your outline should
-														include your monitoring and evaluation questions and objectives, as well as a description of your data collection methods and the
-														data sources that you will use. Your outline should correspond with your project timeline
-													</p>
-													<textarea class="form-control ckeditor"name="monitoringevaluation" rows="3"><?php
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="MandEplan">Monitoring and Evaluation Plan</label>
+                                                    <br/>
+                                                    <p>
+                                                        WORD LIMIT: 500. Outline how you will consistently examine and assess your project throughout its life course. Your outline should
+                                                        include your monitoring and evaluation questions and objectives, as well as a description of your data collection methods and the
+                                                        data sources that you will use. Your outline should correspond with your project timeline
+                                                    </p>
+                                                    <textarea class="form-control ckeditor"name="monitoringevaluation" rows="3"><?php
                                                     if ($present) {
                                                         echo $monitoring_and_evaluation;
                                                     }
                                                                                                                     ?></textarea>
-												</div>
-												<button type="submit" class="btn btn-default">
-													Save
-												</button>
-											</form>
-										</section>
+                                                </div>
+                                                <button type="submit" class="btn btn-default">
+                                                    Save
+                                                </button>
+                                            </form>
+                                        </section>
 
 									</div>
 									<div id="step-5">
@@ -692,7 +687,7 @@
 														?>" id="budget_proposal" name="proposal_id"/>
 														<label for="parallelFunds">Parallel Funds</label>
 														<br/>		
-														<a href="<?php echo base_url(); ?>public/templates/HILA.xlsx" download="template.xlsx" class="btn btn-default">Download Budget Template</a><br/>
+														<a href="<?php echo base_url(); ?>public/templates/OCSDNetBudgetTemplate.xlsx" download="OCSDNetBudgetTemplate.xlsx" class="btn btn-default">Download Budget Template</a><br/>
 													</div>
 													<input type="file" id="budget" name="budget" value=""/><br/>
 													<button type="submit" class="btn btn-default">
@@ -709,35 +704,63 @@
                             </p>
 													<input type="hidden" value="<?php if ($present) { echo $id;}?>" id="budget_proposal" name="proposal_id"/>
                                                     
-													<div class="form-group">
-														<label for="donor">Donor</label>
-														<input type="text" name="donor" class="form-control" id="donor" placeholder="">
-													</div>
-													<div class="form-group">
-														<label for="amount">Amount</label>
-														<input type="text" name="amount" class="form-control" id="amount" placeholder="">
-													</div>
-													<div class="form-group">
-														<label for="currency">Currency</label>
-														<input type="text"  name="currency"class="form-control" id="currency" placeholder="">
-													</div>
-													<div class="form-group">
-														<label for="timeFrame">Timeframe</label>
-														<input type="text"  name="timeframe" class="form-control" id="timeFrame" placeholder="">
-													</div>
-							                             <button type="submit" class="btn btn-default">
+                                                    <div class="form-group">
+                                                        <label for="donor">Donor</label>
+                                                        <input type="text" name="donor" class="form-control" id="donor" placeholder="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="amount">Amount</label>
+                                                        <input type="text" name="amount" class="form-control" id="amount" placeholder="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="currency">Currency</label>
+                                                        <input type="text"  name="currency"class="form-control" id="currency" placeholder="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="timeFrame">Timeframe</label>
+                                                        <input type="text"  name="timeframe" class="form-control" id="timeFrame" placeholder="">
+                                                    </div>
+                                                         <button type="submit" class="btn btn-default">
+                                                                Save and Add New
+                                                            </button>
+                                                </form>
+                                                 <!-- <button type="submit" id="add-funding" class="btn btn-default">
+                                                                Add new Funding Source
+                                                            </button> -->
+                                            </section>
+                                           
+                                                   
+                                                <form role="form" action="<?php echo base_url(); ?>index.php/proposal/funding"  id="optionTemplate" class="funding-info form-group hide" >
+                                                    <h2>Parallel Funding Source</h2>
+                                                    <input type="hidden" value="<?php if ($present) { echo $id;}?>" id="budget_proposal" name="proposal_id"/>
+                                                    
+                                                    <div class="form-group">
+                                                        <label for="donor">Donor</label>
+                                                        <input type="text" name="donor" class="form-control" id="donor" placeholder="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="amount">Amount</label>
+                                                        <input type="text" name="amount" class="form-control" id="amount" placeholder="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="currency">Currency</label>
+                                                        <input type="text"  name="currency"class="form-control" id="currency" placeholder="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="timeFrame">Timeframe</label>
+                                                        <input type="text"  name="timeframe" class="form-control" id="timeFrame" placeholder="">
+                                                    </div>
+                                                         <button type="submit" class="btn btn-default">
                                                                 Save
                                                             </button>
-												</form>
-												 <button type="submit" id="add-funding" class="btn btn-default">
-                                                                Add new Funding Source
-                                                            </button>
-											</section>
-										</div>
-									</div>
-								</div><!-- End SmartWizard Content --></td>
-							</tr>
-						</table>
+                                                </form>
+                                                
+                                            
+                                          
+                                    </div>
+                                </div><!-- End SmartWizard Content --></td>
+                            </tr>
+                        </table>
 <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery-2.0.0.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery.smartWizard.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery.steps.min.js"></script>
@@ -782,31 +805,31 @@
 
 
 
-		<script type="text/javascript">
-			$(document).ready(function() {
-				// Smart Wizard
-				$('#wizardmain').smartWizard();
-				CKEDITOR.replaceClass = 'ckeditor';
-				//  var editor = $('.ckeditor').ckeditor().editor;
-				// //
-				// //  var editor = CKEDITOR.instances['ckeditor'];
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // Smart Wizard
+                $('#wizardmain').smartWizard();
+                CKEDITOR.replaceClass = 'ckeditor';
+                //  var editor = $('.ckeditor').ckeditor().editor;
+                // //
+                // //  var editor = CKEDITOR.instances['ckeditor'];
 
-				//  editor.on( 'keyup', function( event ) {
-				//      alert( e.getData() );
-				//  });
-			});
+                //  editor.on( 'keyup', function( event ) {
+                //      alert( e.getData() );
+                //  });
+            });
 
-		</script>
-		<script src="<?php echo base_url(); ?>public/new/js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url(); ?>public/new/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
-		<script src="<?php echo base_url(); ?>public/new/js/custom/osdnet_validator.js"></script>
-		<script src="<?php echo base_url(); ?>public/new/js/custom/autosave.js"></script>
-		<script src="<?php echo base_url(); ?>public/js/ckeditor/ckeditor.js"></script>
-		<script src="<?php echo base_url(); ?>public/new/js/jquery.prettyPhoto.js"></script>
-		<!-- jQuery easing plugin -->
-		<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
-		<script src="<?php echo base_url(); ?>public/new/js/main.js"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="<?php echo base_url(); ?>public/new/js/ie10-viewport-bug-workaround.js"></script>
-	</body>
+        </script>
+        <script src="<?php echo base_url(); ?>public/new/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>public/new/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+        <script src="<?php echo base_url(); ?>public/new/js/custom/osdnet_validator.js"></script>
+        <script src="<?php echo base_url(); ?>public/new/js/custom/autosave.js"></script>
+        <script src="<?php echo base_url(); ?>public/js/ckeditor/ckeditor.js"></script>
+        <script src="<?php echo base_url(); ?>public/new/js/jquery.prettyPhoto.js"></script>
+        <!-- jQuery easing plugin -->
+        <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url(); ?>public/new/js/main.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="<?php echo base_url(); ?>public/new/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
 </html>
