@@ -183,8 +183,8 @@ class Advisors_model extends CI_Model {
 	}
 
 	function save_tabs($tab_id) {
-		print_r($tab_id);
-		exit;
+		// print_r($tab_id);
+		// exit;
 		$data = array();
 		$proposal_id = $this -> session -> userdata("proposal_id");
 		$data['proposal_id'] = $proposal_id;
@@ -201,7 +201,8 @@ class Advisors_model extends CI_Model {
 			$this -> db -> where_in("id", $old_row_ids);
 			$this -> db -> delete("proposal_reviews");
 		}
-
+	//print_r($_POST);
+	//exit;
 		foreach ($_POST as $key => $value) {
 			$data['option_id'] = $value;
 			$this -> db -> insert('proposal_reviews', $data);
