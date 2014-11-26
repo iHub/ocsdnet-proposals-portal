@@ -1,4 +1,5 @@
 <?php
+
 class Proposal extends CI_Controller {
 
 	public function __construct() {
@@ -7,6 +8,7 @@ class Proposal extends CI_Controller {
 
 		$this->load->model("proposal/proposal_model");
 		$this->load->model("users/user_model");
+		$this->load->model("proposal/budget_model");
 	}
 
 	public function index() {
@@ -33,7 +35,7 @@ class Proposal extends CI_Controller {
 
 	public function projectinfo() {
 		$data['id'] = $_POST['proposal_id'];
-		$data['title'] = $_POST['title'];
+		$data['study_title'] = $_POST['title'];
 		$data['duration'] = $_POST['duration'];
 		$data['countries_covered'] = $_POST['countries'];
 		$data['regions'] = $_POST['regions'];
@@ -42,8 +44,8 @@ class Proposal extends CI_Controller {
 		$data['budget'] = $_POST['budget'];
 		$proposal_id = $this->proposal_model->save_study_info($data);
 		echo json_encode($proposal_id);
-
 	}
+
 	public function stepthree() {
 		$data['id'] = $_POST['proposal_id'];
 		$data['research_project_abstract'] = $_POST['researchproject'];
@@ -58,18 +60,36 @@ class Proposal extends CI_Controller {
 		$proposal_id = $this->proposal_model->save_study_info($data);
 		echo json_encode($proposal_id);
 	}
+
 	public function stepfour() {
 
 		$data['id'] = $_POST['proposal_id'];
-		//$data['project_timelines'] = $_POST['projecttimeline'];
+        $uploaddir = realpath(dirname(__DIR__));
+        $upload_array=explode("/application", $uploaddir);
+        $uploaddir = $upload_array[0]."/uploads";
+        $upload_path=base_url()."uploads";
+		$tmp_name = $_FILES["projecttimeline"]["tmp_name"];
+        
+		$name = $_FILES["projecttimeline"]["name"];
+        $name_array=explode('.',$name);
+        
+        $name_path=$name_array[0].time();
+        $file_name=$name_path.".".$name_array[1];
+        
+		$path = $upload_path.'/'.$file_name;
+		$data["project_timelines"] = "";
+		
+		if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
+			$data["project_timelines"] = $path;
+		}
 		$data['research_ethics'] = $_POST['researchethics'];
 		$data['internal_project_communication_and_management'] = $_POST['internalproject'];
 		$data['challenges_and_risks'] = $_POST['challengesandrisks'];
 		$data['monitoring_and_evaluation'] = $_POST['monitoringevaluation'];
 		$proposal_id = $this->proposal_model->save_study_info($data);
 		echo json_encode($proposal_id);
-
 	}
+
 	public function researchinfo() {
 		$data['first_name'] = $_POST['researchername'];
 		$data['gender'] = $_POST['researchergender'];
@@ -93,6 +113,7 @@ class Proposal extends CI_Controller {
 		$researcher_id = $this->user_model->save($data, $id);
 		echo json_encode($id);
 	}
+
 	public function collaboratorinfo() {
 		$data['first_name'] = $_POST['name'];
 		$data['gender'] = $_POST['gender'];
@@ -114,6 +135,7 @@ class Proposal extends CI_Controller {
 		$collaborator_id = $this->user_model->save($data);
 		echo json_encode($collaborator_id);
 	}
+
 	public function institutioninfo() {
 		$data['first_name'] = $_POST['name'];
 		$data['email'] = $_POST['email'];
@@ -127,6 +149,7 @@ class Proposal extends CI_Controller {
 		$institution_id = $this->user_model->save($data);
 		echo json_encode($institution_id);
 	}
+
 	public function institutionparticipatinginfo() {
 		$data['first_name'] = $_POST['name'];
 		$data['email'] = $_POST['email'];
@@ -138,10 +161,40 @@ class Proposal extends CI_Controller {
 		$institution_id = $this->user_model->save($data);
 		echo json_encode($institution_id);
 	}
-	public function updater() {
-		$data = $_POST;
-		echo json_encode($data);
-		exit;
+
+	public function budget() {
+		
+		$uploaddir = realpath(dirname(__DIR__));
+        $upload_array=explode("/application", $uploaddir);
+        $uploaddir = $upload_array[0]."/uploads";
+        $upload_path=base_url()."uploads";
+        $tmp_name = $_FILES["budget"]["tmp_name"];
+        $name = $_FILES["budget"]["name"];
+        $name_array=explode('.',$name);
+        $name_path=$name_array[0].time();
+        $file_name=$name_path.".".$name_array[1];
+        $path = $upload_path.'/'.$file_name;
+        $data["budget_url"] = "";
+        $data['id']= $_POST['proposal_id'];
+        
+        if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
+            $data["budget_url"] = $path;
+            
+        }
+       $proposal_id=$this->proposal_model->save_study_info($data);
+       echo json_encode($proposal_id);
+       
+		
+
+	}
+	public function funding() {
+		$data['donor'] = $_POST['donor'];
+		$data['amount'] = $_POST['amount'];
+		$data['currency'] = $_POST['currency'];
+		$data['timeframe'] = $_POST['timeframe'];
+		$data['proposal_id'] = $_POST['proposal_id'];
+		$id = $this->budget_model->save($data);
+
 	}
 
 }
