@@ -18,7 +18,38 @@
         <link href="<?php echo base_url(); ?>public/new/css/sticky-footer.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>public/new/css/form.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url(); ?>public/new/css/custom.css" rel="stylesheet" type="text/css">
-
+<!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+</head><body>
+  <header class="navbar navbar-inverse navbar-static-top wet-asphalt" role="banner">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="<?php echo base_url();?>public/new/images/logo.png" alt="logo"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--<li><a href="javascript:;">Item 1</a></li>
+                    <li><a href="javascript:;">Item 2</a></li>
+                     <li><a href="javascript:;">Item 3</a></li>
+                    <li><a href="javascript:;">Item 4</a></li>
+                    <li><a href="javascript:;">Item 5</a></li>
+                    <li><a href="javascript:;">Item 6</a></li>-->
+                    <li><a href="javascript:;">Logout</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+    </header>
+</div>
 <section id="proposal-form">
         <div class="container">
             <div class="row">
@@ -762,6 +793,16 @@
                                 </div><!-- End SmartWizard Content --></td>
                             </tr>
                         </table>
+                        </div>
+                        </div>
+                        </div>
+                        </section>
+
+                        <div class="footer">
+                        <div class="container">
+                          <p class="footer-text"> <a href="http://ocsdnet.org/"> ocsdnet </a></p>
+                        </div>
+                      </div>
 <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery-2.0.0.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery.smartWizard.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery.steps.min.js"></script>
