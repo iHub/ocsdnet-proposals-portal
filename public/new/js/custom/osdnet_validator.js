@@ -85,6 +85,8 @@ $(document).ready(function() {
             alert('data saved');
         }, 'json');
     });
+    
+    
     $('.researcher-info').bootstrapValidator({
         message: 'This value is not valid',
         feedbackIcons: {
@@ -215,21 +217,24 @@ $(document).ready(function() {
             }
         }
     }).on('success.form.bv', function(e) {
-        // Prevent form submission
-        e.preventDefault();
-
-        // Get the form instance
+         e.preventDefault();
         var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-        
+        var formData = new FormData($(this)[0]);
         // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
-            data = JSON.parse(result);
-            $('#researcher_id').val(data);
-            alert('data saved');
-        }, 'json');
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function(data) {
+                alert('form saved');
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        
     });
 
     $('.collaborator-info').bootstrapValidator({
@@ -369,7 +374,7 @@ $(document).ready(function() {
             $('#research_id').val(data);
             $('#institution_research_id').val(data);
             $('#institution__supportresearch_id').val(data);
-            alert('data saved')
+            alert('data saved');
         }, 'json');
     });
     $('.institution-info').bootstrapValidator({
@@ -460,7 +465,7 @@ $(document).ready(function() {
         $.post($form.attr('action'), $form.serialize(), function(result) {
             data = JSON.parse(result);
             $('#research_id').val(data);
-            alert('data saved')
+            alert('data saved');
         }, 'json');
     });
     $('.institution-supporting-info').bootstrapValidator({
@@ -532,12 +537,12 @@ $(document).ready(function() {
 
         // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-        alert($form.serialize());
+        //alert($form.serialize());
         // Use Ajax to submit form data
         $.post($form.attr('action'), $form.serialize(), function(result) {
             data = JSON.parse(result);
             $('#research_id').val(data);
-            alert('data saved')
+            alert('data saved');
         }, 'json');
     });
 
@@ -973,5 +978,20 @@ $(document).ready(function() {
 
         }, 'json');
         
+    });
+    
+    $('#addi-funding').on('click',function(){
+    	var $template = $('#optionTemplate'),
+          $clone    = $template
+                         .clone()
+                         .removeClass('hide')
+                         .removeAttr('id')
+                         .insertBefore('#add-funding'),
+          
+          $option1   = $clone.find('[name="donor"]');
+          $option2   = $clone.find('[name="amount"]');
+          $option3   = $clone.find('[name="currency"]');
+          $option4   = $clone.find('[name="timeframe"]');
+          
     });
 });

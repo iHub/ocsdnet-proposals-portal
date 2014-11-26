@@ -106,6 +106,27 @@ class Proposal extends CI_Controller {
 		$data['country_of_residence'] = $_POST['researchercountryresidence'];
 		$data['expertise'] = $_POST['researcherexpertise'];
 		$data['relevant_publications'] = $_POST['researcherpublications'];
+        
+        // $uploaddir = realpath(dirname(__DIR__));
+        // $upload_array=explode("/application", $uploaddir);
+        // $uploaddir = $upload_array[0]."/uploads";
+        // $upload_path=base_url()."uploads";
+        // $tmp_name = $_FILES["researchercv"]["tmp_name"];
+//         
+        // $name = $_FILES["researchercv"]["name"];
+        // $name_array=explode('.',$name);
+//         
+        // $name_path=$name_array[0].time();
+        // $file_name=$name_path.".".$name_array[1];
+        // echo $file_name;
+        // exit;
+//         
+        // $path = $upload_path.'/'.$file_name;
+        // $data["project_timelines"] = "";
+//         
+        // if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
+            // $data["project_timelines"] = $path;
+        // }
 
 		$user_data = $this->session->userdata("user_data");
 		$id = $user_data['id'];
@@ -131,6 +152,27 @@ class Proposal extends CI_Controller {
 		$data['relevant_publications'] = $_POST['revelantpublications'];
 		$data['researcher_id'] = $_POST['researcher_id'];
 		$data['role_in_project'] = $_POST['role'];
+        
+        $uploaddir = realpath(dirname(__DIR__));
+        $upload_array=explode("/application", $uploaddir);
+        $uploaddir = $upload_array[0]."/uploads";
+        $upload_path=base_url()."uploads";
+        $tmp_name = $_FILES["projecttimeline"]["tmp_name"];
+        
+        $name = $_FILES["projecttimeline"]["name"];
+        $name_array=explode('.',$name);
+        
+        $name_path=$name_array[0].time();
+        $file_name=$name_path.".".$name_array[1];
+        echo $file_name;
+        exit;
+        
+        $path = $upload_path.'/'.$file_name;
+        $data["project_timelines"] = "";
+        
+        if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
+            $data["project_timelines"] = $path;
+        }
 
 		$collaborator_id = $this->user_model->save($data);
 		echo json_encode($collaborator_id);
