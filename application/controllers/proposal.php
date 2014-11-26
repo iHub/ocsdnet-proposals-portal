@@ -35,7 +35,7 @@ class Proposal extends CI_Controller {
 
 	public function projectinfo() {
 		$data['id'] = $_POST['proposal_id'];
-		$data['study_title'] = $_POST['title'];
+		$data['title'] = $_POST['title'];
 		$data['duration'] = $_POST['duration'];
 		$data['countries_covered'] = $_POST['countries'];
 		$data['regions'] = $_POST['regions'];
