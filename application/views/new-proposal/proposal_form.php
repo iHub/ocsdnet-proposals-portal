@@ -49,7 +49,7 @@
           </div>
         </div>
     </header>
-</div>
+</div>g
 <section id="proposal-form">
         <div class="container">
             <div class="row">
@@ -796,7 +796,7 @@
                         </div>
                         </div>
                         </div>
-                        </section>
+                        </section><br/><br/><br/>
 
                         <div class="footer">
                         <div class="container">
