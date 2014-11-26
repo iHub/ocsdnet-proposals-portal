@@ -147,9 +147,9 @@
                                  <input type="hidden" name="themes" class="form-control" id="other" placeholder="">
                                  <div class="checkbox no-margin">
                                     <label>
-                                        Other
-                                    </label>  
-                                     <input name="themes" class="form-control" id="other" placeholder="">
+                                        Other:&nbsp; <span>(Enter Each in a new line)</span>
+                                    </label> 
+                                     <textarea name="themes" class="form-control ckeditor" id="other" placeholder="" rows="3"></textarea>
                                  </div>
                               </div>
                               <div class="form-group">
@@ -197,17 +197,13 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="pdOa">Office Address</label><br/>
-                                              <textarea name="researcheraddress" class="form-control" placeholder="" rows="3"></textarea>
+                                              <textarea name="researcheraddress" class="form-control ckeditor" placeholder="" rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoI">Country of incorporation</label><br/>
                                               <input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
                                             </div>
-                                            
-                                            
-                                          </div>
-                                          <div class="col-md-6">
-                                          <div class="form-group">
+                                             <div class="form-group">
                                               <label for="pd">IDRC Affiliation (if any)</label><br/>
                                               <input type="text" name="researcheraffliation" placeholder="" class="form-control" />
                                             </div>
@@ -219,6 +215,10 @@
                                               <label for="pdCoCi">Country of Citizenship</label><br/>
                                               <input type="text" name="researchercountrycitizenship" placeholder="" class="form-control"/>
                                             </div>
+                                            
+                                          </div>
+                                          <div class="col-md-6">
+                                         
                                             <div class="form-group">
                                               <label for="pdGender">Gender</label><br/>
                                               <label class="radio-inline">
@@ -230,11 +230,11 @@
                                             </div>
                                            <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                              <textarea type="text" name="researcherexpertise" placeholder="" class="form-control" rows="3"></textarea>
+                                              <textarea type="text" name="researcherexpertise" placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                             </div> 
                                             <div class="form-group">
                                             <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                             <textarea type="text" name="researcherpublications" placeholder="" class="form-control" rows="3"></textarea>
+                                             <textarea type="text" name="researcherpublications" placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                           </div>
                                           <div class="form-group">
                                             <label for="pd">Website</label><br/>
@@ -305,26 +305,27 @@
                                                 Female </label>
                                               <br/>
                                             </div>
-                                          </div>
-                                          <div class="col-md-6">
-
                                             <div class="form-group">
                                               <label for="pdIoRn">Institution or organization name</label><br/>
                                               <input type="text" name="organization" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdOa">Office Address</label><br/>
-                                              <textarea name="address" placeholder="" rows="3" class="form-control"></textarea>
+                                              <textarea name="address" placeholder="" rows="3" class="form-control ckeditor"></textarea>
                                             </div>
+                                          </div>
+                                          <div class="col-md-6">
+
+                                            
                                             <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label>
                                               <br/>
-                                              <textarea type="text" name="researcherexpertise" placeholder="" class="form-control"></textarea>
+                                              <textarea type="text" name="researcherexpertise" placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdRPoRO">Relevant Publications or Research Outputs</label>
                                               <br/>
-                                              <textarea type="text" name="researcherpublications" placeholder="" class="form-control"></textarea>
+                                              <textarea type="text" name="researcherpublications" placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
               																<label for="pd">Website</label>
@@ -379,7 +380,7 @@
                                             <div class="form-group">
                                               <label for="piMA">Mailing Address</label><br/>
                                               <p class="lable-description">Including office or departmental name</p><br/>
-                                              <textarea name="mailaddress" class="form-control"> </textarea>
+                                              <textarea name="mailaddress" class="form-control ckeditor" rows="3"> </textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="piTN">Telephone Number</label><br/>
@@ -391,7 +392,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="piOE">Office Address</label><br/>
-                                              <textarea name="address" placeholder="" rows="3" class="form-control"></textarea>
+                                              <textarea name="address" placeholder="" rows="3" class="form-control ckeditor"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="piFoN">Finance Officer’s name</label><br/>
@@ -437,7 +438,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3TN">Address </label><br/>
-                                              <textarea name="address" placeholder="" rows="3" class="form-control"></textarea>
+                                              <textarea name="address" placeholder="" rows="3" class="form-control ckeditor"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Mailing Address</label><br/>
@@ -446,7 +447,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Role in the project</label><br/>
-                                              <textarea name="role" placeholder="" rows="3" class="form-control"></textarea><br/>
+                                              <textarea name="role" placeholder="" rows="3" class="form-control ckeditor"></textarea><br/>
                                               <hr/>
                                             </div>
                                               <a class="btn btn-default ">Add New Institution</a><br/>
@@ -608,7 +609,7 @@
 														Upload the completed template document and use it to outline the key milestones and deadlines of your project. Each activity included in the schedule should
 														relate to a project objective and should provide a financial estimate that is corresponds with the proposed budget in Section 5
 													</p>
-                          <a href="" class="btn btn-default " download>Download CV Template</a><br/><br/>
+                          <a href="" class="btn btn-default " download>Download Timeline Template</a><br/><br/>
 													<input type="file" name="projecttimeline" id="projectTimeline"><br/>
 
 												</div>
@@ -689,13 +690,10 @@
                                                         }
 														?>" id="budget_proposal" name="proposal_id"/>
 														<label for="parallelFunds">Parallel Funds</label>
-														<br/>														
-														<p>
-															Template
-														</p>
-														<a href="<?php echo base_url(); ?>public/templates/HILA.xlsx" download="template.xlsx">Download</a>
+														<br/>		
+														<a href="<?php echo base_url(); ?>public/templates/HILA.xlsx" download="template.xlsx" class="btn btn-default">Download Budget Template</a><br/>
 													</div>
-													<input type="file" id="budget" name="budget" value=""/>
+													<input type="file" id="budget" name="budget" value=""/><br/>
 													<button type="submit" class="btn btn-default">
 														Upload
 													</button>
