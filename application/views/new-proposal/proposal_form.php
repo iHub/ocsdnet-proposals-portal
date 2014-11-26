@@ -175,6 +175,7 @@
                                           <h2 class="fs-title">Research Team and Institutional Information</h2>
                                           <h3  class="fs-subtitle">Primary Researcher Information</h3>
                                           <div class="col-md-6">
+                                               <input type="hidden" id="researcher_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
                                             <div class="form-group">
                                               <label for="pdName">Name</label><br/>
                                               <input type="text" name="researchername" placeholder="" class="form-control"/>
@@ -275,7 +276,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="pdPhoneNumber">Telephone Number</label><br/>
-                                              <input type="number" name="phone" placeholder="" class="form-control"/>
+                                              <input type="text" name="phone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoCi">Country of incorporation</label><br/>
@@ -288,7 +289,7 @@
                                             <div class="form-group">
                                               <label for="pdCoR">Country of Residence</label>
                                               <br/>
-                                              <input type="text" name="researchercountryresidence" placeholder="" class="form-control"/>
+                                              <input type="text" name="residence" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoc">Country of Citizenship</label><br/>
@@ -298,10 +299,10 @@
                                               <label for="pdGender">Gender</label>
                                               <br/>
                                               <label class="radio-inline">
-                                                <input type="radio" name="researchergender" id="pdMale" value="male">
+                                                <input type="radio" name="gender" id="pdMale" value="male">
                                                 Male </label>
                                               <label class="radio-inline">
-                                                <input type="radio" name="researchergender" id="pdFemale" value="female">
+                                                <input type="radio" name="gender" id="pdFemale" value="female">
                                                 Female </label>
                                               <br/>
                                             </div>
@@ -318,27 +319,27 @@
                                             <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label>
                                               <br/>
-                                              <textarea type="text" name="researcherexpertise" placeholder="" class="form-control ckeditor" rows="3"></textarea>
+                                              <textarea type="text" name="expertise" placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdRPoRO">Relevant Publications or Research Outputs</label>
                                               <br/>
-                                              <textarea type="text" name="researcherpublications" placeholder="" class="form-control ckeditor" rows="3"></textarea>
+                                              <textarea type="text" name="publications" placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
               																<label for="pd">Website</label>
               																<br/>
-              																<input type="text" name="researcherwebsite" placeholder="" class="form-control"/>
+              																<input type="text" name="website" placeholder="" class="form-control"/>
               															</div>
               															<div class="form-group">
               																<label for="pdCoI">Country of incorporation</label>
               																<br/>
-              																<input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
+              																<input type="text" name="countryincorporation" placeholder="" class="form-control"/>
               															</div>
                                             <div class="form-group">
                                               <label for="pdCoI">Role in Proposed Projec</label>
                                               <br/>
-                                              <input type="text" name="" placeholder="" class="form-control"/>
+                                              <input type="text" name="role" placeholder="" class="form-control"/>
                                             </div>
                                           </div>
                                           <div class="col-md-12">
@@ -350,7 +351,7 @@
               															credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.
               														</p>
               														 <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>
-                                                                      <input type="file" name="researchercv" /><br/>
+                                                                      <input type="file" name="qualification" /><br/>
               														
                                            <button type="submit" class="btn btn-default">Save and Add New</button>                                           
               														</div>
@@ -380,7 +381,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="piTN">Telephone Number</label><br/>
-                                              <input type="number" name="phone" placeholder="" class="form-control"/>
+                                              <input type="text" name="phone" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="piE">Email</label><br/>
@@ -433,23 +434,23 @@
                                               <input type="email" name="email" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
-                                              <label for="pi3TN">Address </label><br/>
-                                              <textarea name="address" placeholder="" rows="3" class="form-control ckeditor"></textarea>
+                                              <label for="pdOa">Office Address</label><br/>
+                                              <textarea name="address" class="form-control ckeditor" placeholder="" rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Mailing Address</label><br/>
                                               <p class="lable-description">Including office or departmental name</p><br/>
-                                              <input type="text" name="mailingaddress" placeholder="" class="form-control"/>
+                                                <textarea name="mailaddress" class="form-control ckeditor" rows="3"> </textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Role in the project</label><br/>
                                               <textarea name="role" placeholder="" rows="3" class="form-control ckeditor"></textarea><br/>
                                               <hr/>
                                             </div>
-                                              <a class="btn btn-default ">Save and Add New Institution</a><br/>
+                                           
 
                                                         <button type="submit" class="btn btn-default">
-                                                            Save
+                                                            Save and Add New
                                                         </button>
                                                     </fieldset>
                                                 </form>
@@ -515,7 +516,7 @@
                                                         the data that you will need to achieve the study’s objectives and answer the project’s research questions.  You should clearly outline how each data collection
                                                         activity will contribute to the study objectives.
                                                     </p>
-                                                    <textarea name="designmethods" class="form-control ckeditor" rows="3"></textarea>
+                                                    <textarea name="researchdesign" class="form-control ckeditor" rows="3"></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="researcherName">Analysis and Synthesis</label>
@@ -573,7 +574,7 @@
                                                     <label for="bibliography">Bibliography</label>
                                                     <br/>
                                                     <p>
-                                                        APA syle
+                                                        APA style
                                                     </p>
                                                     <textarea type="text" name="bibliography" class="form-control ckeditor" id="bibliography" rows="3" value="<?php
                                                     if ($present) {

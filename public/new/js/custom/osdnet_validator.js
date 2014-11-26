@@ -114,7 +114,7 @@ $(document).ready(function() {
             researcherphone: {
                 validators: {
                     notEmpty: {
-                        message: 'Phone is required and cannot be empty'
+                        message: 'Telephone is required and cannot be empty'
                     }
 
                 }
@@ -227,15 +227,20 @@ $(document).ready(function() {
             type: 'POST',
             data: formData,
             async: false,
-            success: function(data) {
-                alert('form saved');
+            success: function(result) {
+              data = JSON.parse(result);
+              
+              $('#researcher_id').val(data);
+              alert('data saved');
             },
             cache: false,
             contentType: false,
             processData: false
         });
+         
         
     });
+   
 
     $('.collaborator-info').bootstrapValidator({
         message: 'This value is not valid',
@@ -341,7 +346,7 @@ $(document).ready(function() {
 
                 }
             },
-            expertiseandinterests: {
+            expertise: {
                 validators: {
                     notEmpty: {
                         message: 'The expertise  is required and cannot be empty'
@@ -349,10 +354,34 @@ $(document).ready(function() {
 
                 }
             },
-            revelantpublications: {
+            publications: {
                 validators: {
                     notEmpty: {
                         message: 'The publications  is required and cannot be empty'
+                    }
+
+                }
+            },
+            qualification: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please choose a file'
+                    }
+
+                }
+            },
+            role: {
+                validators: {
+                    notEmpty: {
+                        message: 'Please choose a file'
+                    }
+
+                }
+            },
+             qualification: {
+                validators: {
+                    notEmpty: {
+                        message: 'File must be selected'
                     }
 
                 }
@@ -361,22 +390,28 @@ $(document).ready(function() {
     }).on('success.form.bv', function(e) {
         // Prevent form submission
         e.preventDefault();
-
-        // Get the form instance
         var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-
+        var formData = new FormData($(this)[0]);
         // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
-            data = JSON.parse(result);
-            $('#research_id').val(data);
-            $('#institution_research_id').val(data);
-            $('#institution__supportresearch_id').val(data);
-            alert('data saved');
-        }, 'json');
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function(result) {
+              data = JSON.parse(result);
+              
+              $('#researcher_id').val(data);
+              alert('data saved');
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
     });
+    
+    //institution info
     $('.institution-info').bootstrapValidator({
         message: 'This value is not valid',
         feedbackIcons: {
@@ -428,7 +463,7 @@ $(document).ready(function() {
             financephone: {
                 validators: {
                     notEmpty: {
-                        message: 'Finance phone nameis required and cannot be empty'
+                        message: 'Finance phone name is required and cannot be empty'
                     }
 
                 }
@@ -468,6 +503,7 @@ $(document).ready(function() {
             alert('data saved');
         }, 'json');
     });
+    //supporting
     $('.institution-supporting-info').bootstrapValidator({
         message: 'This value is not valid',
         feedbackIcons: {
@@ -562,8 +598,6 @@ $(document).ready(function() {
                     notEmpty: {
                         message: 'Research Project Abstract and cannot be empty'
                     }
-
-
                 }
             },
             researchproblem: {
@@ -571,7 +605,6 @@ $(document).ready(function() {
                     notEmpty: {
                         message: 'Research Problem, Significance and Justification is required and cannot be empty'
                     }
-
                 }
             },
             researchquestions: {
@@ -579,7 +612,6 @@ $(document).ready(function() {
                     notEmpty: {
                         message: 'Research Questions and Objectives'
                     }
-
                 }
             },
             designmethods: {
@@ -587,20 +619,13 @@ $(document).ready(function() {
                     notEmpty: {
                         message: 'Research Design and Methods is required and cannot be empty'
                     }
-
                 }
             },
             analysissynthesis: {
                 validators: {
                     notEmpty: {
                         message: 'Analysis and Synthesis is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 1000,
-                        message: 'Words cannot exceed 1000'
-                    }
-
+                    }    
                 }
             },
             outcomesoutputs: {
@@ -608,7 +633,6 @@ $(document).ready(function() {
                     notEmpty: {
                         message: 'Output and outcomes is required and cannot be empty'
                     }
-
                 }
             },
             translationdissemination: {
@@ -624,7 +648,6 @@ $(document).ready(function() {
                     notEmpty: {
                         message: 'The Network Connections and Interactions is required and cannot be empty'
                     }
-
                 }
             },
             bibliography: {
@@ -632,28 +655,39 @@ $(document).ready(function() {
                     notEmpty: {
                         message: 'The Bibliography  is required and cannot be empty'
                     }
-
+                }
+            },
+            stakeholders: {
+                validators: {
+                    notEmpty: {
+                        message: 'Stakeholders field  is required and cannot be empty'
+                    }
                 }
             }
 
         }
     }).on('success.form.bv', function(e) {
+    	alert('hii');
         // Prevent form submission
         e.preventDefault();
-
-        // Get the form instance
+//     e.preventDefault();
         var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-        console.log($form.serialize());
+        var formData = new FormData($(this)[0]);
         // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
-            data = JSON.parse(result);
-            console.log(data);
-            alert('data saved ');
-
-        }, 'json');
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function(result) {
+              data = JSON.parse(result);
+              alert('data saved');
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
     });
 
     // Research admnistration form
@@ -748,147 +782,7 @@ $(document).ready(function() {
             processData: false
         });
     });
-    $('.researcher-info').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            researchername: {
-                message: 'Name  is required',
-                validators: {
-                    notEmpty: {
-                        message: 'Name is required and cannot be empty'
-                    }
-                }
-            },
-            researcheremail: {
-                validators: {
-                    notEmpty: {
-                        message: 'Email is required and cannot be empty'
-                    }
-
-                }
-            },
-            researcherphone: {
-                validators: {
-                    notEmpty: {
-                        message: 'Phone number is required and cannot be empty'
-                    }
-
-                }
-            },
-            researcherdesignation: {
-                validators: {
-                    notEmpty: {
-                        message: 'Designation is required and cannot be empty'
-                    }
-
-                }
-            },
-            researcherorganization: {
-                validators: {
-                    notEmpty: {
-                        message: 'Organization is required and cannot be empty'
-                    }
-
-                }
-            },
-            researchercountrycitizenship: {
-                validators: {
-                    notEmpty: {
-                        message: 'Country of citenship is required and cannot be empty'
-                    }
-
-                }
-            },
-            researchercountrycitizenship: {
-                validators: {
-                    notEmpty: {
-                        message: 'Country of citenship is required and cannot be empty'
-                    }
-
-                }
-            },
-            researcheraddress: {
-                validators: {
-                    notEmpty: {
-                        message: 'Address is required and cannot be empty'
-                    }
-
-                }
-            },
-            researcheraffliation: {
-                validators: {
-                    notEmpty: {
-                        message: 'Affliation is required and cannot be empty'
-                    }
-
-                }
-            },
-            researcherwebsite: {
-                validators: {
-                    notEmpty: {
-                        message: 'Website is required and cannot be empty'
-                    }
-
-                }
-            },
-            researchercountryincorporation: {
-                validators: {
-                    notEmpty: {
-                        message: 'Country of incorporation is required and cannot be empty'
-                    }
-
-                }
-            },
-            researchergender: {
-                validators: {
-                    notEmpty: {
-                        message: 'Gender is required and cannot be empty'
-                    }
-
-                }
-            },
-            researcherexpertise: {
-                validators: {
-                    notEmpty: {
-                        message: 'Expertise is required and cannot be empty'
-                    }
-
-                }
-            },
-            researcherpublications: {
-                validators: {
-                    notEmpty: {
-                        message: 'Research publications is required and cannot be empty'
-                    }
-
-                }
-            }
-
-
-
-        }
-    }).on('success.form.bv', function(e) {
-        // Prevent form submission
-        e.preventDefault();
-
-        // Get the form instance
-        var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
-        var bv = $form.data('bootstrapValidator');
-
-        // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
-            console.log(result);
-            alert('data saved');
-        }, 'json');
-    });
-
+  
     $('.budget-info').bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',

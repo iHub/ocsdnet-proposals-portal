@@ -57,6 +57,7 @@ class Proposal extends CI_Controller {
 		$data['knowledge_translation_and_dissemination'] = $_POST['translationdissemination'];
 		$data['network_connections_and_interactions'] = $_POST['networkconnetions'];
 		$data['bibliography'] = $_POST['bibliography'];
+        
 		$proposal_id = $this->proposal_model->save_study_info($data);
 		echo json_encode($proposal_id);
 	}
@@ -106,33 +107,31 @@ class Proposal extends CI_Controller {
 		$data['country_of_residence'] = $_POST['researchercountryresidence'];
 		$data['expertise'] = $_POST['researcherexpertise'];
 		$data['relevant_publications'] = $_POST['researcherpublications'];
+        $data['user_role_id']=1;
+        $uploaddir = realpath(dirname(__DIR__));
+        $upload_array=explode("/application", $uploaddir);
+        $uploaddir = $upload_array[0]."/uploads";
+        $upload_path=base_url()."uploads";
+        $tmp_name = $_FILES["researchercv"]["tmp_name"];
         
-        // $uploaddir = realpath(dirname(__DIR__));
-        // $upload_array=explode("/application", $uploaddir);
-        // $uploaddir = $upload_array[0]."/uploads";
-        // $upload_path=base_url()."uploads";
-        // $tmp_name = $_FILES["researchercv"]["tmp_name"];
-//         
-        // $name = $_FILES["researchercv"]["name"];
-        // $name_array=explode('.',$name);
-//         
-        // $name_path=$name_array[0].time();
-        // $file_name=$name_path.".".$name_array[1];
-        // echo $file_name;
-        // exit;
-//         
-        // $path = $upload_path.'/'.$file_name;
-        // $data["project_timelines"] = "";
-//         
-        // if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
-            // $data["project_timelines"] = $path;
-        // }
+        $name = $_FILES["researchercv"]["name"];
+        $name_array=explode('.',$name);
+        
+        $name_path=$name_array[0].time();
+        $file_name=$name_path.".".$name_array[1];
+        
+        $path = $upload_path.'/'.$file_name;
+        $data["qualifications_and_experience"] = "";
+        
+        if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
+            $data["qualifications_and_experience"] = $path;
+        }
 
 		$user_data = $this->session->userdata("user_data");
 		$id = $user_data['id'];
 
 		$researcher_id = $this->user_model->save($data, $id);
-		echo json_encode($id);
+		echo json_encode($researcher_id);
 	}
 
 	public function collaboratorinfo() {
@@ -147,33 +146,30 @@ class Proposal extends CI_Controller {
 		$data['country_of_citizenship'] = $_POST['citizenship'];
 		$data['website'] = $_POST['website'];
 		$data['idrc_affiliation'] = $_POST['affliation'];
-		$data['country_of_residence'] = $_POST['countryresidence'];
-		$data['expertise'] = $_POST['expertiseandinterests'];
-		$data['relevant_publications'] = $_POST['revelantpublications'];
+		$data['country_of_residence'] = $_POST['residence'];
+		$data['expertise'] = $_POST['expertise'];
+		$data['relevant_publications'] = $_POST['publications'];
 		$data['researcher_id'] = $_POST['researcher_id'];
 		$data['role_in_project'] = $_POST['role'];
-        
+        $data['user_role_id']=5;
         $uploaddir = realpath(dirname(__DIR__));
         $upload_array=explode("/application", $uploaddir);
         $uploaddir = $upload_array[0]."/uploads";
         $upload_path=base_url()."uploads";
-        $tmp_name = $_FILES["projecttimeline"]["tmp_name"];
+        $tmp_name = $_FILES["qualification"]["tmp_name"];
         
-        $name = $_FILES["projecttimeline"]["name"];
+        $name = $_FILES["qualification"]["name"];
         $name_array=explode('.',$name);
         
         $name_path=$name_array[0].time();
         $file_name=$name_path.".".$name_array[1];
-        echo $file_name;
-        exit;
+        
         
         $path = $upload_path.'/'.$file_name;
-        $data["project_timelines"] = "";
-        
+        $data["qualifications_and_experience"] = "";      
         if (move_uploaded_file($tmp_name, "$uploaddir/$file_name")) {
-            $data["project_timelines"] = $path;
+            $data["qualifications_and_experience"] = $path;
         }
-
 		$collaborator_id = $this->user_model->save($data);
 		echo json_encode($collaborator_id);
 	}
