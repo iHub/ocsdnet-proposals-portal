@@ -606,7 +606,7 @@
 														Upload the completed template document and use it to outline the key milestones and deadlines of your project. Each activity included in the schedule should
 														relate to a project objective and should provide a financial estimate that is corresponds with the proposed budget in Section 5
 													</p>
-                          <a href="" class="btn btn-default " download>Download Timeline Template</a><br/><br/>
+                                                 <a href="<?php echo base_url(); ?>public/templates/ProjectTimelineTemplate.docx" class="btn btn-default " download>Download Timeline Template</a><br/><br/>
 													<input type="file" name="projecttimeline" id="projectTimeline"><br/>
 
 												</div>
@@ -688,7 +688,7 @@
 														?>" id="budget_proposal" name="proposal_id"/>
 														<label for="parallelFunds">Parallel Funds</label>
 														<br/>		
-														<a href="<?php echo base_url(); ?>public/templates/HILA.xlsx" download="template.xlsx" class="btn btn-default">Download Budget Template</a><br/>
+														<a href="<?php echo base_url(); ?>public/templates/OCSDNetBudgetTemplate.xlsx" download="OCSDNetBudgetTemplate.xlsx" class="btn btn-default">Download Budget Template</a><br/>
 													</div>
 													<input type="file" id="budget" name="budget" value=""/><br/>
 													<button type="submit" class="btn btn-default">
