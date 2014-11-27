@@ -49,7 +49,7 @@
           </div>
         </div>
     </header>
-</div>g
+</div>
 <section id="proposal-form">
         <div class="container">
             <div class="row">
@@ -368,7 +368,7 @@
               																<input type="text" name="countryincorporation" placeholder="" class="form-control"/>
               															</div>
                                             <div class="form-group">
-                                              <label for="pdCoI">Role in Proposed Projec</label>
+                                              <label for="pdCoI">Role in Proposed Project</label>
                                               <br/>
                                               <input type="text" name="role" placeholder="" class="form-control"/>
                                             </div>
@@ -391,7 +391,7 @@
               												</form>
               											</section>
 											
-                                  <h3>Proposed Study Info</h3>
+                                  <h3>Proposing Institution</h3>
                                   <section>
                                        <form class="institution-info" action="<?php echo base_url();?>index.php/proposal/institutioninfo">
                                         <fieldset>
