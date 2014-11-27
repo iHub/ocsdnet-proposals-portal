@@ -667,7 +667,7 @@ $(document).ready(function() {
 
         }
     }).on('success.form.bv', function(e) {
-    	alert('hii');
+    	
         // Prevent form submission
         e.preventDefault();
 //     e.preventDefault();

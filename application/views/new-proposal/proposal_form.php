@@ -43,13 +43,13 @@
                     <li><a href="javascript:;">Item 4</a></li>
                     <li><a href="javascript:;">Item 5</a></li>
                     <li><a href="javascript:;">Item 6</a></li>-->
-                    <li><a href="javascript:;">Logout</a></li>
+                    <li><a href="<?php echo base_url()?>index.php/auth/logout">Logout</a></li>
                 </ul>
             </div>
           </div>
         </div>
     </header>
-</div>g
+</div>
 <section id="proposal-form">
         <div class="container">
             <div class="row">
@@ -103,7 +103,7 @@
                               <input type="hidden" name="proposal_id" class="form-control"  value="<?php if ($present) {echo $id;}?>" />
                               <div class="form-group">
                                 <label for="projectTitle">Project Title</label>
-                                <input type="text" class="form-control" id="title" name="title" value="<?php if ($present) {echo $study_title;}?>" id="title" placeholder="">
+                                <input type="text" class="form-control" id="title" name="title" value="<?php if ($present) {echo $title;}?>" id="title" placeholder="">
                               </div>
                               <div class="form-group">
                                 <label for="projectTitle">Duration of the project</label><br/>
@@ -624,7 +624,7 @@
                                         <h3>Research Administration</h3>
                                         <section>
                                             <h2>Research Administration</h2>
-                                            <form role="form" class="research-administration" action="<?php echo base_url(); ?>index.php/proposal/stepfour">
+                                            <form role="form" class="research-administration" method="post" action="<?php echo base_url(); ?>index.php/proposal/stepfour">
                                                 <input type="hidden" name="proposal_id" value="<?php
                                                 if ($present) {
                                                     echo $id;
@@ -851,7 +851,7 @@
             $(document).ready(function() {
                 // Smart Wizard
                 $('#wizardmain').smartWizard();
-                CKEDITOR.replaceClass = 'ckeditor';
+               // CKEDITOR.replaceClass = 'ckeditor';
                 //  var editor = $('.ckeditor').ckeditor().editor;
                 // //
                 // //  var editor = CKEDITOR.instances['ckeditor'];
