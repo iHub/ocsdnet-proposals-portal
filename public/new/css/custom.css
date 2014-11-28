@@ -254,3 +254,7 @@ p.titlle {
 visibility: hidden;
 width: 0px;
 }
+.proposal-section{
+	background-color: #FDFDFD; /*#F8F8F8;*/
+	padding:20px;
+}
