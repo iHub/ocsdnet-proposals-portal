@@ -72,16 +72,34 @@ $(document).ready(function() {
 
         // Get the form instance
         var $form = $(e.target);
-
+		//var data= new Array();
         // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-
+        
+		// var regions_array = new Array();
+		// $("input[name='regions[]']:checked").each(function(i) {
+			// regions_array.push($(this).val());
+		// });
+		// data.push(regions_array);
+		// var themes_array = new Array();
+		// $("input[name='themes[]']:checked").each(function(i) {
+			// themes_array.push($(this).val());
+		// });
+		// data.push(themes_array);
+		// data.push($('#title').val());
+		// data.push($('#duration').val());
+		// data.push($('#countries').val());
+		// data.push($('#duration').val());
+		// data.push($('#countries').val());
+		// data.push($('#budget').val());
+		
+		
         // Use Ajax to submit form data
         $.post($form.attr('action'), $form.serialize(), function(result) {
-            data = JSON.parse(result);
+            data_is = JSON.parse(result);
             
-            $('#proposal_id').text(data);
-            $('#gender_proposal').text(data);
+            $('#proposal_id').text(data_is);
+            $('#gender_proposal').text(data_is);
             alert('data saved');
         }, 'json');
     });
@@ -218,6 +236,9 @@ $(document).ready(function() {
         }
     }).on('success.form.bv', function(e) {
          e.preventDefault();
+         for ( instance in CKEDITOR.instances )
+          CKEDITOR.instances[instance].updateElement();
+          
         var $form = $(e.target);
         var bv = $form.data('bootstrapValidator');
         var formData = new FormData($(this)[0]);
@@ -389,7 +410,10 @@ $(document).ready(function() {
         }
     }).on('success.form.bv', function(e) {
         // Prevent form submission
+        for ( instance in CKEDITOR.instances )
+          CKEDITOR.instances[instance].updateElement();
         e.preventDefault();
+        
         var $form = $(e.target);
         var bv = $form.data('bootstrapValidator');
         var formData = new FormData($(this)[0]);
@@ -488,20 +512,28 @@ $(document).ready(function() {
         }
     }).on('success.form.bv', function(e) {
         // Prevent form submission
-        e.preventDefault();
-
-        // Get the form instance
+         e.preventDefault();
+//     e.preventDefault();
+		for ( instance in CKEDITOR.instances )
+          CKEDITOR.instances[instance].updateElement();
         var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-        alert($form.serialize());
+        var formData = new FormData($(this)[0]);
+        
         // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
-            data = JSON.parse(result);
-            $('#research_id').val(data);
-            alert('data saved');
-        }, 'json');
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function(result) {
+              data = JSON.parse(result);
+              alert('data saved');
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
     });
     //supporting
     $('.institution-supporting-info').bootstrapValidator({
@@ -566,20 +598,29 @@ $(document).ready(function() {
         }
     }).on('success.form.bv', function(e) {
         // Prevent form submission
+        
         e.preventDefault();
-
-        // Get the form instance
+//     e.preventDefault();
+		for ( instance in CKEDITOR.instances )
+          CKEDITOR.instances[instance].updateElement();
         var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
-        //alert($form.serialize());
+        var formData = new FormData($(this)[0]);
+        
         // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
-            data = JSON.parse(result);
-            $('#research_id').val(data);
-            alert('data saved');
-        }, 'json');
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: formData,
+            async: false,
+            success: function(result) {
+              data = JSON.parse(result);
+              alert('data saved');
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
     });
 
 
@@ -667,13 +708,16 @@ $(document).ready(function() {
 
         }
     }).on('success.form.bv', function(e) {
-    	alert('hii');
+    	
         // Prevent form submission
         e.preventDefault();
 //     e.preventDefault();
+		for ( instance in CKEDITOR.instances )
+          CKEDITOR.instances[instance].updateElement();
         var $form = $(e.target);
         var bv = $form.data('bootstrapValidator');
         var formData = new FormData($(this)[0]);
+        
         // Use Ajax to submit form data
         $.ajax({
             url: $form.attr('action'),
@@ -765,6 +809,8 @@ $(document).ready(function() {
     }).on('success.form.bv', function(e) {
         // Prevent form submission
          e.preventDefault();
+         for ( instance in CKEDITOR.instances )
+          CKEDITOR.instances[instance].updateElement();
         var $form = $(e.target);
         var bv = $form.data('bootstrapValidator');
         var formData = new FormData($(this)[0]);

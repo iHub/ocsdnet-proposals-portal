@@ -29,21 +29,26 @@ class Proposal extends CI_Controller {
 		}
 
 		$data['researcher_id'] = $id;
+        
 
 		$this->load->view("new-proposal/proposal_form", $data);
 	}
 
 	public function projectinfo() {
-		$data['id'] = $_POST['proposal_id'];
-		$data['title'] = $_POST['title'];
-		$data['duration'] = $_POST['duration'];
-		$data['countries_covered'] = $_POST['countries'];
-		$data['regions'] = $_POST['regions'];
-		$data['research_themes'] = $_POST['themes'];
-		$data['justification_of_research_themes'] = $_POST['justifythemes'];
-		$data['budget'] = $_POST['budget'];
-		$proposal_id = $this->proposal_model->save_study_info($data);
-		echo json_encode($proposal_id);
+		$user_data = $this->session->userdata("user_data");
+        $id = $user_data['id'];
+        $data['id'] = $_POST['proposal_id'];
+        $data['researcher_id'] = $id;
+        $data['title'] = $_POST['title'];
+        $data['duration'] = $_POST['duration'];
+        $data['countries_covered'] = $_POST['countries'];
+        $data['regions'] = $_POST['regions'];
+        $data['research_themes'] = $_POST['themes'];
+        $data['justification_of_research_themes'] = $_POST['justifythemes'];
+        $data['budget'] = $_POST['budget'];
+        
+        $proposal_id = $this->proposal_model->save_study_info($data);
+        echo json_encode($proposal_id);
 	}
 
 	public function stepthree() {
@@ -53,6 +58,7 @@ class Proposal extends CI_Controller {
 		$data['research_questions_and_objectives'] = $_POST['researchquestions'];
 		$data['research_design_and_methods'] = $_POST['researchdesign'];
 		$data['analysis_and_synthesis'] = $_POST['analysissynthesis'];
+        $data['stakeholders'] = $_POST['stakeholders'];
 		$data['outcomes_and_outputs'] = $_POST['outcomesoutputs'];
 		$data['knowledge_translation_and_dissemination'] = $_POST['translationdissemination'];
 		$data['network_connections_and_interactions'] = $_POST['networkconnetions'];
@@ -180,7 +186,7 @@ class Proposal extends CI_Controller {
 		$data['telephone'] = $_POST['phone'];
 		$data['mailing_address'] = $_POST['mailaddress'];
 		$data['finance_name'] = $_POST['financename'];
-		$data['office_address'] = $_POST['address'];
+		$data['office_address'] = $_POST['addresses'];
 		$data['finance_email'] = $_POST['financeemail'];
 		$data['finance_phone'] = $_POST['financephone'];
 		$data['researcher_id'] = $_POST['researcher_id'];
