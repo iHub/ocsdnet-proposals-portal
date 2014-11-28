@@ -99,16 +99,7 @@ $(document).ready(function() {
 		data['duration']=$('#duration').val();
 		data['justifythemes']=$('#budget').val();
 		data['otherthemes']=$('#otherthemes').val();
-		//values=JSON.stringify(data);
-		//console.log(values);
-		// console.log(data);
-		// data.push({'title': $('#title').val()});
-		// data.push({'duration':$('#duration').val()});
-		// data.push({'countries':$('#countries').val()});
-		// data.push({'budget': $('#budget').val()});
-		// console.log(data);
-		// var formData = new FormData($(this)[0]);
-		//console.log(data);
+		
         // Use Ajax to submit form data
         $.post($form.attr('action'), data, function(result) {
             data_is = JSON.parse(result);

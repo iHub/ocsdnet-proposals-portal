@@ -46,6 +46,7 @@ class Proposal extends CI_Controller {
         $data['regions'] = json_encode($_POST['regions']);
         $data['research_themes'] = json_encode($_POST['themes']);
         $data['justification_of_research_themes'] = $_POST['justifythemes'];
+         $data['other_themes'] = $_POST['otherthemes'];
         $data['budget'] = $_POST['budget'];
         $proposal_id = $this->proposal_model->save_study_info($data);
         echo json_encode($proposal_id);
