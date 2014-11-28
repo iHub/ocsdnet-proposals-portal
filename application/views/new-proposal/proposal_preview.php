@@ -46,7 +46,7 @@
         </div>
     </header>
 <div class="container">
-<div class="row">
+	<div class="row">
 <div class="col-md-12">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -71,11 +71,15 @@
     </nav>
     </div>
 </div> 
-<div class="row">  
-  <div class="col-md-12">
-    <div class="review-box">    
+<div class="review-box">  
+  <div class="row">
+    <div class="col-md-12">    
       <h3 align="center " class="project-title"><?php if($present){ echo $title; } ?></h3>
       <!--<h4>Primary Researcher Proposal</h4>-->
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
       <table class="table table-striped table-bordered table-condensed">
           <tbody>
             <h4>General Project Information</h4>
@@ -98,13 +102,14 @@
           
           </tbody>
       </table>
-
+      </div>
+  </div>
     <div class="clr clearfix"></div>
 
     <!-- Collaborators -->
-
-          
-    <table class="table table-striped table-bordered table-condensed">
+  <div class="row">
+    <div class="col-md-12">  
+    <table class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
             <h4>Research Team and Institutional Information</h4>
             <h5>Primary Researcher Information</h5>         
@@ -122,8 +127,7 @@
         </tr>        
         <tr>
             <th>Institution or organization name</th> <td><p><?php echo $user['organization'] ?></p></td>
-        </tr>
-        
+        </tr>        
         <tr>
             <th>Country of Citizenship</th> <td><p><?php echo $user['country_of_citizenship'] ?></p></td>
         </tr>        
@@ -163,6 +167,7 @@
         </tr>
         <tr>
             <th><h5>Collaborators</h5></th>
+        </tr>
         <?php foreach($collaborators as $user){ ?>
         <tr>
             <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
@@ -248,7 +253,7 @@
             <th>Finance Officer Email</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
         </tr>
         <tr>
-            <th><h5>Participating Institutions</h6></th>
+            <th><h5>Participating Institutions</h5></th>
         </tr>
         <?php foreach($participating_institution as $user ){?>
         <tr>
@@ -272,7 +277,10 @@
         <?php } ?>
         </tbody>
         </table>
-        
+        </div>
+  </div>
+  <div class="row">
+  	<div class="col-md-12">
         <table class="table table-striped table-bordered table-condensed">
         <tbody>
         <h4>Proposed Study Information</h4>
@@ -334,9 +342,13 @@
         </tr>
         </tbody>
         </table>
+        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
         <table class="table table-striped table-bordered table-condensed">
         <tbody>
-        <h4>Research Administration</h5>
+        <h4>Research Administration</h4>
         <tr>
             <th>Project Timeline</th><td><a href="<?php if($present){ echo $project_timelines; } ?>" download>Download</a></td>
         </tr>
@@ -367,6 +379,10 @@
         </tr>
         </tbody>
         </table>
+        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
         <table class="table table-striped table-bordered table-condensed">
         <tbody>
         <h4>Budgets</h4>
@@ -397,16 +413,14 @@
         </tbody>
     </table>
     </div>
-  </div><!--/.col-md-6 --> 
-</div> <!-- /.col -->
-</div>
-</div>
-</div> <!-- /.container -->
+    </div>
+  </div><!--/.review-box --> 
+</div><!-- /.container -->
 <div class="footer">
       <div class="container">
         <p class="text-muted">ocsdnet</p>
       </div>
-    </div>
+</div>
 
 
   <script src="js/jquery-2.0.0.min.js"></script>
