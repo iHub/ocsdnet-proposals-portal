@@ -34,6 +34,7 @@ class Preview extends CI_Controller {
         $data['collaborators']=$collaborators;
         $data['user']=$user;
         
+        
         $this->load->view("new-proposal/proposal_preview", $data);
     }
 }

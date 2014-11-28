@@ -292,77 +292,49 @@
         </table>
         <h5>Participating Institutions</h5>
         <div class="panel-group" id="PIaccordion" role="tablist" aria-multiselectable="true">
+            <?php foreach($participating_institution as $user){?>
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="PIheadingOne">
+            <div class="panel-heading" role="tab" id="PIheading<?php echo $i ?>">
               <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapseOne" aria-expanded="true" aria-controls="PIcollapseOne">
-                  Institution 1
-                </a>
+                <?php if($i==1){ ?>
+                <a data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>">
+                  Institution <?php echo $i ?>
+                </a> 
+                <?php }else{ ?>
+                    <a class="collapsed" data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>">
+                 <?php }?>
                 <a class="pull-right" href="javascript:;">Edit</a>
               </h4>
             </div>
-            <div id="PIcollapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="PIcollapse<?php echo $i ?>" class="<?php if($i==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $i ?>">
               <div class="panel-body">
               <table class="table  table-bordered table-condensed table-hover">
               <tbody>
                	<tr>
-                        <th>Institution name</th> <td><p></p></td>
+                        <th>Institution name</th> <td><p><?php echo $user['first_name'] ?></p></td>
                     </tr>
                     <tr>
-                        <th>Telephone Number</th> <td><p></p></td>
+                        <th>Telephone Number</th> <td><p><?php echo $user['telephone'] ?></p></td>
                     </tr>
                     <tr>
-                        <th>Email</th> <td><p></p></td>
+                        <th>Email</th> <td><p></p><?php echo $user['email'] ?></td>
                     </tr>
                     <tr>
-                        <th colspan="2" >Mailing Address</th> <td><p></p></td>
+                        <th colspan="2" >Mailing Address</th> <td><p><?php echo $user['mailing_address'] ?></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</td>
                     </tr>
                     <tr>
-                        <th>Role in the project</th> <td><p></p></td>
+                        <th>Role in the project</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
                     </tr>
-                <tbody>
+                            <tbody>
                 </table>
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="PIheadingTwo">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapseTwo" aria-expanded="false" aria-controls="PIcollapseTwo">
-                  Institution 2
-                </a>
-                <a class="pull-right" href="javascript:;">Edit</a>
-              </h4>
-            </div>
-            <div id="PIcollapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="PIheadingTwo">
-              <div class="panel-body">
-              	<table class="table table-bordered table-condensed table-hover">
-					<tr>
-                        <th>Institution name</th> <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <th>Telephone Number</th> <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <th>Email</th> <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <th colspan="2" >Mailing Address</th> <td><p></p></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</td>
-                    </tr>
-                    <tr>
-                        <th>Role in the project</th> <td><p></p></td>
-                    </tr>               
-                <tbody>
-                </table>
-              </div>
-            </div>
-          </div>                    
+          <?php $i++; }?>
+            
         </div>
         <!--<tr>
             <th><h5>Participating Institutions</h5></th>
