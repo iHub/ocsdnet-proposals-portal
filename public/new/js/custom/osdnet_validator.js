@@ -69,33 +69,48 @@ $(document).ready(function() {
     }).on('success.form.bv', function(e) {
         // Prevent form submission
         e.preventDefault();
-
+        
+	     for ( instance in CKEDITOR.instances )
+          CKEDITOR.instances[instance].updateElement();
         // Get the form instance
         var $form = $(e.target);
-		//var data= new Array();
+	    var data= {};
         // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
         
-		// var regions_array = new Array();
-		// $("input[name='regions[]']:checked").each(function(i) {
-			// regions_array.push($(this).val());
-		// });
-		// data.push(regions_array);
-		// var themes_array = new Array();
-		// $("input[name='themes[]']:checked").each(function(i) {
-			// themes_array.push($(this).val());
-		// });
-		// data.push(themes_array);
-		// data.push($('#title').val());
-		// data.push($('#duration').val());
-		// data.push($('#countries').val());
-		// data.push($('#duration').val());
-		// data.push($('#countries').val());
-		// data.push($('#budget').val());
+		var regions_array = new Array();
+		$("input[name='regions']:checked").each(function(i) {
+			regions_array.push($(this).val());
+		});
+		//console.log(regions_array);
+		
+		var themes_array = new Array();
+		$("input[name='themes']:checked").each(function(i) {
+			themes_array.push($(this).val());
+		});
 		
 		
+		data['themes']=themes_array;
+		data['regions']=regions_array;
+		data['title']= $('#title').val();
+		data['proposal_id']= $('#proposal_id').val();
+		data['countries']=$('#countries').val();
+		data['budget']=$('#budget').val();
+		data['duration']=$('#duration').val();
+		data['justifythemes']=$('#budget').val();
+		data['otherthemes']=$('#otherthemes').val();
+		//values=JSON.stringify(data);
+		//console.log(values);
+		// console.log(data);
+		// data.push({'title': $('#title').val()});
+		// data.push({'duration':$('#duration').val()});
+		// data.push({'countries':$('#countries').val()});
+		// data.push({'budget': $('#budget').val()});
+		// console.log(data);
+		// var formData = new FormData($(this)[0]);
+		//console.log(data);
         // Use Ajax to submit form data
-        $.post($form.attr('action'), $form.serialize(), function(result) {
+        $.post($form.attr('action'), data, function(result) {
             data_is = JSON.parse(result);
             
             $('#proposal_id').text(data_is);
