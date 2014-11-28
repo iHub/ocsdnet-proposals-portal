@@ -13,6 +13,8 @@ class Preview extends CI_Controller {
     public function index(){
         $user_data = $this->session->userdata("user_data");
         $id = $user_data['id'];
+        $user=$this->user_model->getUser($id);
+        
         $proposal = $this->proposal_model->get_proposals($id);
         $data = array();
         if ($proposal) {
@@ -20,7 +22,10 @@ class Preview extends CI_Controller {
             $data['present'] = 1;
         } else {
             $data['present'] = 0;
-        }
+        }      
+        $collaborators=$this->user_model->get_collaborators($id);
+        $data['collaborators']=$collaborators;
+        $data['user']=$user;
         $this->load->view("new-proposal/proposal_review", $data);
     }
 }

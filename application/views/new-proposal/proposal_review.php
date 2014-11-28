@@ -12,15 +12,15 @@
 
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700">
-  <link rel="stylesheet" href="../css/font-awesome.min.css">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/new/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/new/css/bootstrap.min.css">
 
-  <link href="../css/main.css" rel="stylesheet">
-    <link href="../css/sticky-footer.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>public/new/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>public/new/css/sticky-footer.css" rel="stylesheet">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="../css/target-admin.css">
-  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/new/css/target-admin.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>public/new/css/custom.css">
 
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
