@@ -22,12 +22,18 @@ class Preview extends CI_Controller {
             $data['present'] = 1;
         } else {
             $data['present'] = 0;
-        }      
+        } 
+             
         $collaborators=$this->user_model->get_collaborators($id);
         $proposing_institution=$this->user_model->getproposing($id);
-        
+        $participating_institution=$this->user_model->getparticipating($id);
+        $budgets=$this->budget_model->getbudgets($data['id']);
+        $data['budgets']=$budgets;
+        $data['proposing_institution']=$proposing_institution;
+        $data['participating_institution']=$participating_institution;
         $data['collaborators']=$collaborators;
         $data['user']=$user;
+        
         $this->load->view("new-proposal/proposal_preview", $data);
     }
 }

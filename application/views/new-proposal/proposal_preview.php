@@ -75,32 +75,26 @@
 <div class="row">  
   <div class="col-md-12">
     <div class="review-box">    
-      <h3 align="center " class="project-title">The assessment of the pollution of the Kafue River: Implications for Fish Health and Reproduction</h3>
+      <h3 align="center " class="project-title"><?php if($present){ echo $title; } ?></h3>
       <!--<h4>Primary Researcher Proposal</h4>-->
       <table class="table table-striped table-bordered table-condensed">
           <tbody>
             <h4>General Project Information</h4>
             <tr>
-                <th>Duration of the project</th><td><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></td>
+                <th>Duration of the project</th><td><p><?php if($present){ echo $duration; } ?></p></td>
             </tr>
             <tr>
-                <th>Countries included in this project</th> <td><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></td>
+                <th>Countries included in this project</th> <td><p><?php if($present){ echo $countries_covered; } ?></p></td>
             </tr>
             <tr>
-                <th>Region(s) included in this project</th> <td><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></td>
+                <th>Region(s) included in this project</th> <td><p><?php if($present){ echo $regions; } ?>.</p></td>
             </tr>
             <tr>
-                <th>Research Themes *</th> <td><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p></td>
+                <th>Research Themes *</th> <td><p><?php if($present){ echo $research_themes; } ?></p></td>
             </tr>
             
             <tr>
-                <th colspan="2">Justification of Research Themes</th>
-            </tr>
-            <tr>
-                <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
-            </tr>
-            <tr>
-                <th>Total Budget Cost (CAD)</th> <td><p></p></td>
+                <th>Total Budget Cost (CAD)</th> <td><p><?php if($present){ echo $total_budget_cost; } ?></p></td>
             </tr>        
           
           </tbody>
@@ -116,117 +110,120 @@
             <h4>Research Team and Institutional Information</h4>
             <h5>Primary Researcher Information</h5>         
         <tr>
-            <th>Name</th><td><p></p></td>
+            <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
         </tr>
         <tr>
-            <th>Email</th> <td><p></p></td>
+            <th>Email</th> <td><p><?php echo $user['email'] ?></p></td>
         </tr>
         <tr>
-            <th>Phone Number</th> <td><p></p></td>
+            <th>Phone Number</th> <td><p><?php echo $user['telephone'] ?></p></td>
         </tr>
         <tr>
-            <th>Designation</th> <td><p></p></td>
+            <th>Designation</th> <td><p><?php echo $user['designation'] ?></p></td>
         </tr>        
         <tr>
-            <th>Institution or organization name</th> <td><p></p></td>
+            <th>Institution or organization name</th> <td><p><?php echo $user['organization'] ?></p></td>
         </tr>
         
         <tr>
-            <th>Country of Citizenship</th> <td><p></p></td>
+            <th>Country of Citizenship</th> <td><p><?php echo $user['country_of_citizenship'] ?></p></td>
         </tr>        
         <tr>
-            <th colspan="2">Office Address</th><p></p></td>
+            <th colspan="2">Office Address</th><p><?php echo $user['office_address'] ?></p></td>
         </tr>
         <tr>
             <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
         </tr>
         <tr>
-            <th>IDRC Affiliation (if any)</th> <td><p></p></td>
+            <th>IDRC Affiliation (if any)</th> <td><p><?php echo $user['idrc_affiliation'] ?></p></td>
         </tr>
 
         <tr>
-            <th>Country of Citizenship</th> <td><p></p></td>
+            <th>Country of Citizenship</th> <td><p><?php echo $user['first_name'] ?></p></td>
         </tr>
         <tr>
-            <th> Website</th> <td><p></p></td>
+            <th> Website</th> <td><p><?php echo $user['website'] ?></p></td>
         </tr>
         <tr>
-            <th>Country of incorporation</th> <td><p></p></td>
+            <th>Country of incorporation</th> <td><p><?php echo $user['country_of_incorporation'] ?></p></td>
         </tr>
         <tr>
-            <th>Country of Residence</th> <td><p></p></td>
+            <th>Country of Residence</th> <td><p><?php echo $user['country_of_residence'] ?></p></td>
         </tr>
         <tr>
-            <th>Gender</th> <td><p></p></td>
+            <th>Gender</th> <td><p><?php echo $user['gender'] ?></p></td>
         </tr>
         <tr>
-            <th>Areas of Expertise and Interest</th> <td><p></p></td>
+            <th>Areas of Expertise and Interest</th> <td><p><?php echo $user['expertise'] ?></p></td>
         </tr>
         <tr>
-            <th>Relevant Publications or Research Outputs</th> <td><p></p></td>
+            <th>Relevant Publications or Research Outputs</th> <td><p><?php echo $user['publications'] ?></p></td>
         </tr>
         <tr>
-            <th>Qualifications and Experience</th> <td><a href="javascript:;">Download</a></td>
+            <th>Qualifications and Experience</th> <td><a href="<?php echo $user['qualifications_and_experience'] ?>">Download</a></td>
         </tr>
         <tr>
             <th><h5>Collaborators</h5></th>
+        <?php foreach($collaborators as $user){ ?>
         <tr>
-            <th>Name</th> <td><p></p></td>
+            <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
         </tr>
         <tr>
-            <th>Email</th> <td><p></p></td>
+            <th>Email</th> <td><p><?php echo $user['email'] ?></p></td>
         </tr>
         <tr>
-            <th>Phone Number</th> <td><p></p></td>
+            <th>Phone Number</th> <td><p><?php echo $user['telephone'] ?></p></td>
         </tr>
         <tr>
-            <th>Designation</th> <td><p></p></td>
+            <th>Designation</th> <td><p><?php echo $user['designation'] ?></p></td>
         </tr>        
         <tr>
-            <th>Institution or organization name</th> <td><p></p></td>
-        </tr>        
+            <th>Institution or organization name</th> <td><p><?php echo $user['organization'] ?></p></td>
+        </tr>
+        
         <tr>
-            <th>Country of Citizenship</th> <td><p></p></td>
-        </tr>        
+            <th>Country of Citizenship</th> <td><p><?php echo $user['country_of_citizenship'] ?></p></td>
+        </tr>       
         <tr>
-            <th colspan="2">Office Address</th><p></p></td>
+            <th colspan="2">Office Address</th><p><?php echo $user['office_address'] ?></p></td>
         </tr>
         <tr>
             <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
         </tr>
         <tr>
-            <th>IDRC Affiliation (if any)</th> <td><p></p></td>
+            <th>IDRC Affiliation (if any)</th> <td><p><?php echo $user['idrc_affiliation'] ?></p></td>
+        </tr>
+         <tr>
+            <th>Country of Citizenship</th> <td><p><?php echo $user['first_name'] ?></p></td>
         </tr>
         <tr>
-            <th>Country of Citizenship</th><td><p></p></td>
+            <th> Website</th> <td><p><?php echo $user['website'] ?></p></td>
         </tr>
         <tr>
-            <th> Website</th><td><p></p></td>
+            <th>Country of incorporation</th> <td><p><?php echo $user['country_of_incorporation'] ?></p></td>
         </tr>
         <tr>
-            <th>Country of incorporation</th><td><p></p></td>
+            <th>Country of Residence</th> <td><p><?php echo $user['country_of_residence'] ?></p></td>
         </tr>
         <tr>
-            <th>Country of Residence</th><td><p></p></td>
+            <th>Gender</th> <td><p><?php echo $user['gender'] ?></p></td>
         </tr>
         <tr>
-            <th>Gender</th><td><p></p></td>
+            <th>Areas of Expertise and Interest</th> <td><p><?php echo $user['expertise'] ?></p></td>
         </tr>
         <tr>
-            <th>Areas of Expertise and Interest</th><td><p></p></td>
+            <th>Relevant Publications or Research Outputs</th><td><p><?php echo $user['publications'] ?></p></td>
         </tr>
         <tr>
-            <th>Relevant Publications or Research Outputs</th><td><p></p></td>
+            <th>Qualifications and Experience</th> <td><a href="<?php echo $user['qualifications_and_experience'] ?>">Download</a></td>
         </tr>
         <tr>
-            <th>Qualifications and Experience</th><td><p></p></td>
-        </tr>
-        <tr>
-            <th colspan="2"><p>Role in Proposed Project</p> </th>
+            <th colspan="2"><p>Role in Proposed Project</p> <?php echo $user['role_in_project'] ?></th>
         </tr>
         <tr>
             <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
         </tr>
+        <?php } ?>
         <tr>
             <th><h5>Proposed Institution</h5></th>
         </tr>

@@ -55,4 +55,18 @@ Class User_model extends CI_Model {
 
         return $users;
     }
+    public function getparticipating($id){
+         $users = array();
+        $this -> db -> where("researcher_id", $id);
+        $this -> db -> where("user_role_id", 7);
+        $query = $this -> db -> get("users");
+
+        if ($query -> num_rows() > 0) {
+            
+                $users = $query -> result_array();
+           
+        }
+
+        return $users;
+    }
 }
