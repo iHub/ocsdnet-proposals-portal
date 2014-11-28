@@ -15,7 +15,7 @@ $(document).ready(function() {
 			setTimeout(function () {
                autoSave(url,$form);
                }, 2000);
-		})
+		});
 	}
 	function autoSave(url,$form){
 

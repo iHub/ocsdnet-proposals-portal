@@ -1,3 +1,4 @@
+
 <?php error_reporting(E_ALL); ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -18,11 +19,7 @@
         <link href="<?php echo base_url(); ?>public/new/css/sticky-footer.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>public/new/css/form.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url(); ?>public/new/css/custom.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]>
-    <script src="/js/html5shiv.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-</head><body>
+       </head><body>
   <header class="navbar navbar-inverse navbar-static-top wet-asphalt" role="banner">
         <div class="container">
           <div class="col-md-12">
@@ -50,6 +47,8 @@
         </div>
     </header>
 </div>
+        
+
 <section id="proposal-form">
         <div class="container">
             <div class="row">
@@ -279,6 +278,7 @@
     credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
                                         <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>    
                                      <input type="file" name="researchercv"/><br/>
+                                                                             
                                     <button type="submit" class="btn btn-default">Save</button>
          
                                 </fieldset>
@@ -358,39 +358,39 @@
                                               <textarea type="text" name="publications" placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
-              																<label for="pd">Website</label>
-              																<br/>
-              																<input type="text" name="website" placeholder="" class="form-control"/>
-              															</div>
-              															<div class="form-group">
-              																<label for="pdCoI">Country of incorporation</label>
-              																<br/>
-              																<input type="text" name="countryincorporation" placeholder="" class="form-control"/>
-              															</div>
+                                              <label for="pd">Website</label>
+                                              <br/>
+                                              <input type="text" name="website" placeholder="" class="form-control"/>
+                                            </div>
                                             <div class="form-group">
-                                              <label for="pdCoI">Role in Proposed Project</label>
+                                              <label for="pdCoI">Country of incorporation</label>
+                                              <br/>
+                                              <input type="text" name="countryincorporation" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="pdCoI">Role in Proposed Projec</label>
                                               <br/>
                                               <input type="text" name="role" placeholder="" class="form-control"/>
                                             </div>
                                           </div>
                                           <div class="col-md-12">
-              														<p>
-              															Qualifications and Experience
-              														</p>
-              														<p>
-              															Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
-              															credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.
-              														</p>
-              														 <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>
+                                          <p>
+                                            Qualifications and Experience
+                                          </p>
+                                          <p>
+                                            Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
+                                            credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.
+                                          </p>
+                                           <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>
                                                                       <input type="file" name="qualification" /><br/>
-              														
-                                           <button type="submit" class="btn btn-default">Save and Add New</button>                                           
-              														</div>
                                           
-              													</fieldset>
-              												</form>
-              											</section>
-											
+                                           <button type="submit" class="btn btn-default">Save and Add New</button>                                           
+                                          </div>
+                                          
+                                        </fieldset>
+                                      </form>
+                                    </section>
+                      
                                   <h3>Proposing Institution</h3>
                                   <section>
                                        <form class="institution-info" action="<?php echo base_url();?>index.php/proposal/institutioninfo">
@@ -624,33 +624,33 @@
                                         <h3>Research Administration</h3>
                                         <section>
                                             <h2>Research Administration</h2>
-                                            <form role="form" class="research-administration" method="post" action="<?php echo base_url(); ?>index.php/proposal/stepfour">
+                                            <form role="form" class="research-administration" action="<?php echo base_url(); ?>index.php/proposal/stepfour">
                                                 <input type="hidden" name="proposal_id" value="<?php
                                                 if ($present) {
                                                     echo $id;
                                                 }
-												?>" />
-												<div class="form-group">
-													<label for="projectTimeline">Project Timeline </label>
-													<br/>
-													<p>
-														Upload the completed template document and use it to outline the key milestones and deadlines of your project. Each activity included in the schedule should
-														relate to a project objective and should provide a financial estimate that is corresponds with the proposed budget in Section 5
-													</p>
+                        ?>" />
+                        <div class="form-group">
+                          <label for="projectTimeline">Project Timeline </label>
+                          <br/>
+                          <p>
+                            Upload the completed template document and use it to outline the key milestones and deadlines of your project. Each activity included in the schedule should
+                            relate to a project objective and should provide a financial estimate that is corresponds with the proposed budget in Section 5
+                          </p>
                                                  <a href="<?php echo base_url(); ?>public/templates/ProjectTimelineTemplate.docx" class="btn btn-default " download>Download Timeline Template</a><br/><br/>
-													<input type="file" name="projecttimeline" id="projectTimeline"><br/>
+                          <input type="file" name="projecttimeline" id="projectTimeline"><br/>
 
-												</div>
-												<div class="form-group">
-													<label for="researchEthics">Research Ethics</label>
-													<br/>
-													<p>
-														WORD LIMIT: 500. Provide a plan for how you will obtain research ethics approval. All projects that include human subjects must ensure that their privacy,
-														dignity, and integrity are protected. An independent ethical review committee must approve the protocols. Funding will be contingent on the provision of a
-														formal written approval. Projects that will collect corporate or personal information must detail how informed consent will be obtained and confidentiality
-														maintained.
-													</p>
-													<textarea class="form-control ckeditor" name="researchethics" rows="3"><?php
+                        </div>
+                        <div class="form-group">
+                          <label for="researchEthics">Research Ethics</label>
+                          <br/>
+                          <p>
+                            WORD LIMIT: 500. Provide a plan for how you will obtain research ethics approval. All projects that include human subjects must ensure that their privacy,
+                            dignity, and integrity are protected. An independent ethical review committee must approve the protocols. Funding will be contingent on the provision of a
+                            formal written approval. Projects that will collect corporate or personal information must detail how informed consent will be obtained and confidentiality
+                            maintained.
+                          </p>
+                          <textarea class="form-control ckeditor" name="researchethics" rows="3"><?php
                                                     if ($present) {
                                                         echo $research_ethics;
                                                     }
@@ -702,39 +702,39 @@
                                             </form>
                                         </section>
 
-									</div>
-									<div id="step-5">
-										<h2 class="StepTitle">Step 5 Content</h2>
-										<h3>Budget</h3>
-										<div id="wizardsub"  class="wizardsub clearfix">
-											<h3>Budget</h3>
-											<section>
-												<form role="form" action="<?php echo base_url(); ?>index.php/proposal/budget" class="budget-info" enctype="multipart/form-data">
-													<h2>Budget</h2>
-													<div class="form-group">
-														<input type="hidden" value="<?php
+                  </div>
+                  <div id="step-5">
+                    <h2 class="StepTitle">Step 5 Content</h2>
+                    <h3>Budget</h3>
+                    <div id="wizardsub"  class="wizardsub clearfix">
+                      <h3>Budget</h3>
+                      <section>
+                        <form role="form" action="<?php echo base_url(); ?>index.php/proposal/budget" class="budget-info" enctype="multipart/form-data">
+                          <h2>Budget</h2>
+                          <div class="form-group">
+                            <input type="hidden" value="<?php
                                                         if ($present) {
                                                             echo $id;
                                                         }
-														?>" id="budget_proposal" name="proposal_id"/>
-														<label for="parallelFunds">Parallel Funds</label>
-														<br/>		
-														<a href="<?php echo base_url(); ?>public/templates/OCSDNetBudgetTemplate.xlsx" download="OCSDNetBudgetTemplate.xlsx" class="btn btn-default">Download Budget Template</a><br/>
-													</div>
-													<input type="file" id="budget" name="budget" value=""/><br/>
-													<button type="submit" class="btn btn-default">
-														Upload
-													</button>
-												</form>
-											</section>
-											<h3>Parallel Funds</h3>
-											<section>
-												<form role="form" action="<?php echo base_url(); ?>index.php/proposal/funding" class="funding-info">
-													<h2>Parallel Funding Source</h2>
+                            ?>" id="budget_proposal" name="proposal_id"/>
+                            <label for="parallelFunds">Parallel Funds</label>
+                            <br/>   
+                            <a href="<?php echo base_url(); ?>public/templates/OCSDNetBudgetTemplate.xlsx" download="OCSDNetBudgetTemplate.xlsx" class="btn btn-default">Download Budget Template</a><br/>
+                          </div>
+                          <input type="file" id="budget" name="budget" value=""/><br/>
+                          <button type="submit" class="btn btn-default">
+                            Upload
+                          </button>
+                        </form>
+                      </section>
+                      <h3>Parallel Funds</h3>
+                      <section>
+                        <form role="form" action="<?php echo base_url(); ?>index.php/proposal/funding" class="funding-info">
+                          <h2>Parallel Funding Source</h2>
                           <p>
                               Parallel funds are funds for your project that are donated from other international donors or funding agencies.
                             </p>
-													<input type="hidden" value="<?php if ($present) { echo $id;}?>" id="budget_proposal" name="proposal_id"/>
+                          <input type="hidden" value="<?php if ($present) { echo $id;}?>" id="budget_proposal" name="proposal_id"/>
                                                     
                                                     <div class="form-group">
                                                         <label for="donor">Donor</label>
@@ -793,16 +793,6 @@
                                 </div><!-- End SmartWizard Content --></td>
                             </tr>
                         </table>
-                        </div>
-                        </div>
-                        </div>
-                        </section><br/><br/><br/>
-
-                        <div class="footer">
-                        <div class="container">
-                          <p class="footer-text"> <a href="http://ocsdnet.org/"> ocsdnet </a></p>
-                        </div>
-                      </div>
 <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery-2.0.0.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery.smartWizard.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>public/new/js/jquery.steps.min.js"></script>
@@ -819,7 +809,7 @@
                             cancel: "Cancel",
                             current: "",
                             pagination: "Pagination",
-                            finish: "",
+                            finish: "Finish",
                             next: "Next",
                             previous: "Prev",
                             loading: "Loading ..."
@@ -837,7 +827,7 @@
                             cancel: "Cancel",
                             current: "",
                             pagination: "Pagination",
-                            finish: "",
+                            finish: "Finish",
                             next: "Next",
                             previous: "Prev",
                             loading: "Loading ..."
@@ -851,7 +841,7 @@
             $(document).ready(function() {
                 // Smart Wizard
                 $('#wizardmain').smartWizard();
-               // CKEDITOR.replaceClass = 'ckeditor';
+                CKEDITOR.replaceClass = 'ckeditor';
                 //  var editor = $('.ckeditor').ckeditor().editor;
                 // //
                 // //  var editor = CKEDITOR.instances['ckeditor'];
@@ -859,6 +849,11 @@
                 //  editor.on( 'keyup', function( event ) {
                 //      alert( e.getData() );
                 //  });
+                $('.buttonFinish').on('click',function(){
+                    alert('Your proposal has been saved. We will provided you with a preview page that will allow you to make edits in the next 24 hrs');
+                });
+                
+                
             });
 
         </script>
@@ -875,3 +870,4 @@
         <script src="<?php echo base_url(); ?>public/new/js/ie10-viewport-bug-workaround.js"></script>
     </body>
 </html>
+
