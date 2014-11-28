@@ -175,223 +175,93 @@
         </table>
         <h5>Collaborators</h5>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <?php $i=1; ?>
+            <?php foreach($collaborators as $user){?>
           <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
+            <div class="panel-heading" role="tab" id="heading<?php echo $i ?>">
               <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Collaborator 1
+                  <?php if($i==1){?>
+                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i ?>" <?php if($i==1){?> aria-expanded="true" <?php }else{?>aria-expanded="false" <?php } ?> aria-controls="collapse<?php echo $i ?>">
+                  Collaborator <?php echo $i; ?>
                 </a>
+                <?php } else{ ?>
+                   <a class="collapsed"  data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i ?>" <?php if($i==1){?> aria-expanded="true" <?php }else{?>aria-expanded="false" <?php } ?> aria-controls="collapse<?php echo $i ?>">
+                  Collaborator <?php echo $i; ?>
+                </a> 
+                 <?php } ?>
                 <a class="pull-right" href="javascript:;">Edit</a>
               </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapse<?php echo $i; ?>" class="<?php if($i==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $i ?>">
               <div class="panel-body">
               <table class="table  table-bordered table-condensed table-hover">
               <tbody>
                <tr>
-                    <th>Name</th> <td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Email</th> <td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Phone Number</th> <td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Designation</th> <td><p></p></td>
-                </tr>        
-                <tr>
-                    <th>Institution or organization name</th> <td><p></p></td>
-                </tr>        
-                <tr>
-                    <th>Country of Citizenship</th> <td><p></p></td>
-                </tr>        
-                <tr>
-                    <th colspan="2">Office Address</th><p></p></td>
-                </tr>
-                <tr>
-                    <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
-                </tr>
-                <tr>
-                    <th>IDRC Affiliation (if any)</th> <td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Country of Citizenship</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th> Website</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Country of incorporation</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Country of Residence</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Gender</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Areas of Expertise and Interest</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Relevant Publications or Research Outputs</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Qualifications and Experience</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th colspan="2"><p>Role in Proposed Project</p> </th>
-                </tr>
-                <tr>
-                    <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
-                </tr>
+                        <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th> <td><p><?php echo $user['email'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th> <td><p><?php echo $user['telephone'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th> <td><p><?php echo $user['designation'] ?></p></td>
+                    </tr>        
+                    <tr>
+                        <th>Institution or organization name</th> <td><p><?php echo $user['organization'] ?></p></td>
+                    </tr>
+                    
+                    <tr>
+                        <th>Country of Citizenship</th> <td><p><?php echo $user['country_of_citizenship'] ?></p></td>
+                    </tr>       
+                    <tr>
+                        <th colspan="2">Office Address</th><p><?php echo $user['office_address'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
+                    </tr>
+                    <tr>
+                        <th>IDRC Affiliation (if any)</th> <td><p><?php echo $user['idrc_affiliation'] ?></p></td>
+                    </tr>
+                     <tr>
+                        <th>Country of Citizenship</th> <td><p><?php echo $user['first_name'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th> Website</th> <td><p><?php echo $user['website'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Country of incorporation</th> <td><p><?php echo $user['country_of_incorporation'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Country of Residence</th> <td><p><?php echo $user['country_of_residence'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th> <td><p><?php echo $user['gender'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Areas of Expertise and Interest</th> <td><p><?php echo $user['expertise'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Relevant Publications or Research Outputs</th><td><p><?php echo $user['publications'] ?></p></td>
+                    </tr>
+                    <tr>
+                        <th>Qualifications and Experience</th> <td><a href="<?php echo $user['qualifications_and_experience'] ?>">Download</a></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2"><p>Role in Proposed Project</p> <?php echo $user['role_in_project'] ?></th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+                    </tr>
                 <tr>
                 <tbody>
                 </table>
               </div>
             </div>
+            <?php $i++; } ?>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Collaborator 2
-                </a>
-                <a class="pull-right" href="javascript:;">Edit</a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-              	<table class="table table-bordered table-condensed table-hover">
-
-              <tbody>
-               <tr>
-                    <th>Name</th> <td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Email</th> <td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Phone Number</th> <td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Designation</th> <td><p></p></td>
-                </tr>        
-                <tr>
-                    <th>Institution or organization name</th> <td><p></p></td>
-                </tr>        
-                <tr>
-                    <th>Country of Citizenship</th> <td><p></p></td>
-                </tr>        
-                <tr>
-                    <th colspan="2">Office Address</th><p></p></td>
-                </tr>
-                <tr>
-                    <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
-                </tr>
-                <tr>
-                    <th>IDRC Affiliation (if any)</th> <td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Country of Citizenship</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th> Website</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Country of incorporation</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Country of Residence</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Gender</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Areas of Expertise and Interest</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Relevant Publications or Research Outputs</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th>Qualifications and Experience</th><td><p></p></td>
-                </tr>
-                <tr>
-                    <th colspan="2"><p>Role in Proposed Project</p> </th>
-                </tr>
-                <tr>
-                    <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
-                </tr>
-                <tr>
-                <tbody>
-                </table>
-              </div>
-            </div>
-          </div> 
-        
-        <!--<tr>
-            <th><h5>Collaborators</h5></th>
-        </tr>
-        <?php //foreach($collaborators as $user){ ?>
-        <tr>
-            <th>Name</th><td><p><?php //echo $user['first_name'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Email</th> <td><p><?php //echo $user['email'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Phone Number</th> <td><p><?php //echo $user['telephone'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Designation</th> <td><p><?php //echo $user['designation'] ?></p></td>
-        </tr>        
-        <tr>
-            <th>Institution or organization name</th> <td><p><?php //echo $user['organization'] ?></p></td>
-        </tr>
-        
-        <tr>
-            <th>Country of Citizenship</th> <td><p><?php //echo $user['country_of_citizenship'] ?></p></td>
-        </tr>       
-        <tr>
-            <th colspan="2">Office Address</th><p><?php //echo $user['office_address'] ?></p></td>
-        </tr>
-        <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
-        </tr>
-        <tr>
-            <th>IDRC Affiliation (if any)</th> <td><p><?php //echo $user['idrc_affiliation'] ?></p></td>
-        </tr>
-         <tr>
-            <th>Country of Citizenship</th> <td><p><?php //echo $user['first_name'] ?></p></td>
-        </tr>
-        <tr>
-            <th> Website</th> <td><p><?php //echo $user['website'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Country of incorporation</th> <td><p><?php //echo $user['country_of_incorporation'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Country of Residence</th> <td><p><?php //echo $user['country_of_residence'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Gender</th> <td><p><?php //echo $user['gender'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Areas of Expertise and Interest</th> <td><p><?php //echo $user['expertise'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Relevant Publications or Research Outputs</th><td><p><?php //echo $user['publications'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Qualifications and Experience</th> <td><a href="<?php //echo $user['qualifications_and_experience'] ?>">Download</a></td>
-        </tr>
-        <tr>
-            <th colspan="2"><p>Role in Proposed Project</p> <?php //echo $user['role_in_project'] ?></th>
-        </tr>
-        <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
-        </tr>
-        <?php //} ?>-->
+          
         <table  class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
         <tr>
