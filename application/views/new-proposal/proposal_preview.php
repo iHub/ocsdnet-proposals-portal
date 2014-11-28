@@ -118,7 +118,8 @@
     		<table class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
             <h4>Research Team and Institutional Information</h4>
-            <h5>Primary Researcher Information</h5>         
+            <h5>Primary Researcher Information</h5>  
+            <a href="/user/edit" >Edit</a>      
         <tr>
             <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
         </tr>
@@ -336,29 +337,7 @@
           <?php $i++; }?>
             
         </div>
-        <!--<tr>
-            <th><h5>Participating Institutions</h5></th>
-        </tr>
-        <?php //foreach($participating_institution as $user ){?>
-        <tr>
-            <th>Institution name</th> <td><p><?php //echo $user['first_name'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Telephone Number</th> <td><p><?php //echo $user['telephone'] ?></p></td>
-        </tr>
-        <tr>
-            <th>Email</th> <td><p></p><?php //echo $user['email'] ?></td>
-        </tr>
-        <tr>
-            <th colspan="2" >Mailing Address</th> <td><p><?php //echo $user['mailing_address'] ?></p></td>
-        </tr>
-        <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</td>
-        </tr>
-        <tr>
-            <th>Role in the project</th> <td><p><?php //echo $user['role_in_project'] ?></p></td>
-        </tr>
-        <?php //} ?>-->
+        
         </tbody>
         </table>
         </div>
@@ -498,7 +477,7 @@
                 <th>Amount</th> <td><p><?php echo $budget['amount'] ?></p></td>
             </tr>
             <tr>
-                <th>Amount</th> <td><p><?php echo $budget['currency'] ?></p></td>
+                <th>Currency</th> <td><p><?php echo $budget['currency'] ?></p></td>
             </tr>
             <tr>
                 <th>Time frame</th> <td><p><?php echo $budget['timeframe'] ?></p></td>
