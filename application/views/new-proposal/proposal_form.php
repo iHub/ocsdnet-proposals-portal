@@ -99,7 +99,7 @@
                                 <!--<h2 class="StepTitle">Step 1 Content</h2>-->
                                 <section>
                                <form role="form" class="project-info" action="<?php echo base_url();?>index.php/proposal/projectinfo">
-                              <input type="hidden" name="proposal_id" class="form-control"  value="<?php if ($present) {echo $id;}?>" />
+                              <input type="hidden" id="proposal_id" name="proposal_id" class="form-control"  value="<?php if ($present) {echo $id;}?>" />
                               <div class="form-group">
                                 <label for="projectTitle">Project Title</label>
                                 <input type="text" class="form-control" id="title" name="title" value="<?php if ($present) {echo $title;}?>" id="title" placeholder="">
@@ -114,42 +114,67 @@
                                 <p class="lable-description">This includes the countries in which the research will take place as well as the countries in which project collaborators currently reside.</p>
                                 <input type="text" class="form-control" value="<?php if ($present) {echo $countries_covered;}?>" name="countries" id="countries" placeholder="">
                               </div>
+                              
                               <div class="form-group">
+                                 
                                   <label>Region(s) included in this project</label>
+                                  <?php if($present){ ?>
+                                    <div class="form-group">
+                                        <p><b>Selected</b>
+                                            <?php $i=1; ?>
+                                            <?php foreach(json_decode($regions) as $key=>$region){ ?>
+                                                <?php echo $i.'.'. $region.' '; ?>
+                                                <?php $i++; ?>
+                                            <?php }?>
+                                        </p>
+                                    </div>
+                             <?php } ?>
                                   <div class="checkbox">
                                       <label>
-                                        <input type="checkbox"  name="regions" value="asia">
+                                               <input type="checkbox"  name="regions" value="asia">
                                         Asia
                                       </label>
                                   </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"  name="regions" value="sub saharan africa">
+                                                <input type="checkbox"  name="regions" value="sub saharan africa">
                                         Sub-Saharan Africa
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="regions" value="latin america">
+                                         <input type="checkbox"  name="regions" value="latin america">
                                         Latin America
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="regions" value="middle east">
+                                         <input type="checkbox"  name="regions" value="middle east">
                                         Middle East
                                     </label>
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="regions" value="caribbean">
-                                        Caribbean
+                                          <input type="checkbox"  name="regions" value="caribbean">
+                                          Caribbean
                                     </label>
                                  </div>
-                                  <input type="hidden" name="regions" class="form-control" id="other" placeholder="">
                               </div>
+                              
                               <div class="form-group">
+                                  
                                   <label>Research Themes *</label>
+                                    <?php if($present){ ?>
+                                    <div class="form-group">
+                                        <p><b>Selected</b>
+                                            <?php $i=1; ?>
+                                            <?php foreach(json_decode($research_themes) as $key=>$theme){ ?>
+                                                <?php echo $i.'.'. $theme.' '; ?>
+                                                <?php $i++; ?>
+                                            <?php }?>
+                                        </p>
+                                    </div>
+                             <?php } ?>
                                   <div class="checkbox">
                                       <label>
                                         <input type="checkbox"  name="themes" value="Them 1:Motivations (Incentives and Ideologies) ">
@@ -164,7 +189,7 @@
                                  </div>
                                  <div class="checkbox">
                                     <label>
-                                        <input type="checkbox"  name="themes" value="">
+                                        <input type="checkbox"  name="themes" value="Theme 3: Communities of Practice in Open and Collaborative Science">
                                         Theme 3: Communities of Practice in Open and Collaborative Science
                                     </label>
                                  </div>
@@ -174,22 +199,22 @@
                                          Theme 4: Potential Impacts (Positive and Negative) of Open and Collaborative Science
                                     </label>
                                  </div>
-                                 <input type="hidden" name="themes" class="form-control" id="other" placeholder="">
+                                 
                                  <div class="checkbox no-margin">
                                     <label>
                                         Other:&nbsp; <span>(Enter Each in a new line)</span>
                                     </label> 
-                                     <textarea name="themes" class="form-control ckeditor" id="other" placeholder="" rows="3"></textarea>
+                                     <textarea name="themes" class="form-control ckeditor" id="otherthemes" placeholder="" rows="3"></textarea>
                                  </div>
                               </div>
                               <div class="form-group">
                                 <label for="projectTitle">Justification of Research Themes</label><br/>
                                 <p class="lable-description">Justify how your project ties into the selected OCSDNet theme(s).</p>
-                                <textarea class="form-control ckeditor" name="justifythemes" rows="3"><?php if ($present) {echo $justification_of_research_themes;}?></textarea>
+                                <textarea class="form-control ckeditor" id="justifythemes" name="justifythemes" rows="3"><?php if ($present) {echo $justification_of_research_themes;}?></textarea>
                               </div>
                               <div class="form-group">
                                 <label for="projectTitle">Total Budget Cost (CAD)</label>
-                                <input type="text" name="budget" value="<?php if ($present) {echo $budget;}?>" class="form-control" id="project-title" placeholder="">
+                                <input type="text" name="budget" value="<?php if ($present) {echo $budget;}?>" class="form-control" id="budget" placeholder="">
                               </div>
                               <button type="submit" class="btn btn-default">Save</button>
                             </form>
