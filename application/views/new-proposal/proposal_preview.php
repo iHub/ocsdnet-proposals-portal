@@ -1,4 +1,5 @@
 
+<?php error_reporting(E_ALL); ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -46,7 +47,7 @@
         </div>
     </header>
 <div class="container">
-	<div class="row">
+	<div class="">
 <div class="col-md-12">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -72,7 +73,7 @@
     </div>
 </div> 
 <div class="review-box">  
-  <div class="row">
+  <div class="">
     <div class="col-md-12">
       <div class="proposal-section">   
       <h3 align="center " class="project-title"><?php if($present){ echo $title; } ?></h3>
@@ -80,7 +81,7 @@
       </div>
       </div>
   </div>
-  <div class="row">
+  <div class="">
     <div class="col-md-12">
     <div class="proposal-section"> 
       <table class="table table-striped table-bordered table-condensed">
@@ -111,7 +112,7 @@
     <div class="clr clearfix"></div>
 
     <!-- Collaborators -->
-  <div class="row">
+  <div class="">
     <div class="col-md-12">
     	<div class="proposal-section"> 
     		<table class="table table-striped table-bordered table-condensed table-hover">
@@ -326,13 +327,75 @@
                 </table>
               </div>
             </div>
-          </div>                    
-        </div>
+          </div> 
         
+        <!--<tr>
+            <th><h5>Collaborators</h5></th>
+        </tr>
+        <?php //foreach($collaborators as $user){ ?>
+        <tr>
+            <th>Name</th><td><p><?php //echo $user['first_name'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Email</th> <td><p><?php //echo $user['email'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Phone Number</th> <td><p><?php //echo $user['telephone'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Designation</th> <td><p><?php //echo $user['designation'] ?></p></td>
+        </tr>        
+        <tr>
+            <th>Institution or organization name</th> <td><p><?php //echo $user['organization'] ?></p></td>
+        </tr>
+        
+        <tr>
+            <th>Country of Citizenship</th> <td><p><?php //echo $user['country_of_citizenship'] ?></p></td>
+        </tr>       
+        <tr>
+            <th colspan="2">Office Address</th><p><?php //echo $user['office_address'] ?></p></td>
+        </tr>
+        <tr>
+            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
+        </tr>
+        <tr>
+            <th>IDRC Affiliation (if any)</th> <td><p><?php //echo $user['idrc_affiliation'] ?></p></td>
+        </tr>
+         <tr>
+            <th>Country of Citizenship</th> <td><p><?php //echo $user['first_name'] ?></p></td>
+        </tr>
+        <tr>
+            <th> Website</th> <td><p><?php //echo $user['website'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Country of incorporation</th> <td><p><?php //echo $user['country_of_incorporation'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Country of Residence</th> <td><p><?php //echo $user['country_of_residence'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Gender</th> <td><p><?php //echo $user['gender'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Areas of Expertise and Interest</th> <td><p><?php //echo $user['expertise'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Relevant Publications or Research Outputs</th><td><p><?php //echo $user['publications'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Qualifications and Experience</th> <td><a href="<?php //echo $user['qualifications_and_experience'] ?>">Download</a></td>
+        </tr>
+        <tr>
+            <th colspan="2"><p>Role in Proposed Project</p> <?php //echo $user['role_in_project'] ?></th>
+        </tr>
+        <tr>
+            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+        </tr>
+        <?php //} ?>-->
         <table  class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
         <tr>
-            <th><h5>Proposed Institution</h5></th>
+            <th colspan="2"><h5>Proposed Institution</h5></th>
         </tr>
         <tr>
             <th>Institution/ Organization name</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
@@ -431,78 +494,106 @@
             </div>
           </div>                    
         </div>
-       
+        <!--<tr>
+            <th><h5>Participating Institutions</h5></th>
+        </tr>
+        <?php //foreach($participating_institution as $user ){?>
+        <tr>
+            <th>Institution name</th> <td><p><?php //echo $user['first_name'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Telephone Number</th> <td><p><?php //echo $user['telephone'] ?></p></td>
+        </tr>
+        <tr>
+            <th>Email</th> <td><p></p><?php //echo $user['email'] ?></td>
+        </tr>
+        <tr>
+            <th colspan="2" >Mailing Address</th> <td><p><?php //echo $user['mailing_address'] ?></p></td>
+        </tr>
+        <tr>
+            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</td>
+        </tr>
+        <tr>
+            <th>Role in the project</th> <td><p><?php //echo $user['role_in_project'] ?></p></td>
+        </tr>
+        <?php //} ?>-->
+        </tbody>
+        </table>
         </div>
   </div>
   </div>
-  <div class="row">
+  <div class="">
   	<div class="col-md-12">
             <div class="proposal-section"> 
                 <table class="table table-striped table-bordered table-condensed">
-                <tbody>
-                <h4>Proposed Study Information</h4>
-                <tr>
-                    <th colspan="2">Research Project Abstract </th>
-                </tr>
-                <tr>
-                    <td colspan="2"><?php if($present){ echo $total_budget_cost; } ?> </td>
-                </tr>
-                <tr>
-                    <th colspan="2">Research Problem, Significance and Justification</th>
-                </tr>
-                <tr>
-                   <td colspan="2">
-                            <?php if($present){ echo $research_problem_significance_and_justification; } ?>  
-                   </td> 
-                </tr>
-                <tr>
-                    <th colspan="2">Research Questions and Objectives</th>
-                </tr>
-                <tr>
-                    <td colspan="2" ><?php if($present){ echo $research_questions_and_objectives; } ?></td>
-                </tr>
-                <tr>
-                    <th colspan="2">Research Design and Methods</th>
-                </tr>
-                <tr>
-                    <td colspan="2"> <?php if($present){ echo $research_design_and_methods; } ?></td>
-                </tr>
-                <tr>
-                    <th colspan="2">Analysis and Synthesis </th>
-                </tr>
-                <tr>
-                    <td colspan="2"><?php if($present){ echo $analysis_and_synthesis; } ?></td>
-                </tr>
-                <tr>
-                    <th>Outcomes and Outputs</th>
-                </tr>
-                <tr>
-                    <td colspan="2"><?php if($present){ echo $outcomes_and_outputs; } ?></td>
-                </tr>
-                <tr>
-                    <th>Knowledge Translation and Dissemination</th>
-                </tr>
-                <tr>
-                    <td colspan="2"><?php if($present){ echo $knowledge_translation_and_dissemination; } ?></td>
-                </tr>
-                <tr>
-                    <th>Network Connections and Interactions</th>
-                </tr>
-                <tr>
-                    <td colspan="2"><?php if($present){ echo $network_connections_and_interactions; } ?></td>
-                </tr>
-                <tr>
-                    <th colspan="2">Bibliography</th>
-                </tr>
-                <tr>
-                    <td colspan="2"><?php if($present){ echo $bibliography; } ?></td>
-                </tr>
+            <tbody>
+            <tr>
+            <th colspan="2">
+            	<h4>Proposed Study Information</h4>
+            </th>
+            </tr>
+            <tr>
+                <th colspan="2">Research Project Abstract </th>
+            </tr>
+            <tr>
+                <td colspan="2"><?php if($present){ echo $total_budget_cost; } ?> </td>
+            </tr>
+            <tr>
+                <th colspan="2">Research Problem, Significance and Justification</th>
+            </tr>
+            <tr>
+               <td colspan="2">
+                        <?php if($present){ echo $research_problem_significance_and_justification; } ?>  
+               </td> 
+            </tr>
+            <tr>
+                <th colspan="2">Research Questions and Objectives</th>
+            </tr>
+            <tr>
+                <td colspan="2" ><?php if($present){ echo $research_questions_and_objectives; } ?></td>
+            </tr>
+            <tr>
+                <th colspan="2">Research Design and Methods</th>
+            </tr>
+            <tr>
+                <td colspan="2"> <?php if($present){ echo $research_design_and_methods; } ?></td>
+            </tr>
+            <tr>
+                <th colspan="2">Analysis and Synthesis </th>
+            </tr>
+            <tr>
+                <td colspan="2"><?php if($present){ echo $analysis_and_synthesis; } ?></td>
+            </tr>
+            <tr>
+                <th>Outcomes and Outputs</th>
+            </tr>
+            <tr>
+                <td colspan="2"><?php if($present){ echo $outcomes_and_outputs; } ?></td>
+            </tr>
+            <tr>
+                <th>Knowledge Translation and Dissemination</th>
+            </tr>
+            <tr>
+                <td colspan="2"><?php if($present){ echo $knowledge_translation_and_dissemination; } ?></td>
+            </tr>
+            <tr>
+                <th>Network Connections and Interactions</th>
+            </tr>
+            <tr>
+                <td colspan="2"><?php if($present){ echo $network_connections_and_interactions; } ?></td>
+            </tr>
+            <tr>
+                <th colspan="2">Bibliography</th>
+            </tr>
+            <tr>
+                <td colspan="2"><?php if($present){ echo $bibliography; } ?></td>
+            </tr>
             </tbody>
             </table>
             </div>
         </div>
   </div>
-  <div class="row">
+  <div class="">
     <div class="col-md-12">
     	<div class="proposal-section"> 
             <table class="table table-striped table-bordered table-condensed">
@@ -541,7 +632,7 @@
         </div>
      </div>
   </div>
-  <div class="row">
+  <div class="">
     <div class="col-md-12">
         <div class="proposal-section"> 
             <table class="table table-striped table-bordered table-condensed">
@@ -583,6 +674,7 @@
         <p class="text-muted">ocsdnet</p>
       </div>
 </div>
+
 
   <script src="<?php echo base_url(); ?>public/new/js/jquery-2.0.0.min.js"></script>
   <script src="<?php echo base_url(); ?>public/new/js/bootstrap.min.js"></script>
