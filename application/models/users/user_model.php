@@ -41,4 +41,18 @@ Class User_model extends CI_Model {
         }
         return $user;
     }
+    public function getproposing($id){
+        $users = array();
+        $this -> db -> where("researcher_id", $id);
+        $this -> db -> where("user_role_id", 6);
+        $query = $this -> db -> get("users");
+
+        if ($query -> num_rows() > 0) {
+            
+                $users = $query -> result_array();
+           
+        }
+
+        return $users;
+    }
 }

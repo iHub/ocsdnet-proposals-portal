@@ -190,6 +190,7 @@ class Proposal extends CI_Controller {
 		$data['finance_email'] = $_POST['financeemail'];
 		$data['finance_phone'] = $_POST['financephone'];
 		$data['researcher_id'] = $_POST['researcher_id'];
+        $data['user_role_id']=6;
 		$institution_id = $this->user_model->save($data);
 		echo json_encode($institution_id);
 	}
@@ -202,6 +203,7 @@ class Proposal extends CI_Controller {
 		$data['office_address'] = $_POST['address'];
 		$data['role_in_project'] = $_POST['role'];
 		$data['researcher_id'] = $_POST['researcher_id'];
+        $data['user_role_id']=7;
 		$institution_id = $this->user_model->save($data);
 		echo json_encode($institution_id);
 	}
