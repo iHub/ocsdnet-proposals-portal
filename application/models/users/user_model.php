@@ -49,7 +49,7 @@ Class User_model extends CI_Model {
 
         if ($query -> num_rows() > 0) {
             
-                $users = $query -> result_array();
+                $users = $query -> row_array();
            
         }
 

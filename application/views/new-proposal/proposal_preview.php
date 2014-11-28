@@ -228,49 +228,52 @@
             <th><h5>Proposed Institution</h5></th>
         </tr>
         <tr>
-            <th>Institution/ Organization name</th> <td><p></p></td>
+            <th>Institution/ Organization name</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
         </tr>
         <tr>
-            <th>Telephone Number</th> <td><p></p></td>
+            <th>Telephone Number</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
         </tr>
         <tr>
-            <th>Email</th> <td><p></p></td>
+            <th>Email</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
         </tr>
         <tr>
-            <th>Mailing Address</th> <td><p></p></td>
+            <th>Mailing Address</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
         </tr>
         <tr>
-            <th>Finance Officer’s name</th> <td><p></p></td>
+            <th>Finance Officer’s name</th> <?php echo $user['role_in_project'] ?><td><p></p></td>
         </tr>
         <tr>
-            <th>Finance Officer phone number</th> <td><p></p></td>
+            <th>Finance Officer phone number</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
         </tr>
         <tr>
-            <th>Finance Officer Email</th> <td><p></p></td>
+            <th>Finance Officer Email</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
         </tr>
         <tr>
             <th><h5>Participating Institutions</h6></th>
         </tr>
+        <?php foreach($participating_institution as $user ){?>
         <tr>
-            <th>Institution name</th> <td><p></p></td>
+            <th>Institution name</th> <td><p><?php echo $user['first_name'] ?></p></td>
         </tr>
         <tr>
-            <th>Telephone Number</th> <td><p></p></td>
+            <th>Telephone Number</th> <td><p><?php echo $user['telephone'] ?></p></td>
         </tr>
         <tr>
-            <th>Email</th> <td><p></p></td>
+            <th>Email</th> <td><p></p><?php echo $user['email'] ?></td>
         </tr>
         <tr>
-            <th colspan="2" >Mailing Address</th> <td><p></p></td>
+            <th colspan="2" >Mailing Address</th> <td><p><?php echo $user['mailing_address'] ?></p></td>
         </tr>
         <tr>
             <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</td>
         </tr>
         <tr>
-            <th>Role in the project</th> <td><p></p></td>
+            <th>Role in the project</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
         </tr>
+        <?php } ?>
         </tbody>
         </table>
+        
         <table class="table table-striped table-bordered table-condensed">
         <tbody>
         <h4>Proposed Study Information</h4>
@@ -278,56 +281,57 @@
             <th colspan="2">Research Project Abstract </th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $total_budget_cost; } ?> </td>
         </tr>
         <tr>
             <th colspan="2">Research Problem, Significance and Justification</th>
         </tr>
         <tr>
-           <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.               
+           <td colspan="2">
+                    <?php if($present){ echo $research_problem_significance_and_justification; } ?>  
            </td> 
         </tr>
         <tr>
             <th colspan="2">Research Questions and Objectives</th>
         </tr>
         <tr>
-            <td colspan="2" >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2" ><?php if($present){ echo $research_questions_and_objectives; } ?></td>
         </tr>
         <tr>
             <th colspan="2">Research Design and Methods</th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"> <?php if($present){ echo $research_design_and_methods; } ?></td>
         </tr>
         <tr>
             <th colspan="2">Analysis and Synthesis </th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $analysis_and_synthesis; } ?></td>
         </tr>
         <tr>
             <th>Outcomes and Outputs</th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $outcomes_and_outputs; } ?></td>
         </tr>
         <tr>
             <th>Knowledge Translation and Dissemination</th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $knowledge_translation_and_dissemination; } ?></td>
         </tr>
         <tr>
             <th>Network Connections and Interactions</th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $network_connections_and_interactions; } ?></td>
         </tr>
         <tr>
             <th colspan="2">Bibliography</th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $bibliography; } ?></td>
         </tr>
         </tbody>
         </table>
@@ -335,54 +339,62 @@
         <tbody>
         <h4>Research Administration</h5>
         <tr>
-            <th>Project Timeline</th><td><a href="javascript:;">Download</a></td>
+            <th>Project Timeline</th><td><a href="<?php if($present){ echo $project_timelines; } ?>" download>Download</a></td>
         </tr>
-        <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
-        </tr>
+        
         <tr>
             <th>Research Ethics</th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $research_ethics; } ?></td>
         </tr>
         <tr>
             <th colspan="2">Internal Project Communication and Management</th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $internal_project_communication_and_management; } ?></td>
         </tr>
         <tr>
             <th colspan="2">Challenges and Risks</th>
         </tr>
         <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $challenges_and_risks; } ?></td>
         </tr>
         <tr>
             <th colspan="2">Monitoring and Evaluation Plan</th>
         </tr>
         <tr colspan="2">
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
+            <td colspan="2"><?php if($present){ echo $monitoring_and_evaluation; } ?></td>
         </tr>
         </tbody>
         </table>
         <table class="table table-striped table-bordered table-condensed">
         <tbody>
         <h4>Budgets</h4>
+        <tr></tr>
         <h6>Budget and Timetable</h6>
         </tr>
         <tr>
-            <th>Parallel funds</th> <td><a href="javascript:;">Download</a></td>
+            <th>Budget</th> <td><a href="<?php if($present){ echo $budget_url; } ?>">Download</a></td>
+        </tr>
+        
+        <tr>
+            <th>Parallel funds</th>
+        </tr>
+        <?php foreach($budgets as $budget){ ?>
+        <tr>
+            <th>Donor</th> <td><p><?php echo $budget['donor'] ?></p></td>
         </tr>
         <tr>
-            <th>Donor</th> <td><p></p></td>
+            <th>Amount</th> <td><p><?php echo $budget['amount'] ?></p></td>
         </tr>
         <tr>
-            <th>Amount</th> <td><p></p></td>
+            <th>Amount</th> <td><p><?php echo $budget['currency'] ?></p></td>
         </tr>
         <tr>
-            <th>Time frame</th> <td><p></p></td>
+            <th>Time frame</th> <td><p><?php echo $budget['timeframe'] ?></p></td>
         </tr>
+        <?php } ?>
         </tbody>
     </table>
     </div>
