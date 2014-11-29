@@ -119,7 +119,7 @@
         <tbody>
             <h4>Research Team and Institutional Information </h4>
             <h5>Primary Researcher Information<a href="javascript:;" class="edit-text pull-right">Edit</a></h5>  
-            <a href="/user/edit" >Edit</a>      
+            <!--<a href="/user/edit" >Edit</a> -->
         <tr>
             <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
         </tr>
