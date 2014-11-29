@@ -86,7 +86,7 @@
     <div class="proposal-section"> 
       <table class="table table-striped table-bordered table-condensed">
           <tbody>
-            <h4>General Project Information</h4>
+            <h4>General Project Information <a href="javascript:;" class="edit-text pull-right">Edit</a> </h4>
             <tr>
                 <th>Duration of the project</th><td><p><?php if($present){ echo $duration; } ?></p></td>
             </tr>
@@ -117,8 +117,8 @@
     	<div class="proposal-section"> 
     		<table class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
-            <h4>Research Team and Institutional Information</h4>
-            <h5>Primary Researcher Information</h5>  
+            <h4>Research Team and Institutional Information </h4>
+            <h5>Primary Researcher Information<a href="javascript:;" class="edit-text pull-right">Edit</a></h5>  
             <a href="/user/edit" >Edit</a>      
         <tr>
             <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
@@ -267,7 +267,7 @@
         <table  class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
         <tr>
-            <th colspan="2"><h5>Proposed Institution</h5></th>
+            <th colspan="2"><h5>Proposed Institution <a href="javascript:;" class="edit-text pull-right">Edit</a></h5></th>
         </tr>
         <tr>
             <th>Institution/ Organization name</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
@@ -303,7 +303,7 @@
                   Institution <?php echo $i ?>
                 </a> 
                 <?php }else{ ?>
-                    <a class="collapsed" data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>"></a>
                  <?php }?>
                 <a class="pull-right" href="javascript:;">Edit</a>
               </h4>
@@ -351,7 +351,7 @@
             <tbody>
             <tr>
             <th colspan="2">
-            	<h4>Proposed Study Information</h4>
+            	<h4>Proposed Study Information <a href="javascript:;" class="edit-text pull-right">Edit</a></h4>
             </th>
             </tr>
             <tr>
@@ -420,7 +420,7 @@
     	<div class="proposal-section"> 
             <table class="table table-striped table-bordered table-condensed">
             <tbody>
-            <h4>Research Administration</h4>
+            <h4>Research Administration <a href="javascript:;" class="edit-text pull-right">Edit</a></h4>
             <tr>
                 <th>Project Timeline</th><td><a href="<?php if($present){ echo $project_timelines; } ?>" download>Download</a></td>
             </tr>

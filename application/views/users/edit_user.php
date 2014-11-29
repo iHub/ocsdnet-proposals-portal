@@ -136,7 +136,8 @@
               </div>
               <div class="col-md-12">
               
-               <button type="submit" class="btn btn-default">Save Edit </button>                                           
+               <button type="submit" class="btn btn-default">Save Edit </button>  
+               <a href="javascript:;" class="btn btn-default pull-right" > Back </a>                                        
               </div>
               
             </fieldset>
