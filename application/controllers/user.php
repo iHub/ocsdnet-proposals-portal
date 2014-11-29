@@ -22,7 +22,10 @@ class User extends CI_Controller {
         if($user){
             $data['present'] = 1;
         }
+        
         $data['user']=$user;
+        // print_r($data);
+        // exit;
         
         $this->load->view("users/edit_user",$data);
     }
@@ -78,7 +81,7 @@ class User extends CI_Controller {
             $data['first_name'] = $_POST['name'];
             $data['email'] = $_POST['email'];
             $data['telephone'] = $_POST['phone'];
-            $data['mailing_address'] = $_POST['mailingaddress'];
+            $data['mailing_address'] = $_POST['mailaddress'];
             $data['office_address'] = $_POST['address'];
             $data['role_in_project'] = $_POST['role'];
             $data['researcher_id'] = $_POST['researcher_id'];

@@ -148,8 +148,16 @@
                                              
                                             </div>
                                             <?php } ?>
+                                              <?php if($user['user_role_id']==7){ ?>
+                                            <div class="form-group">
+                                              <label for="pdCoI">Role in Proposed Project</label>
+                                              <br/>
+                                              <textarea  class="form-control ckeditor" name="role"><?php if ($present) { echo $user['role_in_project'];}?></textarea>
+                                             
+                                            </div>
+                                            <?php } ?>
                                         
-                                          <?php if($user['user_role_id']==6){ ?>
+                                          <?php if($user['user_role_id'] > 5){ ?>
                                              <div class="form-group">
                                               <label for="piMA">Mailing Address</label><br/>
                                               <p class="lable-description">Including office or departmental name</p><br/>
