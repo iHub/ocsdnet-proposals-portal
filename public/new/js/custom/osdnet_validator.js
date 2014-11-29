@@ -107,8 +107,9 @@ $(document).ready(function() {
             $('#proposal_id').text(data_is);
             $('#budget_proposal').text(data_is);
             $('#budget_parrallel_proposal').text(data_is);
-            
-            alert('data saved');
+            $('#step_3_proposal').text(data_is);
+            $('#step_4_proposal').text(data_is);
+
         }, 'json');
     });
     
@@ -260,6 +261,7 @@ $(document).ready(function() {
               data = JSON.parse(result);
               
               $('#researcher_id').val(data);
+               $('#institution__supportresearch_id').val(data);
               alert('data saved');
             },
             cache: false,

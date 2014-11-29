@@ -86,7 +86,7 @@
     <div class="proposal-section"> 
       <table class="table table-striped table-bordered table-condensed">
           <tbody>
-            <h4>General Project Information <a href="javascript:;" class="edit-text pull-right">Edit</a> </h4>
+            <h4>General Project Information <a href="<?php echo base_url(); ?>index.php/proposal" class="edit-text pull-right">Edit</a> </h4>
             <tr>
                 <th>Duration of the project</th><td><p><?php if($present){ echo $duration; } ?></p></td>
             </tr>
@@ -118,7 +118,7 @@
     		<table class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
             <h4>Research Team and Institutional Information </h4>
-            <h5>Primary Researcher Information<a href="javascript:;" class="edit-text pull-right">Edit</a></h5>  
+            <h5>Primary Researcher Information<a href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $user['id']; ?>" class="edit-text pull-right">Edit</a></h5>  
             <!--<a href="/user/edit" >Edit</a> -->
         <tr>
             <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
@@ -268,34 +268,35 @@
         <table  class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
         <tr>
-            <th colspan="2"><h5>Proposed Institution <a href="javascript:;" class="edit-text pull-right">Edit</a></h5></th>
+            <th colspan="2"><h5>Proposing Institution <a href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $proposing_institution['id']; ?>" class="edit-text pull-right">Edit</a></h5></th>
         </tr>
         <tr>
-            <th>Institution/ Organization name</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Institution/ Organization name</th> <td><p><?php echo $proposing_institution['first_name'] ?></p></td>
         </tr>
         <tr>
-            <th>Telephone Number</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Telephone Number</th> <td><p><?php echo $proposing_institution['telephone'] ?></p></td>
         </tr>
         <tr>
-            <th>Email</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Email</th> <td><p><?php echo $proposing_institution['email'] ?></p></td>
         </tr>
         <tr>
-            <th>Mailing Address</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Mailing Address</th> <td><p><?php echo $proposing_institution['mailing_address'] ?></p></td>
         </tr>
         <tr>
-            <th>Finance Officer’s name</th> <?php echo $user['role_in_project'] ?><td><p></p></td>
+            <th>Finance Officer’s name</th> <?php echo $proposing_institution['finance_name'] ?><td><p></p></td>
         </tr>
         <tr>
-            <th>Finance Officer phone number</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Finance Officer phone number</th> <td><p><?php echo $proposing_institution['finance_phone'] ?></p></td>
         </tr>
         <tr>
-            <th>Finance Officer Email</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Finance Officer Email</th> <td><p><?php echo $proposing_institution['finance_email'] ?></p></td>
         </tr>
         </tbody>
         </table>
         <h5>Participating Institutions</h5>
         <div class="panel-group" id="PIaccordion" role="tablist" aria-multiselectable="true">
             <?php foreach($participating_institution as $user){?>
+              
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="PIheading<?php echo $i ?>">
               <h4 class="panel-title">
@@ -306,7 +307,7 @@
                 <?php }else{ ?>
                     <a class="collapsed" data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>"></a>
                  <?php }?>
-                <a class="pull-right" href="javascript:;">Edit</a>
+                <a class="pull-right" href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $user['id']; ?>">Edit</a>
               </h4>
             </div>
             <div id="PIcollapse<?php echo $i ?>" class="<?php if($i==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $i ?>">
@@ -331,7 +332,7 @@
                     <tr>
                         <th>Role in the project</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
                     </tr>
-                            <tbody>
+                   </tbody>
                 </table>
               </div>
             </div>
@@ -339,9 +340,9 @@
           <?php $i++; }?>
             
         </div>
-        
+        <!-- 
         </tbody>
-        </table>
+        </table> -->
         </div>
   </div>
   </div>
@@ -352,7 +353,7 @@
             <tbody>
             <tr>
             <th colspan="2">
-            	<h4>Proposed Study Information <a href="javascript:;" class="edit-text pull-right">Edit</a></h4>
+            	<h4>Proposed Study Information <a href="<?php echo base_url(); ?>index.php/proposal" class="edit-text pull-right">Edit</a></h4>
             </th>
             </tr>
             <tr>
@@ -421,7 +422,7 @@
     	<div class="proposal-section"> 
             <table class="table table-striped table-bordered table-condensed">
             <tbody>
-            <h4>Research Administration <a href="javascript:;" class="edit-text pull-right">Edit</a></h4>
+            <h4>Research Administration <a href="<?php echo base_url(); ?>index.php/proposal" class="edit-text pull-right">Edit</a></h4>
             <tr>
                 <th>Project Timeline</th><td><a href="<?php if($present){ echo $project_timelines; } ?>" download>Download</a></td>
             </tr>

@@ -49,13 +49,14 @@
 <div class="container">
     <div class="">
         <div class="col-md-12">
-<<<<<<< HEAD
         <form  class="collaborator-info" action="<?php echo base_url();?>index.php/user/editpost">
           <fieldset>
                                           <h2 class="fs-title">Edit user</h2>
                                           <h3 class="fs-subtitle"></h3>
                                           <div class="col-md-6">
                                             <input type="hidden" id="researcher_id" name="researcher_id" value="<?php if ($present) {echo $user['researcher_id'];}?>"/>
+                                            <input type="hidden" name="user_id" value="<?php if ($present) {echo $user['id'];}?>"/>
+                                            <input type="hidden" name="user_role_id" value="<?php if ($present) {echo $user['user_role_id'];}?>"/>
                                             <div class="form-group">
                                               <label for="pdName">Name</label><br/>
                                               <input type="text" name="name" value="<?php if ($present) {echo $user['first_name'];}?>" placeholder="" class="form-control"/>
@@ -65,13 +66,19 @@
                                               <input type="email" name="email" value="<?php if ($present) {echo $user['email'];}?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
+                                              <label for="pdPhoneNumber">Telephone Number</label><br/>
+                                              <input type="text" name="phone" value="<?php if ($present) {echo $user['telephone'];}?>" placeholder="" class="form-control"/>
+                                            </div>
+                                              <?php if($user['user_role_id']< 6){ ?>
+                                            <div class="form-group">
                                               <label for="pdD">Designation</label><br/>
                                               <input type="text" name="designation" value="<?php if ($present) {echo $user['designation'];}?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
-                                              <label for="pdPhoneNumber">Telephone Number</label><br/>
-                                              <input type="text" name="phone" value="<?php if ($present) {echo $user['telephone'];}?>" placeholder="" class="form-control"/>
+                                              <label for="pdPhoneNumber">Organization</label><br/>
+                                              <input type="text" name="organization" value="<?php if ($present) {echo $user['organization'];}?>" placeholder="" class="form-control"/>
                                             </div>
+                                            
                                             <div class="form-group">
                                               <label for="pdCoCi">Country of incorporation</label><br/>
                                               <input type="text" name="countryincorporation" value="<?php if ($present) {echo $user['country_of_incorporation'];}?>" placeholder="" class="form-control"/>
@@ -100,16 +107,15 @@
                                                 Female </label>
                                               <br/>
                                             </div>
-                                            <div class="form-group">
-                                              <label for="pdIoRn">Institution or organization name</label><br/>
-                                              <input type="text" name="organization" value="<?php if ($present) { echo $user['organization'];}?>" placeholder="" class="form-control"/>
-                                            </div>
+                                            <?php } ?>
+                                            
                                             <div class="form-group">
                                               <label for="pdOa">Office Address</label><br/>
                                               <textarea name="address" placeholder="" rows="3" class="form-control ckeditor"><?php if ($present) { echo $user['office_address'];}?></textarea>
                                             </div>
                                           </div>
-                                          <div class="col-md-6">                                     
+                                          <div class="col-md-6">  
+                                              <?php if($user['user_role_id']< 6){ ?>                                   
                                             <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label>
                                               <br/>
@@ -125,18 +131,49 @@
                                               <br/>
                                               <input type="text" name="website" value="<?php if ($present) { echo $user['website'];}?>" placeholder="" class="form-control"/>
                                             </div>
+                                            <?php } ?>
+                                             <?php if($user['user_role_id']< 6){ ?>
                                             <div class="form-group">
                                               <label for="pdCoI">Country of incorporation</label>
                                               <br/>
                                               <input type="text" name="countryincorporation" value="<?php if ($present) { echo $user['country_of_incorporation'];}?>" placeholder="" class="form-control"/>
                                             </div>
+                                            
+                                            <?php } ?>
+                                            <?php if($user['user_role_id']==5){ ?>
                                             <div class="form-group">
-                                              <label for="pdCoI">Role in Proposed Projec</label>
+                                              <label for="pdCoI">Role in Proposed Project</label>
                                               <br/>
-                                              <input type="text" name="role" placeholder="" value="<?php if ($present) { echo $user['role_in_project'];}?>" class="form-control"/>
+                                              <textarea  class="form-control ckeditor" name="role"><?php if ($present) { echo $user['role_in_project'];}?></textarea>
+                                             
                                             </div>
-                                          </div>
+                                            <?php } ?>
+                                        
+                                          <?php if($user['user_role_id']==6){ ?>
+                                             <div class="form-group">
+                                              <label for="piMA">Mailing Address</label><br/>
+                                              <p class="lable-description">Including office or departmental name</p><br/>
+                                              <textarea name="mailaddress" class="form-control ckeditor" rows="3"> <?php if ($present) { echo $user['mailing_address'];}?></textarea>
+                                            </div>  
+                                          <div class="form-group">
+                                              <label for="piFoN">Finance Officer’s name</label><br/>
+                                              <p class="lable-description" >Name for the main point of contact for financials</p><br/>
+                                              <input type="text" name="financename" placeholder=""value="<?php if ($present) { echo $user['finance_name'];}?>" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piFoPN">Finance Officer phone number</label><br/>
+                                              <p class="lable-description" >Phone number for the main point of contact for financials</p><br/>
+                                              <input type="text" name="financephone" value="<?php if ($present) { echo $user['finance_phone'];}?>" placeholder="" class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="piFoE">Finance Officer Email</label><br/>
+                                              <p class="lable-description" >Email address for the main point of contact for financials</p><br/>
+                                              <input type="text" name="financeemail" value="<?php if ($present) { echo $user['finance_email'];}?>" placeholder="" class="form-control"/>
+                                            </div>
+                                           <?php } ?>
+                                             </div>
                                           <div class="col-md-12">
+                                               <?php if($user['user_role_id']< 6){ ?>
                                           <p>
                                             Qualifications and Experience
                                           </p>
@@ -146,105 +183,13 @@
                                           </p>
                                            <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>
                                                                       <input type="file" name="qualification" /><br/>
+                                            <?php } ?>
                                           
-                                           <button type="submit" class="btn btn-default">Save and Add New</button>                                           
+                                           <button type="submit" class="btn btn-default">Save and Add New</button> 
+                                           <a href="<?php echo base_url();?>index.php/preview" class="btn btn-default pull-right" > Back </a>                                             
                                           </div>
                                           
                                         </fieldset>
-=======
-        <form  class="collaborator-info" action="">
-            <fieldset>
-              <h3 class="fs-subtitle">Edit Collaborators</h3>
-              <div class="col-md-6">
-                <input type="hidden" id="researcher_id" name="researcher_id" value=""/>
-                <div class="form-group">
-                  <label for="pdName">Name</label><br/>
-                  <input type="text" name="name" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdEmail">Email address</label><br/>
-                  <input type="email" name="email" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdD">Designation</label><br/>
-                  <input type="text" name="designation" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdPhoneNumber">Telephone Number</label><br/>
-                  <input type="text" name="phone" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdCoCi">Country of incorporation</label><br/>
-                  <input type="text" name="countryincorporation" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pd">IDRC Affiliation (if any)</label><br/>
-                  <input type="text" name="affliation" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdCoR">Country of Residence</label>
-                  <br/>
-                  <input type="text" name="residence" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdCoc">Country of Citizenship</label><br/>
-                  <input type="text" name="citizenship" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdGender">Gender</label>
-                  <br/>
-                  <label class="radio-inline">
-                    <input type="radio" name="gender" id="pdMale" value="male">
-                    Male </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="gender" id="pdFemale" value="female">
-                    Female </label>
-                  <br/>
-                </div>
-                <div class="form-group">
-                  <label for="pdIoRn">Institution or organization name</label><br/>
-                  <input type="text" name="organization" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdOa">Office Address</label><br/>
-                  <textarea name="address" placeholder="" rows="3" class="form-control ckeditor"></textarea>
-                </div>
-              </div>
-              <div class="col-md-6">                                     
-                <div class="form-group">
-                  <label for="pdAoEaI">Areas of Expertise and Interest</label>
-                  <br/>
-                  <textarea type="text" name="expertise" placeholder="" class="form-control ckeditor" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="pdRPoRO">Relevant Publications or Research Outputs</label>
-                  <br/>
-                  <textarea type="text" name="publications" placeholder="" class="form-control ckeditor" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="pd">Website</label>
-                  <br/>
-                  <input type="text" name="website" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdCoI">Country of incorporation</label>
-                  <br/>
-                  <input type="text" name="countryincorporation" placeholder="" class="form-control"/>
-                </div>
-                <div class="form-group">
-                  <label for="pdCoI">Role in Proposed Projec</label>
-                  <br/>
-                  <input type="text" name="role" placeholder="" class="form-control"/>
-                </div>
-              </div>
-              <div class="col-md-12">
-              
-               <button type="submit" class="btn btn-default">Save Edit </button>  
-               <a href="javascript:;" class="btn btn-default pull-right" > Back </a>                                        
-              </div>
-              
-            </fieldset>
->>>>>>> 984c866e184ec32fdae611ad448d3e551d4bf88b
           </form>
         </div>
     </div>

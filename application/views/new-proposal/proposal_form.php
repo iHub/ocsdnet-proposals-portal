@@ -518,7 +518,7 @@
                                         <h2 class="StepTitle">Step 3 Content</h2>
                                         <section>
                                             <form role="form" class="proposed-study-info" action="<?php echo base_url(); ?>index.php/proposal/stepthree">
-                                                <input type="hidden" name="proposal_id" value="<?php if ($present) { echo $id;} ?>"/>
+                                                <input type="hidden" id="step_3_proposal" name="proposal_id" value="<?php if ($present) { echo $id;} ?>"/>
                                                  <div class="form-group">
                                                     <label for="researcherName">Research Project Abstract </label>
                                                     <br/>
@@ -650,7 +650,7 @@
                                         <section>
                                             <h2>Research Administration</h2>
                                             <form role="form" class="research-administration" action="<?php echo base_url(); ?>index.php/proposal/stepfour">
-                                                <input type="hidden" name="proposal_id" value="<?php
+                                                <input type="hidden" id="step_4_proposal" name="proposal_id" value="<?php
                                                 if ($present) {
                                                     echo $id;
                                                 }

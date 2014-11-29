@@ -114,7 +114,7 @@ class Proposal extends CI_Controller {
 		$data['country_of_residence'] = $_POST['researchercountryresidence'];
 		$data['expertise'] = $_POST['researcherexpertise'];
 		$data['relevant_publications'] = $_POST['researcherpublications'];
-        $data['user_role_id']=1;
+        $data['user_role_id']=3;
         $uploaddir = realpath(dirname(__DIR__));
         $upload_array=explode("/application", $uploaddir);
         $uploaddir = $upload_array[0]."/uploads";
