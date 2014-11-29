@@ -190,13 +190,14 @@
                   Collaborator <?php echo $i; ?>
                 </a> 
                  <?php } ?>
-                <a class="pull-right" href="javascript:;">Edit</a>
+                <a class="pull-right" href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $user['id']; ?>">Edit</a>
               </h4>
             </div>
             <div id="collapse<?php echo $i; ?>" class="<?php if($i==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $i ?>">
               <div class="panel-body">
               <table class="table  table-bordered table-condensed table-hover">
               <tbody>
+                  <input type="hidden" name="user_id" value="<?php echo $user['id'] ?>"/>
                <tr>
                         <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
                     </tr>
@@ -484,6 +485,7 @@
                 <th>Time frame</th> <td><p><?php echo $budget['timeframe'] ?></p></td>
             </tr>
             <?php } ?>
+            <tr  colspan="2"></tr>
             </tbody>
         </table>
         </div>

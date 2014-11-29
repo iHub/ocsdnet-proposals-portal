@@ -105,7 +105,9 @@ $(document).ready(function() {
             data_is = JSON.parse(result);
             
             $('#proposal_id').text(data_is);
-            $('#gender_proposal').text(data_is);
+            $('#budget_proposal').text(data_is);
+            $('#budget_parrallel_proposal').text(data_is);
+            
             alert('data saved');
         }, 'json');
     });

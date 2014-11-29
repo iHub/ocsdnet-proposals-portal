@@ -230,19 +230,19 @@
                                           <h2 class="fs-title">Research Team and Institutional Information</h2>
                                           <h3  class="fs-subtitle">Primary Researcher Information</h3>
                                           <div class="col-md-6">
-                                               <input type="hidden" id="researcher_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
+                                               <input type="hidden" id="researcher_id" name="researcher_id" value="<?php echo $researcher_id;?>"/>
                                             <div class="form-group">
                                               <label for="pdName">Name</label><br/>
-                                              <input type="text" name="researchername" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchername" value="<?php echo $first_name;?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdEmail">Email</label><br/>
-                                              <input type="email" name="researcheremail" placeholder="" class="form-control"/>
+                                              <input type="email" name="researcheremail" value="<?php echo $email;;?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                              <div class="form-group">
                                               <label for="pdD">Designation</label><br/>
-                                              <input type="text" name="researcherdesignation" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherdesignation" value="<?php echo $designation;?>" placeholder="" class="form-control"/>
                                             </div>
                                               <label for="pdPhoneNumber">Telephone Number</label><br/>
                                               <input type="text" name="researcherphone" placeholder="" class="form-control"/>
@@ -759,7 +759,7 @@
                           <p>
                               Parallel funds are funds for your project that are donated from other international donors or funding agencies.
                             </p>
-                          <input type="hidden" value="<?php if ($present) { echo $id;}?>" id="budget_proposal" name="proposal_id"/>
+                          <input type="hidden" value="<?php if ($present) { echo $id;}?>" id="budget_parrallel_proposal" name="proposal_id"/>
                                                     
                                                     <div class="form-group">
                                                         <label for="donor">Donor</label>
