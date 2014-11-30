@@ -27,7 +27,9 @@ class Proposal extends CI_Controller {
 		} else {
 			$data['present'] = 0;
 		}
-
+        // if($data['status']==1){
+            // redirect('proposal/submit');
+        // }
 		$data['researcher_id'] = $id;
         
 
@@ -46,7 +48,7 @@ class Proposal extends CI_Controller {
         $data['regions'] = json_encode($_POST['regions']);
         $data['research_themes'] = json_encode($_POST['themes']);
         $data['justification_of_research_themes'] = $_POST['justifythemes'];
-         $data['other_themes'] = $_POST['otherthemes'];
+        // $data['other_themes'] = $_POST['otherthemes'];
         $data['budget'] = $_POST['budget'];
         $proposal_id = $this->proposal_model->save_study_info($data);
         echo json_encode($proposal_id);
@@ -243,5 +245,24 @@ class Proposal extends CI_Controller {
 		$id = $this->budget_model->save($data);
 
 	}
+    public function submit(){
+        $proposal_id=$this->uri->segment(3);
+        if($proposal_id){
+            $data['status']=1;
+            $proposal=$this->proposal_model->updateStatus($proposal_id,$data);
+        }
+        $user_data = $this->session->userdata("user_data");
+        $id = $user_data['id'];
+        $user=$this->user_model->getUser($id);
+        $data['present'] = 0;
+        if($user){
+            $data['present'] = 1;
+        }
+        $data['user']=$user;
+        
+        $this->load->view("new-proposal/thank_you", $data);
+       
+        
+    }
 
 }

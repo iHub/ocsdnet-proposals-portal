@@ -138,12 +138,7 @@
         <tr>
             <th>Country of Citizenship</th> <td><p><?php echo $user['country_of_citizenship'] ?></p></td>
         </tr>        
-        <tr>
-            <th colspan="2">Office Address</th><p><?php echo $user['office_address'] ?></p></td>
-        </tr>
-        <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
-        </tr>
+       
         <tr>
             <th>IDRC Affiliation (if any)</th> <td><p><?php echo $user['idrc_affiliation'] ?></p></td>
         </tr>
@@ -295,26 +290,28 @@
         </table>
         <h5>Participating Institutions</h5>
         <div class="panel-group" id="PIaccordion" role="tablist" aria-multiselectable="true">
+            <?php $j=1;?>
             <?php foreach($participating_institution as $user){?>
-              
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="PIheading<?php echo $i ?>">
+                <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="PIheading<?php echo $j ?>">
               <h4 class="panel-title">
-                <?php if($i==1){ ?>
-                <a data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>">
-                  Institution <?php echo $i ?>
+                  <?php if($j==1){?>
+                 <a data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $j ?>" <?php if($j==1){?> aria-expanded="true" <?php }else{?>aria-expanded="false" <?php } ?> aria-controls="collapse<?php echo $j ?>">
+                  Institution <?php echo $j; ?>
+                </a>
+                <?php } else{ ?>
+                   <a class="collapsed"  data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $j ?>" <?php if($j==1){?> aria-expanded="true" <?php }else{?>aria-expanded="false" <?php } ?> aria-controls="collapse<?php echo $j ?>">
+                  Institution <?php echo $j; ?>
                 </a> 
-                <?php }else{ ?>
-                    <a class="collapsed" data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>"></a>
-                 <?php }?>
+                 <?php } ?>
                 <a class="pull-right" href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $user['id']; ?>">Edit</a>
               </h4>
             </div>
-            <div id="PIcollapse<?php echo $i ?>" class="<?php if($i==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $i ?>">
+            <div id="PIcollapse<?php echo $j; ?>" class="<?php if($j==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $j ?>">
               <div class="panel-body">
-              <table class="table  table-bordered table-condensed table-hover">
-              <tbody>
-               	<tr>
+                <table class="table  table-bordered table-condensed table-hover">
+               <tbody>
+                <tr>
                         <th>Institution name</th> <td><p><?php echo $user['first_name'] ?></p></td>
                     </tr>
                     <tr>
@@ -323,8 +320,11 @@
                     <tr>
                         <th>Email</th> <td><p></p><?php echo $user['email'] ?></td>
                     </tr>
+                     <tr>
+                        <th>Office Address</th> <td><p></p><?php echo $user['office_address'] ?></td>
+                    </tr>
                     <tr>
-                        <th colspan="2" >Mailing Address</th> <td><p><?php echo $user['mailing_address'] ?></p></td>
+                        <th >Mailing Address</th> <td><p><?php echo $user['mailing_address'] ?></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</td>
@@ -336,8 +336,8 @@
                 </table>
               </div>
             </div>
-          </div>
-          <?php $i++; }?>
+            </div>
+          <?php $j++; }?>
             
         </div>
         <!-- 
@@ -468,13 +468,16 @@
             <tr>
                 <th>Budget</th> <td><a href="<?php if($present){ echo $budget_url; } ?>">Download</a></td>
             </tr>
+           </tbody>
+           </table>
             
-            <tr>
-                <th>Parallel funds</th>
-            </tr>
+                <h4>Parallel funds</h4>
+            <?php $i=1; ?>
             <?php foreach($budgets as $budget){ ?>
+                <table class="table table-striped table-bordered table-condensed">
+            <tbody>
             <tr>
-                <th>Donor</th> <td><p><?php echo $budget['donor'] ?></p></td>
+                <th><?php echo $i; ?> .Donor</th> <td><p><?php echo $budget['donor'] ?> </p></td><td><a href="<?php echo base_url(); ?>index.php/budget/edit/<?php echo $budget['id'] ?>">Edit</a></td>
             </tr>
             <tr>
                 <th>Amount</th> <td><p><?php echo $budget['amount'] ?></p></td>
@@ -485,10 +488,12 @@
             <tr>
                 <th>Time frame</th> <td><p><?php echo $budget['timeframe'] ?></p></td>
             </tr>
-            <?php } ?>
+              </tbody>
+               </table>
+            <?php $i++; } ?>
             <tr  colspan="2"></tr>
-            </tbody>
-        </table>
+          
+         <button type="submit" id="submit_proposal" href="<?php echo base_url();?>index.php/proposal/submit/<?php echo $id; ?>" class="btn btn-default">Submit proposal</button>
         </div>
     </div>
   </div>
@@ -496,7 +501,7 @@
 </div><!-- /.container -->
 <div class="footer">
       <div class="container">
-        <p class="text-muted">ocsdnet</p>
+        <p class="text-muted">Ocsdnet</p>
       </div>
 </div>
 
@@ -504,7 +509,18 @@
   <script src="<?php echo base_url(); ?>public/new/js/jquery-2.0.0.min.js"></script>
   <script src="<?php echo base_url(); ?>public/new/js/bootstrap.min.js"></script>
 
-  
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $('#submit_proposal').on('click',function(){
+              if(confirm('Your proposal will be submitted and will not be editable thereafter.Thank you ')){
+                  
+                  window.location.href=$(this).attr('href');
+              }
+              return false;
+              
+          });
+      })
+  </script>
 
 
   

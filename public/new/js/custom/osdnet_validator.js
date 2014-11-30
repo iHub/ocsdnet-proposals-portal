@@ -109,7 +109,7 @@ $(document).ready(function() {
             $('#budget_parrallel_proposal').text(data_is);
             $('#step_3_proposal').text(data_is);
             $('#step_4_proposal').text(data_is);
-
+			 location.reload();
         }, 'json');
     });
     
