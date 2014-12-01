@@ -562,7 +562,9 @@
                                                 <div class="form-group">
                                                   <label for="researcherName">Stakeholders</label>
                                                   <p>WORD LIMIT: 250. Identify and briefly describe your project's stakeholders. How will your project respond to their needs and interests?</p>
-                                                  <textarea name="stakeholders" class="form-control ckeditor" rows="3"></textarea>
+                                                  <textarea name="stakeholders" class="form-control ckeditor" rows="3"><?php if ($present) {
+                                                        echo $stakeholders; }?>
+                                                    }</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="researcheDandM">Research Design and Methods</label>

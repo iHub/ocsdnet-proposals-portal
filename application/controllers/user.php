@@ -6,6 +6,12 @@ class User extends CI_Controller {
         $this->load->model("users/user_model");
         $this->load->model("proposal/budget_model");
     }
+    public function collaborator(){
+        $user_data = $this->session->userdata("user_data");
+        $user_id = $user_data['id'];
+        $data['researcher_id']=$user_id;
+        $this->load->view("users/collaborator",$data);
+    }
     public function edit(){
         $user_data = $this->session->userdata("user_data");
         $user_id = $user_data['id'];

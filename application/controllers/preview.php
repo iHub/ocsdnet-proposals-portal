@@ -36,7 +36,8 @@ class Preview extends CI_Controller {
         $data['participating_institution']=$participating_institution;
         $data['collaborators']=$collaborators;
         $data['user']=$user;
-        
+        print_r($data);
+        exit;
         $this->load->view("new-proposal/proposal_preview", $data);
     }
 }

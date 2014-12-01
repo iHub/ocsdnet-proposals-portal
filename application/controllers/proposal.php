@@ -32,6 +32,7 @@ class Proposal extends CI_Controller {
         // }
 		$data['researcher_id'] = $id;
         
+        
 
 		$this->load->view("new-proposal/proposal_form", $data);
 	}

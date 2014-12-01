@@ -278,7 +278,7 @@
             <th>Mailing Address</th> <td><p><?php echo $proposing_institution['mailing_address'] ?></p></td>
         </tr>
         <tr>
-            <th>Finance Officer’s name</th> <?php echo $proposing_institution['finance_name'] ?><td><p></p></td>
+            <th>Finance Officer’s name</th> <td><p><?php echo $proposing_institution['finance_name'] ?></p></td>
         </tr>
         <tr>
             <th>Finance Officer phone number</th> <td><p><?php echo $proposing_institution['finance_phone'] ?></p></td>
