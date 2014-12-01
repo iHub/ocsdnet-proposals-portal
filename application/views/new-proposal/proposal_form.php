@@ -47,7 +47,14 @@
         </div>
     </header>
 </div>
-        
+      
+<section class="main">
+        <!-- the component -->
+        <div class="wrapper">
+          <div class="inner">
+          </div>
+        </div>
+      </section>  
 
 <section id="proposal-form">
         <div class="container">

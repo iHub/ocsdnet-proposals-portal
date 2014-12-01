@@ -731,7 +731,7 @@ ul.tag-cloud li {
   color: #fff;
 }
 .navbar-inverse .navbar-nav {
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   padding-top: 60px;
 }
 .navbar-inverse .navbar-nav > li > a {
