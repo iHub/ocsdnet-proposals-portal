@@ -477,7 +477,7 @@ function SmartWizard(target, options) {
         errorSteps:[],    // Array Steps with errors
         labelNext:'Next',
         labelPrevious:'Previous',
-        labelFinish:'Finish',
+        labelFinish:'Preview Proposal',
         noForwardJumping: false,
         ajaxType: "POST",
         onLeaveStep: null, // triggers when leaving a step
