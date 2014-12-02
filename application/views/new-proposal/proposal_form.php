@@ -240,43 +240,43 @@
                                                <input type="hidden" id="researcher_id" name="researcher_id" value="<?php echo $researcher_id;?>"/>
                                             <div class="form-group">
                                               <label for="pdName">Name</label><br/>
-                                              <input type="text" name="researchername" value="<?php echo $first_name;?>" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchername" value="<?php echo $user['first_name'];?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdEmail">Email</label><br/>
-                                              <input type="email" name="researcheremail" value="<?php echo $email;;?>" placeholder="" class="form-control"/>
+                                              <input type="email" name="researcheremail" value="<?php echo $user['email'];?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                              <div class="form-group">
                                               <label for="pdD">Designation</label><br/>
-                                              <input type="text" name="researcherdesignation" value="<?php echo $designation;?>" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherdesignation" value="<?php echo $user['designation'];?>" placeholder="" class="form-control"/>
                                             </div>
                                               <label for="pdPhoneNumber">Telephone Number</label><br/>
-                                              <input type="text" name="researcherphone" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherphone" value="<?php echo $user['telephone'];?>" placeholder="" class="form-control"/>
                                             </div>                                           
                                             <div class="form-group">
                                               <label for="pdIoRn">Institution or organization name</label><br/>
-                                              <input type="text" name="researcherorganization" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherorganization" value="<?php echo $user['organization'];?>"placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdOa">Office Address</label><br/>
-                                              <textarea name="researcheraddress" class="form-control ckeditor" placeholder="" rows="3"></textarea>
+                                              <textarea name="researcheraddress" value="<?php echo $user['office_address'];?>" class="form-control ckeditor" placeholder="" rows="3"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoI">Country of incorporation</label><br/>
-                                              <input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchercountryincorporation" value="<?php echo $user['country_of_incorporation'];?>"placeholder="" class="form-control"/>
                                             </div>
                                              <div class="form-group">
                                               <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                              <input type="text" name="researcheraffliation" placeholder="" class="form-control" />
+                                              <input type="text" name="researcheraffliation" value="<?php echo $user['idrc_affiliation'];?>" placeholder="" class="form-control" />
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoR">Country of Residence</label><br/>
-                                              <input type="text" name="researchercountryresidence" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchercountryresidence" value="<?php echo $user['country_of_residence'];?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoCi">Country of Citizenship</label><br/>
-                                              <input type="text" name="researchercountrycitizenship" placeholder="" class="form-control"/>
+                                              <input type="text" value="<?php echo $user['country_of_citizenship'];?>" name="researchercountrycitizenship" placeholder="" class="form-control"/>
                                             </div>
                                             
                                           </div>
@@ -294,15 +294,15 @@
 
                                            <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                              <textarea type="text" name="researcherexpertise" placeholder="" class="form-control ckeditor" rows="3"></textarea>
+                                              <textarea type="text" name="researcherexpertise" value="<?php echo $user['expertise'];?>" placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                             </div> 
                                             <div class="form-group">
                                             <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                             <textarea type="text" name="researcherpublications" placeholder="" class="form-control ckeditor" rows="3"></textarea>
+                                             <textarea type="text" name="researcherpublications" value="<?php echo $user['publications'];?>"  placeholder="" class="form-control ckeditor" rows="3"></textarea>
                                           </div>
                                           <div class="form-group">
                                             <label for="pd">Website</label><br/>
-                                            <input type="text" name="researcherwebsite" placeholder="" class="form-control"/>
+                                            <input type="text" name="researcherwebsite" value="<?php echo $user['website'];?>" placeholder="" class="form-control"/>
                                           </div>
                                         </div>
                                         <p>Qualifications and Experience</p>

@@ -19,7 +19,7 @@ class Proposal extends CI_Controller {
 		$this->data['active_menu'] = 1;
 		$this->data['form'] = $this->proposal_model->get_researchers($id);
 		$proposal = $this->proposal_model->get_proposals($id);
-
+        $user=$this->user_model->getUser($id);
 		$data = array();
 		if ($proposal) {
 			$data = $proposal[0];
@@ -31,7 +31,7 @@ class Proposal extends CI_Controller {
             // redirect('proposal/submit');
         // }
 		$data['researcher_id'] = $id;
-        
+        $data['user']=$user;
         
 
 		$this->load->view("new-proposal/proposal_form", $data);
