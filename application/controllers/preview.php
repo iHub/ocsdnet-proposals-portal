@@ -23,9 +23,10 @@ class Preview extends CI_Controller {
         } else {
             $data['present'] = 0;
         } 
-        // if($data['status']==1){
-            // redirect('proposal/submit');
-        // }
+        
+        if($data['proposal_status']==1){
+            redirect('proposal/submit');
+        }
              
         $collaborators=$this->user_model->get_collaborators($id);
         $proposing_institution=$this->user_model->getproposing($id);
@@ -36,8 +37,7 @@ class Preview extends CI_Controller {
         $data['participating_institution']=$participating_institution;
         $data['collaborators']=$collaborators;
         $data['user']=$user;
-        print_r($data);
-        exit;
+        
         $this->load->view("new-proposal/proposal_preview", $data);
     }
 }
