@@ -51,20 +51,12 @@ mysql, mysqli, postgre, odbc, mssql, sqlite, oci8
 $active_group = 'default';
 $active_record = TRUE;
 /*
-//localhost
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'dataStore2014';
-
-//Staging server
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'ocsdnet_apply';
-$db['default']['password'] = 'OCSDNet2014';
+//Database details
  */
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'ocsdnet_proposal';
-$db['default']['password'] = 'OCSDNet2014';
-$db['default']['database'] = 'ocsdnet_staging';
+$db['default']['username'] = '';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
