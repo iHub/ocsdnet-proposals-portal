@@ -62,9 +62,9 @@ $db['default']['username'] = 'ocsdnet_apply';
 $db['default']['password'] = 'OCSDNet2014';
  */
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'ocsdnet_proposal';
-$db['default']['password'] = 'OCSDNet2014';
-$db['default']['database'] = 'ocsdnet_staging';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -76,6 +76,5 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
 /* End of file database.php */
 /* Location: ./application/config/database.php */
