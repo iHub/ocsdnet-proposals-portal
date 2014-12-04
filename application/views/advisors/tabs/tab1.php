@@ -48,7 +48,7 @@ include ("nav_bar.php");
 					  </label>
 				 </div>
 				 <?php endif; ?>
-				 
+				  <textarea class="form-control" rows="3"></textarea>
 				 
 			    <?php endfor; ?>
 				  
