@@ -53,9 +53,9 @@
                     <!--<li><a href="javascript:;">Item 1</a></li>
                     <li><a href="javascript:;">Item 2</a></li>
                      <li><a href="javascript:;">Item 3</a></li>-->                     
-                    <li><a href="javascript:;">Proposals</a></li>
-                    <li><a href="advisor-profile.html">My Profile</a></li>
-                    <li><a href="javascript:;">Logout</a></li>
+                    <li><a href="<?php echo site_url('advisors'); ?>">Proposals</a></li>
+                    <li><a href="<?php echo site_url('advisors/panel'); ?>">My Profile</a></li>
+                    <li><a href="<?php echo site_url("auth/logout");  ?>">Logout</a></li>
                 </ul>
             </div>
         </div>
