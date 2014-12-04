@@ -71,7 +71,7 @@ class Advisors extends CI_Controller {
 		$this -> session -> set_userdata("proposal_id", $id);
 		$reviews = $this -> advisors_model -> get_proposal_review($id);
 		$this -> data["reviews"] = $reviews;
-		$this -> template -> load('review', "advisors/review_tabs", $this -> data);
+		$this -> template -> load('advisor', "advisors/review_tabs", $this -> data);
 	}
 
 	function review_tab() {
