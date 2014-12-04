@@ -1,5 +1,4 @@
 
-<?php error_reporting(E_ALL); ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -47,15 +46,14 @@
         </div>
     </header>
 </div>
-      
+        
 <section class="main">
         <!-- the component -->
         <div class="wrapper">
           <div class="inner">
           </div>
         </div>
-      </section>  
-
+</section> 
 <section id="proposal-form">
         <div class="container">
             <div class="row">
@@ -105,11 +103,12 @@
                                 <div id="step-1">
                                 <!--<h2 class="StepTitle">Step 1 Content</h2>-->
                                 <section>
-                               <form role="form" class="project-info" action="<?php echo base_url();?>index.php/proposal/projectinfo">
+                                                  <form role="form" class="project-info" action="<?php echo base_url();?>index.php/proposal/projectinfo">
                               <input type="hidden" id="proposal_id" name="proposal_id" class="form-control"  value="<?php if ($present) {echo $id;}?>" />
+                              
                               <div class="form-group">
                                 <label for="projectTitle">Project Title</label>
-                                <input type="text" class="form-control" id="title" name="title" value="<?php if ($present) {echo $title;}?>" id="title" placeholder="">
+                                <input type="text" class="form-control" id="title" name="title" value="<?php if ($present) {echo $study_title;}?>" id="title" placeholder="">
                               </div>
                               <div class="form-group">
                                 <label for="projectTitle">Duration of the project</label><br/>
@@ -125,17 +124,7 @@
                               <div class="form-group">
                                  
                                   <label>Region(s) included in this project</label>
-                                  <?php if($present){ ?>
-                                    <div class="form-group">
-                                        <p><b>Selected</b>
-                                            <?php $i=1; ?>
-                                            <?php foreach(json_decode($regions) as $key=>$region){ ?>
-                                                <?php echo $i.'.'. $region.' '; ?>
-                                                <?php $i++; ?>
-                                            <?php }?>
-                                        </p>
-                                    </div>
-                             <?php } ?>
+                                
                                   <div class="checkbox">
                                       <label>
                                                <input type="checkbox"  name="regions" value="asia">
@@ -171,17 +160,7 @@
                               <div class="form-group">
                                   
                                   <label>Research Themes *</label>
-                                    <?php if($present){ ?>
-                                    <div class="form-group">
-                                        <p><b>Selected</b>
-                                            <?php $i=1; ?>
-                                            <?php foreach(json_decode($research_themes) as $key=>$region){ ?>
-                                                <?php echo $i.'.'. $region.' '; ?>
-                                                <?php $i++; ?>
-                                            <?php }?>
-                                        </p>
-                                    </div>
-                             <?php } ?>
+                                  
                                   <div class="checkbox">
                                       <label>
                                         <input type="checkbox"  name="themes" value="Them 1:Motivations (Incentives and Ideologies) ">
@@ -211,7 +190,9 @@
                                     <label>
                                         Other:&nbsp; <span>(Enter Each in a new line)</span>
                                     </label> 
-                                     <textarea name="themes" class="form-control ckeditor" id="otherthemes" placeholder="" rows="3"></textarea>
+                                     <textarea name="themes" class="form-control ckeditor" id="otherthemes" placeholder="" rows="3"> <?php if ($present) {
+                                                        echo $other_themes;
+                                                    }?></textarea>
                                  </div>
                               </div>
                               <div class="form-group">
@@ -237,46 +218,46 @@
                                           <h2 class="fs-title">Research Team and Institutional Information</h2>
                                           <h3  class="fs-subtitle">Primary Researcher Information</h3>
                                           <div class="col-md-6">
-                                               <input type="hidden" id="researcher_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
+                                               <input type="hidden" id="researcher_id" name="researcher_id" value="<?php echo $researcher_id;?>" />
                                             <div class="form-group">
                                               <label for="pdName">Name</label><br/>
-                                              <input type="text" name="researchername" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchername" value="<?php echo $user['first_name'];?>" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdEmail">Email</label><br/>
-                                              <input type="email" name="researcheremail" placeholder="" class="form-control"/>
+                                              <input type="email" value="<?php echo $user['email'];?>" name="researcheremail" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                              <div class="form-group">
                                               <label for="pdD">Designation</label><br/>
-                                              <input type="text" name="researcherdesignation" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherdesignation" value="<?php echo $user['designation'];?>" placeholder="" class="form-control"/>
                                             </div>
                                               <label for="pdPhoneNumber">Telephone Number</label><br/>
-                                              <input type="text" name="researcherphone" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherphone" value="<?php echo $user['telephone'];?>"  placeholder="" class="form-control"/>
                                             </div>                                           
                                             <div class="form-group">
                                               <label for="pdIoRn">Institution or organization name</label><br/>
-                                              <input type="text" name="researcherorganization" placeholder="" class="form-control"/>
+                                              <input type="text" name="researcherorganization" value="<?php echo $user['organization'];?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdOa">Office Address</label><br/>
-                                              <textarea name="researcheraddress" class="form-control ckeditor" placeholder="" rows="3"></textarea>
+                                              <textarea name="researcheraddress" class="form-control ckeditor" placeholder="" rows="3"> value="<?php echo $user['office_address'];?>" </textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoI">Country of incorporation</label><br/>
-                                              <input type="text" name="researchercountryincorporation" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchercountryincorporation"   value="<?php echo $user['country_of_incorporation'];?>" placeholder="" class="form-control"/>
                                             </div>
                                              <div class="form-group">
                                               <label for="pd">IDRC Affiliation (if any)</label><br/>
-                                              <input type="text" name="researcheraffliation" placeholder="" class="form-control" />
+                                              <input type="text" name="researcheraffliation"  value="<?php echo $user['idrc_affiliation'];?>" placeholder="" class="form-control" />
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoR">Country of Residence</label><br/>
-                                              <input type="text" name="researchercountryresidence" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchercountryresidence" value="<?php echo $user['country_of_residence'];?>" placeholder="" class="form-control"/>
                                             </div>
                                             <div class="form-group">
                                               <label for="pdCoCi">Country of Citizenship</label><br/>
-                                              <input type="text" name="researchercountrycitizenship" placeholder="" class="form-control"/>
+                                              <input type="text" name="researchercountrycitizenship" value="<?php echo $user['country_of_citizenship'];?>"placeholder="" class="form-control"/>
                                             </div>
                                             
                                           </div>
@@ -294,17 +275,18 @@
 
                                            <div class="form-group">
                                               <label for="pdAoEaI">Areas of Expertise and Interest</label><br/>
-                                              <textarea type="text" name="researcherexpertise" placeholder="" class="form-control ckeditor" rows="3"></textarea>
+                                              <textarea type="text" name="researcherexpertise" placeholder="" class="form-control ckeditor" rows="3"><?php echo $user['expertise'];?></textarea>
                                             </div> 
                                             <div class="form-group">
                                             <label for="pdRPoRO">Relevant Publications or Research Outputs</label><br/>
-                                             <textarea type="text" name="researcherpublications" placeholder="" class="form-control ckeditor" rows="3"></textarea>
+                                             <textarea type="text" name="researcherpublications" placeholder="" class="form-control ckeditor" rows="3"><?php echo $user['relevant_publications'];?></textarea>
                                           </div>
                                           <div class="form-group">
                                             <label for="pd">Website</label><br/>
-                                            <input type="text" name="researcherwebsite" placeholder="" class="form-control"/>
+                                            <input type="text" name="researcherwebsite" value="<?php echo $user['website'];?>" placeholder="" class="form-control"/>
                                           </div>
                                         </div>
+                                        <div class="col-md-12">
                                         <p>Qualifications and Experience</p>
                                         <p>Please upload an up-to-date curriculum vitae (CV). Your CV should include a chronological list of your work experience, qualifications,
     credentials, funded research projects (including those supported by the IDRC), language skills (spoken and written) and relevant publications.</p>
@@ -312,7 +294,7 @@
                                      <input type="file" name="researchercv"/><br/>
                                                                              
                                     <button type="submit" class="btn btn-default">Save</button>
-         
+                                    </div>
                                 </fieldset>
 
                                       </form>
@@ -324,7 +306,7 @@
                                           <h2 class="fs-title">Research Team and Institutional Information</h2>
                                           <h3 class="fs-subtitle">Add Collaborators</h3>
                                           <div class="col-md-6">
-                                            <input type="hidden" id="researcher_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
+                                            <input type="hidden" id="researcher_id" name="researcher_id" value="<?php echo $researcher_id;?>"/>
                                             <div class="form-group">
                                               <label for="pdName">Name</label><br/>
                                               <input type="text" name="name" placeholder="" class="form-control"/>
@@ -416,7 +398,9 @@
                                            <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>
                                                                       <input type="file" name="qualification" /><br/>
                                           
-                                           <button type="submit" class="btn btn-default">Save and Add New</button>                                           
+                                           <button type="submit" class="btn btn-default">Save </button>
+                                           
+                                           <p><a class="btn btn-link" href="<?php echo base_url(); ?>index.php/user/collaborator"> Add new</a></p>                                           
                                           </div>
                                           
                                         </fieldset>
@@ -432,7 +416,7 @@
                                           <p>The proposing institution receives and manages the project funds provided by the IDRC. Please indicate the contact information of
       the administration office to which funds may be dispensed should this application be accepted.</p>
                                           <div class="col-md-10 no-margin">
-                                            <input type="hidden" id="institution_research_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
+                                            <input type="hidden" id="institution_research_id" name="researcher_id" value="<?php echo $researcher_id;?>"/>
                                             <div class="form-group">
                                               <label for="piION">Institution/ Organization name</label><br/>
                                               <input type="text" name="name" placeholder="" class="form-control"/>
@@ -452,7 +436,7 @@
                                             </div>
                                             <div class="form-group">
                                               <label for="piOE">Office Address</label><br/>
-                                              <textarea name="address" placeholder="" rows="3" class="form-control ckeditor"></textarea>
+                                              <textarea name="addresses" placeholder="" rows="3" class="form-control ckeditor"></textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="piFoN">Finance Officer’s name</label><br/>
@@ -483,7 +467,7 @@
                                           <p>Participating institutions put forward the research proposal under the leadership of the proposing institution. Note that all funding will
       be disbursed directly to the proposing institution only.</p>
                                           <div class="col-md-10 no-margin">
-                                             <input type="hidden" id="institution__supportresearch_id" name="researcher_id" value="<?php if ($present) {echo $researcher_id;}?>"/>
+                                             <input type="hidden" id="institution__supportresearch_id" name="researcher_id" value="<?php echo $researcher_id;?>"/>
                                             <div class="form-group">
                                               <label for="pi3IN">Institution name</label><br/>
                                               <input type="text" name="name" placeholder="" class="form-control"/>
@@ -503,7 +487,7 @@
                                             <div class="form-group">
                                               <label for="pi3MA">Mailing Address</label><br/>
                                               <p class="lable-description">Including office or departmental name</p><br/>
-                                                <textarea name="mailaddress" class="form-control ckeditor" rows="3"> </textarea>
+                                                <textarea name="mailingaddress" class="form-control ckeditor" rows="3"> </textarea>
                                             </div>
                                             <div class="form-group">
                                               <label for="pi3MA">Role in the project</label><br/>
@@ -525,7 +509,7 @@
                                         <h2 class="StepTitle">Step 3 Content</h2>
                                         <section>
                                             <form role="form" class="proposed-study-info" action="<?php echo base_url(); ?>index.php/proposal/stepthree">
-                                                <input type="hidden" name="proposal_id" value="<?php if ($present) { echo $id;} ?>"/>
+                                                <input type="hidden"  id="step_3_proposal"  name="proposal_id" value="<?php if ($present) { echo $id;} ?>"/>
                                                  <div class="form-group">
                                                     <label for="researcherName">Research Project Abstract </label>
                                                     <br/>
@@ -569,7 +553,11 @@
                                                 <div class="form-group">
                                                   <label for="researcherName">Stakeholders</label>
                                                   <p>WORD LIMIT: 250. Identify and briefly describe your project's stakeholders. How will your project respond to their needs and interests?</p>
-                                                  <textarea name="stakeholders" class="form-control ckeditor" rows="3"></textarea>
+                                                  <textarea name="stakeholders" class="form-control ckeditor" rows="3"><?php
+                                                    if ($present) {
+                                                        echo $stakeholders;
+                                                    }
+                                                                                                                    ?></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="researcheDandM">Research Design and Methods</label>
@@ -579,7 +567,11 @@
                                                         the data that you will need to achieve the study’s objectives and answer the project’s research questions.  You should clearly outline how each data collection
                                                         activity will contribute to the study objectives.
                                                     </p>
-                                                    <textarea name="researchdesign" class="form-control ckeditor" rows="3"></textarea>
+                                                    <textarea name="researchdesign" class="form-control ckeditor" rows="3"><?php
+                                                    if ($present) {
+                                                        echo $research_design_and_methods;
+                                                    }
+                                                                                                                    ?></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="researcherName">Analysis and Synthesis</label>
@@ -639,11 +631,7 @@
                                                     <p>
                                                         APA style
                                                     </p>
-                                                    <textarea type="text" name="bibliography" class="form-control ckeditor" id="bibliography" rows="3" value="<?php
-                                                    if ($present) {
-                                                        echo $bibliography;
-                                                    }
-                                                    ?>" ></textarea>
+                                                    <textarea type="text" name="bibliography" class="form-control ckeditor" id="bibliography" rows="3"  ><?php if($present){ echo $bibliography; } ?></textarea>
                                                 </div>
                                                 <button type="submit" class="btn btn-default">
                                                     Save
@@ -657,7 +645,7 @@
                                         <section>
                                             <h2>Research Administration</h2>
                                             <form role="form" class="research-administration" action="<?php echo base_url(); ?>index.php/proposal/stepfour">
-                                                <input type="hidden" name="proposal_id" value="<?php
+                                                <input type="hidden" id="step_4_proposal" name="proposal_id" value="<?php
                                                 if ($present) {
                                                     echo $id;
                                                 }
@@ -766,7 +754,7 @@
                           <p>
                               Parallel funds are funds for your project that are donated from other international donors or funding agencies.
                             </p>
-                          <input type="hidden" value="<?php if ($present) { echo $id;}?>" id="budget_proposal" name="proposal_id"/>
+                          <input type="hidden" value="<?php if ($present) { echo $id;}?>" id="budget_parrallel_proposal" name="proposal_id"/>
                                                     
                                                     <div class="form-group">
                                                         <label for="donor">Donor</label>
@@ -874,15 +862,12 @@
                 // Smart Wizard
                 $('#wizardmain').smartWizard();
                 CKEDITOR.replaceClass = 'ckeditor';
-                //  var editor = $('.ckeditor').ckeditor().editor;
-                // //
-                // //  var editor = CKEDITOR.instances['ckeditor'];
-
-                //  editor.on( 'keyup', function( event ) {
-                //      alert( e.getData() );
-                //  });
+                
                 $('.buttonFinish').on('click',function(){
-                    alert('Your proposal has been saved. We will provided you with a preview page that will allow you to make edits in the next 24 hrs');
+                   if(confirm('This will allow you to review your work.Click OK to continue')){
+                  
+                     window.location.href="http://www.proposals.ocsdnet.org/index.php/preview";
+                    }
                 });
                 
                 
@@ -902,4 +887,3 @@
         <script src="<?php echo base_url(); ?>public/new/js/ie10-viewport-bug-workaround.js"></script>
     </body>
 </html>
-

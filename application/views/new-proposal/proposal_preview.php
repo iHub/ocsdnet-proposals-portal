@@ -1,5 +1,4 @@
 
-<?php error_reporting(E_ALL); ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -47,7 +46,7 @@
         </div>
     </header>
 <div class="container">
-	<div class="">
+    <div class="">
 <div class="col-md-12">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -76,7 +75,7 @@
   <div class="">
     <div class="col-md-12">
       <div class="proposal-section">   
-      <h3 align="center " class="project-title"><?php if($present){ echo $title; } ?></h3>
+      <h3 align="center " class="project-title"><?php if($present){ echo $study_title; } ?></h3>
       <!--<h4>Primary Researcher Proposal</h4>-->
       </div>
       </div>
@@ -86,7 +85,7 @@
     <div class="proposal-section"> 
       <table class="table table-striped table-bordered table-condensed">
           <tbody>
-            <h4>General Project Information <a href="javascript:;" class="edit-text pull-right">Edit</a> </h4>
+            <h4>General Project Information <a href="<?php echo base_url(); ?>index.php/proposal" class="edit-text pull-right">Edit</a> </h4>
             <tr>
                 <th>Duration of the project</th><td><p><?php if($present){ echo $duration; } ?></p></td>
             </tr>
@@ -101,7 +100,7 @@
             </tr>
             
             <tr>
-                <th>Total Budget Cost (CAD)</th> <td><p><?php if($present){ echo $total_budget_cost; } ?></p></td>
+                <th>Total Budget Cost (CAD)</th> <td><p><?php if($present){ echo $budget; } ?></p></td>
             </tr>        
           
           </tbody>
@@ -114,11 +113,11 @@
     <!-- Collaborators -->
   <div class="">
     <div class="col-md-12">
-    	<div class="proposal-section"> 
-    		<table class="table table-striped table-bordered table-condensed table-hover">
+        <div class="proposal-section"> 
+            <table class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
             <h4>Research Team and Institutional Information </h4>
-            <h5>Primary Researcher Information<a href="javascript:;" class="edit-text pull-right">Edit</a></h5>  
+            <h5>Primary Researcher Information<a href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $user['id']; ?>" class="edit-text pull-right">Edit</a></h5>  
             <!--<a href="/user/edit" >Edit</a> -->
         <tr>
             <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
@@ -138,12 +137,7 @@
         <tr>
             <th>Country of Citizenship</th> <td><p><?php echo $user['country_of_citizenship'] ?></p></td>
         </tr>        
-        <tr>
-            <th colspan="2">Office Address</th><p><?php echo $user['office_address'] ?></p></td>
-        </tr>
-        <tr>
-            <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
-        </tr>
+       
         <tr>
             <th>IDRC Affiliation (if any)</th> <td><p><?php echo $user['idrc_affiliation'] ?></p></td>
         </tr>
@@ -167,14 +161,15 @@
             <th>Areas of Expertise and Interest</th> <td><p><?php echo $user['expertise'] ?></p></td>
         </tr>
         <tr>
-            <th>Relevant Publications or Research Outputs</th> <td><p><?php echo $user['publications'] ?></p></td>
+            <th>Relevant Publications or Research Outputs</th> <td><p><?php echo $user['relevant_publications'] ?></p></td>
         </tr>
         <tr>
             <th>Qualifications and Experience</th> <td><a href="<?php echo $user['qualifications_and_experience'] ?>">Download</a></td>
         </tr>
         </tbody>
         </table>
-        <h5>Collaborators</h5>
+        <h5>Collaborators</h5><p><a href="<?php echo base_url(); ?>index.php/user/collaborator"> add new</a></p>
+        <?php if($collaborators){ ?>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <?php $i=1; ?>
             <?php foreach($collaborators as $user){?>
@@ -190,13 +185,14 @@
                   Collaborator <?php echo $i; ?>
                 </a> 
                  <?php } ?>
-                <a class="pull-right" href="javascript:;">Edit</a>
+                <a class="pull-right" href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $user['id']; ?>">Edit</a>
               </h4>
             </div>
             <div id="collapse<?php echo $i; ?>" class="<?php if($i==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $i ?>">
               <div class="panel-body">
               <table class="table  table-bordered table-condensed table-hover">
               <tbody>
+                  <input type="hidden" name="user_id" value="<?php echo $user['id'] ?>"/>
                <tr>
                         <th>Name</th><td><p><?php echo $user['first_name'] ?></p></td>
                     </tr>
@@ -217,11 +213,9 @@
                         <th>Country of Citizenship</th> <td><p><?php echo $user['country_of_citizenship'] ?></p></td>
                     </tr>       
                     <tr>
-                        <th colspan="2">Office Address</th><p><?php echo $user['office_address'] ?></p></td>
+                        <th >Office Address</th><td><p><?php echo $user['office_address'] ?></p></td>
                     </tr>
-                    <tr>
-                        <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</td>
-                    </tr>
+                    
                     <tr>
                         <th>IDRC Affiliation (if any)</th> <td><p><?php echo $user['idrc_affiliation'] ?></p></td>
                     </tr>
@@ -250,11 +244,9 @@
                         <th>Qualifications and Experience</th> <td><a href="<?php echo $user['qualifications_and_experience'] ?>">Download</a></td>
                     </tr>
                     <tr>
-                        <th colspan="2"><p>Role in Proposed Project</p> <?php echo $user['role_in_project'] ?></th>
+                        <th><p>Role in Proposed Project</p></th> <td><?php echo $user['role_in_project'] ?></td>
                     </tr>
-                    <tr>
-                        <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</td>
-                    </tr>
+                    
                 <tr>
                 </tbody>
                 </table>
@@ -264,101 +256,117 @@
             <?php $i++; } ?>
           
           </div>
+          <?php }else{ ?>
+              <p> No collaborators yet. Add new <a href="<?php echo base_url(); ?>index.php/proposal"> here</a></p>
+           <?php } ?>
+           <h5>Proposing Institution</h5>
+        <?php if($proposing_institution){ ?>
         <table  class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
         <tr>
-            <th colspan="2"><h5>Proposed Institution <a href="javascript:;" class="edit-text pull-right">Edit</a></h5></th>
+            <th colspan="2"><h5><a href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $proposing_institution['id']; ?>" class="edit-text pull-right">Edit</a></h5></th>
         </tr>
         <tr>
-            <th>Institution/ Organization name</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Institution/ Organization name</th> <td><p><?php echo $proposing_institution['first_name'] ?></p></td>
         </tr>
         <tr>
-            <th>Telephone Number</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Telephone Number</th> <td><p><?php echo $proposing_institution['telephone'] ?></p></td>
         </tr>
         <tr>
-            <th>Email</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Email</th> <td><p><?php echo $proposing_institution['email'] ?></p></td>
         </tr>
         <tr>
-            <th>Mailing Address</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Mailing Address</th> <td><p><?php echo $proposing_institution['mailing_address'] ?></p></td>
         </tr>
         <tr>
-            <th>Finance Officer’s name</th> <?php echo $user['role_in_project'] ?><td><p></p></td>
+            <th>Finance Officer’s name</th><td><p><?php echo $proposing_institution['finance_name'] ?></p></td>
         </tr>
         <tr>
-            <th>Finance Officer phone number</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Finance Officer phone number</th> <td><p><?php echo $proposing_institution['finance_phone'] ?></p></td>
         </tr>
         <tr>
-            <th>Finance Officer Email</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
+            <th>Finance Officer Email</th> <td><p><?php echo $proposing_institution['finance_email'] ?></p></td>
         </tr>
         </tbody>
         </table>
+        <?php }else{ ?>
+              <p>Proposing institution details not added yet. Add new <a href="<?php echo base_url(); ?>index.php/proposal"> here</a></p>
+           <?php } ?>
         <h5>Participating Institutions</h5>
+         <?php if($participating_institution){ ?>
         <div class="panel-group" id="PIaccordion" role="tablist" aria-multiselectable="true">
+            <?php $j=1;?>
             <?php foreach($participating_institution as $user){?>
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="PIheading<?php echo $i ?>">
+                <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="PIheading<?php echo $j ?>">
               <h4 class="panel-title">
-                <?php if($i==1){ ?>
-                <a data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>">
-                  Institution <?php echo $i ?>
+                  <?php if($j==1){?>
+                 <a data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $j ?>" <?php if($j==1){?> aria-expanded="true" <?php }else{?>aria-expanded="false" <?php } ?> aria-controls="collapse<?php echo $j ?>">
+                  Institution <?php echo $j; ?>
+                </a>
+                <?php } else{ ?>
+                   <a class="collapsed"  data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $j ?>" <?php if($j==1){?> aria-expanded="true" <?php }else{?>aria-expanded="false" <?php } ?> aria-controls="collapse<?php echo $j ?>">
+                  Institution <?php echo $j; ?>
                 </a> 
-                <?php }else{ ?>
-                    <a class="collapsed" data-toggle="collapse" data-parent="#PIaccordion" href="#PIcollapse<?php echo $i ?>" aria-expanded="true" aria-controls="PIcollapse<?php echo $i ?>"></a>
-                 <?php }?>
-                <a class="pull-right" href="javascript:;">Edit</a>
+                 <?php } ?>
+                <a class="pull-right" href="<?php echo base_url(); ?>index.php/user/edit/<?php echo $user['id']; ?>">Edit</a>
               </h4>
             </div>
-            <div id="PIcollapse<?php echo $i ?>" class="<?php if($i==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $i ?>">
+            <div id="PIcollapse<?php echo $j; ?>" class="<?php if($j==1){ ?>panel-collapse collapse in<?php }else{ ?>panel-collapse collapse<?php } ?>" role="tabpanel" aria-labelledby="heading<?php echo $j ?>">
               <div class="panel-body">
-              <table class="table  table-bordered table-condensed table-hover">
-              <tbody>
-               	<tr>
+                <table class="table  table-bordered table-condensed table-hover">
+               <tbody>
+                <tr>
                         <th>Institution name</th> <td><p><?php echo $user['first_name'] ?></p></td>
                     </tr>
                     <tr>
                         <th>Telephone Number</th> <td><p><?php echo $user['telephone'] ?></p></td>
                     </tr>
                     <tr>
-                        <th>Email</th> <td><p></p><?php echo $user['email'] ?></td>
+                        <th>Email</th> <td><p><?php echo $user['email'] ?></p></td>
+                    </tr>
+                     <tr>
+                        <th>Office Address</th> <td><p></p><?php echo $user['office_address'] ?></td>
                     </tr>
                     <tr>
-                        <th colspan="2" >Mailing Address</th> <td><p><?php echo $user['mailing_address'] ?></p></td>
+                        <th >Mailing Address</th> <td><p><?php echo $user['mailing_address'] ?></p></td>
                     </tr>
-                    <tr>
-                        <td colspan="2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</td>
-                    </tr>
+                    
                     <tr>
                         <th>Role in the project</th> <td><p><?php echo $user['role_in_project'] ?></p></td>
                     </tr>
-                            <tbody>
+                   </tbody>
                 </table>
               </div>
             </div>
-          </div>
-          <?php $i++; }?>
+            </div>
+          <?php $j++; }?>
             
         </div>
-        
+        <?php }else{ ?>
+              <p>Proposing institution details not added yet. Add new <a href="<?php echo base_url(); ?>index.php/proposal"> here</a></p>
+           <?php } ?>
+        <!-- 
         </tbody>
-        </table>
+        </table> -->
         </div>
   </div>
   </div>
   <div class="">
-  	<div class="col-md-12">
+    <div class="col-md-12">
             <div class="proposal-section"> 
                 <table class="table table-striped table-bordered table-condensed">
             <tbody>
             <tr>
             <th colspan="2">
-            	<h4>Proposed Study Information <a href="javascript:;" class="edit-text pull-right">Edit</a></h4>
+                <h4>Proposed Study Information <a href="<?php echo base_url(); ?>index.php/proposal" class="edit-text pull-right">Edit</a></h4>
             </th>
             </tr>
             <tr>
                 <th colspan="2">Research Project Abstract </th>
             </tr>
             <tr>
-                <td colspan="2"><?php if($present){ echo $total_budget_cost; } ?> </td>
+                <td colspan="2"><?php if($present){ echo $research_project_abstract; } ?> </td>
             </tr>
             <tr>
                 <th colspan="2">Research Problem, Significance and Justification</th>
@@ -417,10 +425,10 @@
   </div>
   <div class="">
     <div class="col-md-12">
-    	<div class="proposal-section"> 
+        <div class="proposal-section"> 
             <table class="table table-striped table-bordered table-condensed">
             <tbody>
-            <h4>Research Administration <a href="javascript:;" class="edit-text pull-right">Edit</a></h4>
+            <h4>Research Administration <a href="<?php echo base_url(); ?>index.php/proposal" class="edit-text pull-right">Edit</a></h4>
             <tr>
                 <th>Project Timeline</th><td><a href="<?php if($present){ echo $project_timelines; } ?>" download>Download</a></td>
             </tr>
@@ -466,13 +474,17 @@
             <tr>
                 <th>Budget</th> <td><a href="<?php if($present){ echo $budget_url; } ?>">Download</a></td>
             </tr>
+           </tbody>
+           </table>
             
-            <tr>
-                <th>Parallel funds</th>
-            </tr>
+            <h4>Parallel funds</h4>
+             <?php if($budgets){ ?>    
+            <?php $i=1; ?>
             <?php foreach($budgets as $budget){ ?>
+                <table class="table table-striped table-bordered table-condensed">
+            <tbody>
             <tr>
-                <th>Donor</th> <td><p><?php echo $budget['donor'] ?></p></td>
+                <th><?php echo $i; ?> .Donor</th> <td><p><?php echo $budget['donor'] ?> </p></td><td><a href="<?php echo base_url(); ?>index.php/budget/edit/<?php echo $budget['id'] ?>">Edit</a></td>
             </tr>
             <tr>
                 <th>Amount</th> <td><p><?php echo $budget['amount'] ?></p></td>
@@ -483,9 +495,14 @@
             <tr>
                 <th>Time frame</th> <td><p><?php echo $budget['timeframe'] ?></p></td>
             </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+              </tbody>
+               </table>
+            <?php $i++; } ?>
+            <tr  colspan="2"></tr>
+             <?php }else{ ?>
+                 <p>Budget not added yet. Add new <a href="<?php echo base_url(); ?>index.php/proposal"> here</a></p>
+              <?php } ?>
+         <button type="submit" id="submit_proposal" href="<?php echo base_url();?>index.php/proposal/submit/<?php echo $id; ?>" class="btn btn-default">Submit proposal</button>
         </div>
     </div>
   </div>
@@ -493,7 +510,7 @@
 </div><!-- /.container -->
 <div class="footer">
       <div class="container">
-        <p class="text-muted">ocsdnet</p>
+        <p class="text-muted">Ocsdnet</p>
       </div>
 </div>
 
@@ -501,7 +518,18 @@
   <script src="<?php echo base_url(); ?>public/new/js/jquery-2.0.0.min.js"></script>
   <script src="<?php echo base_url(); ?>public/new/js/bootstrap.min.js"></script>
 
-  
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $('#submit_proposal').on('click',function(){
+              if(confirm('Your proposal will be submitted and will not be editable thereafter.Thank you ')){
+                  
+                  window.location.href=$(this).attr('href');
+              }
+              return false;
+              
+          });
+      })
+  </script>
 
 
   

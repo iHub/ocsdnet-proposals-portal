@@ -11,6 +11,7 @@ class Auth_model extends CI_Model {
 		$this->db->where('email', $_POST['email']);
 		$query = $this->db->get($table);
 		$row = $query->row();
+       
 		$user_data = array();
 
 		$this->session->unset_userdata("user_data");
