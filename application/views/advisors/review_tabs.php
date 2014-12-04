@@ -18,7 +18,9 @@
 <style> <?php echo (isset($css) ? $css : ""); ?> </style>
 
 <div class="row-fluid">
+	
     <div class="col-md-12">
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="<?php echo site_url('advisors'); ?>" class="btn btn-success"> <i class="glyphicon glyphicon-chevron-left"></i> View all Proposals</a>
     </div>
 </div>
