@@ -96,8 +96,8 @@ class Advisors_model extends CI_Model {
 		}
 
 		//Collaborators
-		$this -> db -> where("researcher_id", $researcher_id);
-		$query = $this -> db -> get("collaborators");
+		$this -> db -> where("id", $researcher_id);
+		$query = $this -> db -> get("users");
 
 		if ($query -> num_rows() > 0) {
 			$preview_data['collaborators'] = $query -> result_array();
