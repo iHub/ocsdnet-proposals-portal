@@ -15,10 +15,10 @@
                     <a href="<?php echo site_url('advisors/shortlisted'); ?>"> <i class="glyphicon glyphicon-ok-circle "></i> Shortlisted</a>
                 </li>
             </ul>
-            
+            <!-- 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="<?php echo site_url("auth/logout");  ?>"> <i class="glyphicon glyphicon-lock"></i> Logout </a> </li>
-            </ul>
+            </ul> -->
         </div>
 
     </nav>
