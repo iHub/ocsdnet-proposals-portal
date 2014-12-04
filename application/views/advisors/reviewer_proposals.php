@@ -1,38 +1,39 @@
-<div class="main-heading">
-	<div class="container">
-		<h1>Review proposals</h1>
-	</div>
-</div>
-<div class="container main-container">
-	<!-- navigation -->
-        <?php include_once("nav_bar.php"); ?>
-        
-     
-    
-              <div class="portlet">
+<div class="container">
+
+  <div class="content">
+
+      
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <div class="portlet">
 
             <div class="portlet-header">
 
               <h3>
                 <i class="fa fa-table"></i>
-                Proposals
+                Proposals Assigned
               </h3>
 
             </div> <!-- /.portlet-header -->
 
             <div class="portlet-content">           
-    <h4><?php echo $reviewer_status; ?></h4> 
 
+               <h4><?php echo $reviewer_status; ?></h4> 
               <div class="table-responsive">
-   
-    <table
-    class="table table-striped table-bordered table-hover table-highlight table-checkable" 
+          
+
+   <table 
+                class="table table-striped table-bordered table-hover table-highlight table-checkable" 
                 data-provide="datatable" 
                 data-display-rows="10"
                 data-info="true"
                 data-search="true"
                 data-length-change="true"
-                data-paginate="true">
+                data-paginate="true"
+              >
     <?php if (count($proposals)>0) {
 			
 		?>
@@ -85,6 +86,35 @@
 		<?php } ?>
     </tbody>
 </table>
+              </div> <!-- /.table-responsive -->
+              
+
+            </div> <!-- /.portlet-content -->
+
+          </div> <!-- /.portlet -->
+
+        
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
 </div>
 </div>
-</div>
+  <script src="<?php echo base_url(); ?>public/review/js/jquery-2.0.0.min.js"></script>
+  <script src="<?php echo base_url(); ?>public/review/js/jquery-ui-1.9.2.custom.min.js"></script>
+  <script src="<?php echo base_url(); ?>public/review/js/bootstrap.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="./js/libs/excanvas.compiled.js"></script>
+  <![endif]-->
+  
+  <!-- Plugin JS -->
+  <script src="<?php echo base_url(); ?>public/review/js/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url(); ?>public/review/js/plugins/datatables/DT_bootstrap.js"></script>
+  <script src="<?php echo base_url(); ?>public/review/js/plugins/tableCheckable/jquery.tableCheckable.js"></script>
+  <!--<script src="./js/plugins/icheck/jquery.icheck.min.js"></script>-->
+
+  <!-- App JS -->
+  <script src="<?php echo base_url(); ?>public/review/js/target-admin.js"></script>
+  

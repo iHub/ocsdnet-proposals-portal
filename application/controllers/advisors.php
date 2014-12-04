@@ -35,7 +35,7 @@ class Advisors extends CI_Controller {
 		$reviewer_id = $user_data['id'];
 		$this -> data["reviewer_status"] = $this -> advisors_model -> reviewer_status($reviewer_id);
 		$this -> data["proposals"] = $this -> advisors_model -> get_proposals($reviewer_id);
-		$this -> template -> load('user', "advisors/reviewer_proposals", $this -> data);
+		$this -> template -> load('advisor', "advisors/reviewer_proposals", $this -> data);
 	}
 
 	function save_edits() {
