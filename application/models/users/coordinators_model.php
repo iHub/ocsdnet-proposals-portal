@@ -42,7 +42,7 @@ class Coordinators_model extends CI_Model {
 				FROM users u
 				INNER JOIN  proposals p ON u.id = p.researcher_id
 				WHERE u.user_role_id = 3 
-				AND p.status = 'complete'
+				AND p.proposal_status = '1'
 				";
 		//Incomplete - Complete
 		$sql .= (is_null($incompletes) ? " AND p.status = 'complete'" : " AND p.status != 'complete'");
