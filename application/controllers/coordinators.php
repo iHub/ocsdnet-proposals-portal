@@ -188,7 +188,11 @@ class Coordinators extends CI_Controller {
 		$this -> data["study_data"] = $this -> coordinators_model -> get_study($proposal_id);
 		$this -> data['assignment_msg'] = $msg;
 		$this -> data['advisors'] = $this -> coordinators_model -> fetch_advisors();
+		if($msg){
+			redirect("coordinators");
+		}else{
 		$this -> template -> load('user', "coordinators/assign_advisors", $this -> data);
+		}
 
 	}
 
