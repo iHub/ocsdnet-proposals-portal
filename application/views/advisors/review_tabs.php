@@ -1,5 +1,6 @@
  <?php 
-// print_r($review_data);
+//print_r($review_data);
+// exit;
 // 
 ?>
 
@@ -9,22 +10,12 @@
 		<h1>Review Proposal</h1>
 	</div>
 </div> -->
-<p>&nbsp;<br/></p>
 <div class="main-container wide-container">
 	<!-- navigation -->
 <?php include_once("nav_bar.php"); ?>
         
   
 <style> <?php echo (isset($css) ? $css : ""); ?> </style>
-
-<div class="row-fluid">
-	
-    <div class="col-md-12">
-    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="<?php echo site_url('advisors'); ?>" class="btn btn-success"> <i class="glyphicon glyphicon-chevron-left"></i> View all Proposals</a>
-    </div>
-</div>
-
 <div class="row-fluid">
 <div class="col-md-6">
     <div class="fixedcol" >
@@ -137,7 +128,7 @@
             <th colspan="2">Relevant Publications or Research Outputs</th><td><p><?php echo $res['publications']; ?></p></td>
         </tr>
         <tr>
-            <th colspan="2">Qualifications and Experience</th><td><p><?php echo $res['expertise']; ?></p></td>
+            <th colspan="2">Qualifications and Experience</th><td><p><?php echo $res['qualifications_and_experience']; ?></p></td>
         </tr>
         <!-- <tr>
             <td colspan="2"><p></p> </td>
@@ -204,7 +195,7 @@
             <th colspan="2">Relevant Publications or Research Outputs</th><td><p><?php echo $res['publications']; ?></p></td>
         </tr>
         <tr>
-            <th colspan="2">Qualifications and Experience</th><td><p><?php echo $res['expertise']; ?></p></td>
+            <th colspan="2">Qualifications and Experience</th><td><p><?php echo $res['qualifications_and_experience']; ?></p></td>
         </tr>
         </tbody>
     </table>
