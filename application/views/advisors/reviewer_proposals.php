@@ -46,8 +46,7 @@
              <th data-filterable="true" data-sortable="true" data-direction="desc">Researcher Name</th>
             <th data-filterable="true" data-sortable="true" data-direction="desc">Project title</th>
              <th data-filterable="true" data-sortable="true">Status</th>
-            <th data-filterable="true" data-sortable="true">Review</th>
-            <th data-filterable="true" data-sortable="true">Progress</th>
+            <th data-filterable="false" data-sortable="false">Review</th>
             <th data-filterable="false" data-sortable="false">Pdf</th>
             
         </tr>
@@ -67,13 +66,12 @@
             <?php $id = $proposals[$i]["id"]; ?>
             <?php $proposal_id = $proposals[$i]["id"]; ?>
              <?php $status = strcasecmp($proposals[$i]["review_status"], "complete")==0; ?>
-            <td><?php echo ( $status ? "Completed" : "Pending"); ?></td>
+            <td>&nbsp;<?php echo ( $status ? "Completed" : "Pending"); ?></td>
             <?php if($status): ?>
             <td> <button> Submitted </button> </td>
             <?php else: ?>
             <td><a href="<?php echo site_url("advisors/review/$id") ?>" class="btn btn-success btn-sm">Edit review</a></td>
             <?php endif; ?>
-            <td></td>
             <td><a href="<?php echo site_url("advisors/print_preview_proposal/$id") ?>" class="btn btn-primary btn-sm">Download</a></td>
                        
         </tr>
