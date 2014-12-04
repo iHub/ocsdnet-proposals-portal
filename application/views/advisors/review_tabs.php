@@ -95,7 +95,7 @@
             <th colspan="2">Email</th> <td><p><?php echo $res["email"]; ?></p></td>
         </tr>
         <tr>
-            <th>Phone Number</th> <td><p><?php echo $res["telephone"]; ?></p></td>
+            <th colspan="2">Phone Number</th> <td><p><?php echo $res["telephone"]; ?></p></td>
         </tr>
         <tr>
             <th  colspan="2">Designation</th> <td><p><?php echo $res['designation']; ?></p></td>
@@ -171,10 +171,10 @@
         </tr>
         
         <tr>
-            <th>Country of citizenship</th> <td><?php echo $res["country_of_citizenship"] ?></td>
+            <th colspan="2">Country of citizenship</th> <td><?php echo $res["country_of_citizenship"] ?></td>
         </tr>
         <tr>
-            <th>Office address</th> <td><?php echo $res["office_address"] ?></td>
+            <th colspan="2">Office address</th> <td><?php echo $res["office_address"] ?></td>
         </tr>
         <tr>
             <th  colspan="2">IDRC Affiliation (if any)</th> <td><p><?php echo 'idrc affiliation'; ?></p></td>
