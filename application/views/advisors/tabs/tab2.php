@@ -51,7 +51,13 @@ include ("nav_bar.php");
 				 
 				 
 			    <?php endfor; ?>
-				  
+				  <br />
+                        <textarea id="comment[<?php echo $question_id ?>]" name="comment[<?php echo $question_id ?>]" class="form-control add"
+                                  ng-model="formData.description" name="description" required
+                                  rows="3"><?php if (!empty($reviews['comment'][$question_id])) {
+                                  	echo $reviews['comment'][$question_id]; 
+                                  }
+                                  	?></textarea>
 			</div>
 	<?php endforeach; ?>
 	

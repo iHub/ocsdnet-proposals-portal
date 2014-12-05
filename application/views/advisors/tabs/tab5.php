@@ -21,9 +21,10 @@ echo form_open('advisors/save_tab/5', $form_attributes);
 		</div>
 	</div>
 	<div >
+<br>
 		<span  class="label label-danger">Once you submit, you will NOT be able to edit your review any further</span>
 	</div>
-
+<br>
 	
 </div>
 <div class="form-group">
