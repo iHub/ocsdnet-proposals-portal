@@ -75,6 +75,23 @@ class Advisors extends CI_Controller {
 		//exit;
 		$this -> template -> load('advisor', "advisors/review_tabs", $this -> data);
 	}
+	function review_proposal() {
+		$tab_id = 1;
+		$id = $this -> uri -> segment(3);
+		$this -> data['tab_menu'] = 1;
+		$this -> data['active_menu'] = 1;
+		$this -> data["css"] = div_selector($this -> tab_divs, ".tab1");
+		$this -> data["tab_data"] = $this -> advisors_model -> get_tab_data($tab_id);
+		$this -> session -> unset_userdata("proposal_id");
+		//$rewiew_data = $this -> advisors_model -> get_review_data($id);
+		$this -> data['review_data'] = $this -> advisors_model -> get_review_data($id);
+		$this -> session -> set_userdata("proposal_id", $id);
+		$reviews = $this -> advisors_model -> get_all_proposal_reviews($id);
+		$this -> data["reviewss"] = $reviews;
+		//print_r($reviews);
+		//exit;
+		$this -> template -> load('advisor', "advisors/review_proposals_tabs", $this -> data);
+	}
 
 	function review_tab() {
 		$tab_id = $this -> uri -> segment(3);
@@ -89,6 +106,21 @@ class Advisors extends CI_Controller {
 		$this -> data["tab_data"] = $this -> advisors_model -> get_tab_data($tab_id);
 		$this -> data['review_data'] = $this -> advisors_model -> get_review_data($proposal_id);
 		$this -> template -> load('advisor', "advisors/review_tabs", $this -> data);
+	}
+	
+	function review_proposal_tab() {
+		$tab_id = $this -> uri -> segment(3);
+		$this -> data['tab_menu'] = $tab_id;
+		$this -> data['active_menu'] = 1;
+		$css_tab = ".tab" . $tab_id;
+		$this -> data["css"] = div_selector($this -> tab_divs, $css_tab);
+		$proposal_id = $this -> session -> userdata("proposal_id");
+		$reviews = $this -> advisors_model -> get_all_proposal_reviews($id);
+		$this -> data["reviewss"] = $reviews;
+		$this -> data["comments"] = $this -> advisors_model -> get_comments($proposal_id);
+		$this -> data["tab_data"] = $this -> advisors_model -> get_tab_data($tab_id);
+		$this -> data['review_data'] = $this -> advisors_model -> get_review_data($proposal_id);
+		$this -> template -> load('advisor', "advisors/review_proposals_tabs", $this -> data);
 	}
 
 	function save_tab() {
