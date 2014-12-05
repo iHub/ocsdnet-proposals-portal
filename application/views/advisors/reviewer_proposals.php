@@ -68,7 +68,7 @@
              <?php $status = strcasecmp($proposals[$i]["review_status"], "complete")==0; ?>
             <td>&nbsp;<?php echo ( $status ? "Completed" : "Pending"); ?></td>
             <?php if($status): ?>
-            <td><a href="<?php echo site_url("advisors/review/$id") ?>" class="btn btn-success btn-sm">View review</a></td>
+            <td><a href="<?php echo site_url("advisors/review_proposal/$id") ?>" class="btn btn-success btn-sm">View review</a></td>
             <?php else: ?>
             <td><a href="<?php echo site_url("advisors/review/$id") ?>" class="btn btn-warning btn-sm">Edit review</a></td>
             <?php endif; ?>
