@@ -96,8 +96,6 @@ class Advisors extends CI_Controller {
 		$tab_id = $this -> uri -> segment(3);
 		$this -> data['tab_menu'] = $tab_id;
 		$this -> data['active_menu'] = 1;
-		
-		
 		$proposal_id = $this -> session -> userdata("proposal_id");
 		$reviews = $this -> advisors_model -> get_proposal_review($proposal_id);
 		$this -> data["reviews"] = $reviews;
