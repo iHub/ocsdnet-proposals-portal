@@ -68,6 +68,7 @@ include ("nav_bar.php");
     </div>
 </div>
 </form>
-
+<br />
+<br /><br /><br />
 	
  
