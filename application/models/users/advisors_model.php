@@ -96,15 +96,9 @@ class Advisors_model extends CI_Model {
 		}
 
 		//Collaborators
-		//$this -> db -> where("id", $researcher_id);
-		//$query = $this -> db -> get("collaborators");
 		$this -> load -> model("users/user_model");
 		$collaborators=$this->user_model->get_collaborators($researcher_id);
-        
-		//if ($query -> num_rows() > 0) {
-			
-			$preview_data['collaborators'] = $collaborators;
-		//}
+		$preview_data['collaborators'] = $collaborators;
 
 		return $preview_data;
 	}
@@ -193,6 +187,8 @@ class Advisors_model extends CI_Model {
 		$data['proposal_id'] = $proposal_id;
 
 		//Delete old rows
+		$comments = $_POST['comment'];
+		unset($_POST['comment']);
 		$option_ids = array();
 		foreach ($_POST as $key => $value) {
 			$option_ids[] = $value;
@@ -206,10 +202,18 @@ class Advisors_model extends CI_Model {
 		}
 		$user_data = $this->session->userdata("user_data");
         $user_id = $user_data['id'];
-		
 		foreach ($_POST as $key => $value) {
 			$data['option_id'] = $value;
 			$data['reviewer_id'] = $user_id;
+			$this -> db -> insert('proposal_reviews', $data);
+
+		}
+		//comments
+		foreach ($comments as $key => $value) {
+			//$data['option_id'] = $value;
+			$data['reviewer_id'] = $user_id;
+			$data['question_id'] = $key;
+			$data['comment'] = $value;
 			$this -> db -> insert('proposal_reviews', $data);
 
 		}
@@ -263,18 +267,22 @@ class Advisors_model extends CI_Model {
 		$reviews = array();
 		if ($query -> num_rows() > 0) {
 			foreach ($query->result() as $row) {
+				if (!empty($row->comment)) {
+				$reviews['comment'][$row -> question_id] = $row -> comment;
+				}else{
 				$reviews[$row -> option_id] = $row -> option_id;
+				}
 			}
 
 		}
-
 		return $reviews;
 	}
 
 	function old_rows($ids, $proposal_id) {
 		$question_ids = array();
 		$proposal_review_ids = array();
-
+		//print_r($ids);
+		//exit;
 		//Get option_ids
 		$this -> db -> select("id, question_id");
 		$this -> db -> distinct();
@@ -320,6 +328,21 @@ class Advisors_model extends CI_Model {
 		return $proposal_review_ids;
 	}
 
+		function get_review_comments($proposal_id) {
+		$this -> db -> select("*");
+		$this -> db -> from("proposal_reviews");
+		$this -> db -> where("id", $proposal_id);
+		$query = $this -> db -> get();
+		$comments = array();
+		if ($query -> num_rows() > 0) {
+			$row = $query -> row();
+			$comments["reviewer_comments"] = $row -> reviewer_comments;
+
+		}
+
+		return $comments;
+
+	}
 	//Tab 5 data
 
 	function get_comments($proposal_id) {
