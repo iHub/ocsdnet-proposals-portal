@@ -115,7 +115,7 @@ class Advisors extends CI_Controller {
 		$css_tab = ".tab" . $tab_id;
 		$this -> data["css"] = div_selector($this -> tab_divs, $css_tab);
 		$proposal_id = $this -> session -> userdata("proposal_id");
-		$reviews = $this -> advisors_model -> get_all_proposal_reviews($id);
+		$reviews = $this -> advisors_model -> get_all_proposal_reviews($proposal_id);
 		$this -> data["reviewss"] = $reviews;
 		$this -> data["comments"] = $this -> advisors_model -> get_comments($proposal_id);
 		$this -> data["tab_data"] = $this -> advisors_model -> get_tab_data($tab_id);
