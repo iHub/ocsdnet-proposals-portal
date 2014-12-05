@@ -96,12 +96,15 @@ class Advisors_model extends CI_Model {
 		}
 
 		//Collaborators
-		$this -> db -> where("id", $researcher_id);
-		$query = $this -> db -> get("users");
-
-		if ($query -> num_rows() > 0) {
-			$preview_data['collaborators'] = $query -> result_array();
-		}
+		//$this -> db -> where("id", $researcher_id);
+		//$query = $this -> db -> get("collaborators");
+		$this -> load -> model("users/user_model");
+		$collaborators=$this->user_model->get_collaborators($researcher_id);
+        
+		//if ($query -> num_rows() > 0) {
+			
+			$preview_data['collaborators'] = $collaborators;
+		//}
 
 		return $preview_data;
 	}
@@ -201,10 +204,12 @@ class Advisors_model extends CI_Model {
 			$this -> db -> where_in("id", $old_row_ids);
 			$this -> db -> delete("proposal_reviews");
 		}
-	//print_r($_POST);
-	//exit;
+		$user_data = $this->session->userdata("user_data");
+        $user_id = $user_data['id'];
+		
 		foreach ($_POST as $key => $value) {
 			$data['option_id'] = $value;
+			$data['reviewer_id'] = $user_id;
 			$this -> db -> insert('proposal_reviews', $data);
 
 		}
@@ -293,8 +298,12 @@ class Advisors_model extends CI_Model {
 				}
 
 				//Get proposal_review_ids
+				
+				$user_data = $this->session->userdata("user_data");
+        		$user_id = $user_data['id'];
 				$this -> db -> where_in("option_id", $option_ids);
 				$this -> db -> where("proposal_id", $proposal_id);
+				$this -> db ->where('reviewer_id',$user_id);
 				$query = $this -> db -> get("proposal_reviews");
 
 				if ($query -> num_rows() > 0) {

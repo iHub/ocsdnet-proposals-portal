@@ -69,8 +69,11 @@ class Advisors extends CI_Controller {
 		//$rewiew_data = $this -> advisors_model -> get_review_data($id);
 		$this -> data['review_data'] = $this -> advisors_model -> get_review_data($id);
 		$this -> session -> set_userdata("proposal_id", $id);
+		//TODO: this is not differentiating reviews from different reviewers
 		$reviews = $this -> advisors_model -> get_proposal_review($id);
 		$this -> data["reviews"] = $reviews;
+		//print_r($reviews);
+		//exit;
 		$this -> template -> load('advisor', "advisors/review_tabs", $this -> data);
 	}
 
@@ -93,7 +96,8 @@ class Advisors extends CI_Controller {
 		$tab_id = $this -> uri -> segment(3);
 		$this -> data['tab_menu'] = $tab_id;
 		$this -> data['active_menu'] = 1;
-
+		
+		
 		$proposal_id = $this -> session -> userdata("proposal_id");
 		$reviews = $this -> advisors_model -> get_proposal_review($proposal_id);
 		$this -> data["reviews"] = $reviews;
