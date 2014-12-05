@@ -262,6 +262,9 @@ class Advisors_model extends CI_Model {
 
 	//Saved proposals
 	function get_proposal_review($proposal_id) {
+		$user_data = $this->session->userdata("user_data");
+        $user_id = $user_data['id'];
+		$this -> db -> where("reviewer_id", $user_id);
 		$this -> db -> where("proposal_id", $proposal_id);
 		$query = $this -> db -> get("proposal_reviews");
 		$reviews = array();
@@ -275,6 +278,51 @@ class Advisors_model extends CI_Model {
 			}
 
 		}
+		return $reviews;
+	}
+		function get_all_proposal_reviews($proposal_id) {
+		
+		$this -> db -> select("reviewer_id");
+		$this -> db -> distinct();
+		$this -> db -> from("proposal_reviews");
+		$this -> db -> where_in("proposal_id", $proposal_id);
+		$query = $this -> db -> get();
+		$reviewers = array();
+		if($query->num_rows()>0){
+			foreach ($query->result() as $row) {
+				if($row -> reviewer_id>0){
+				$reviewers[$row -> reviewer_id] = $row -> reviewer_id;
+				}
+           }			
+		}
+		$reviews = array();
+		if (count($reviewers>0)) {
+		foreach ($reviewers as $key => $value) {
+			$this -> db -> select("first_name,last_name");
+			$this -> db -> where("id", $value);
+			$query = $this -> db -> get("users");
+			if ($query -> num_rows() > 0) {
+				$reviews[$key]['advisor_details'] = $query -> row_array();
+			}
+		
+		$this -> db -> where("proposal_id", $proposal_id);
+		$this -> db -> where("reviewer_id", $value);
+		$query = $this -> db -> get("proposal_reviews");
+		if ($query -> num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				if (!empty($row->comment)) {
+				$reviews[$key]['comment'][$row -> question_id] = $row -> comment;
+				}else{
+				$reviews[$key][$row -> option_id] = $row -> option_id;
+				}
+			}
+
+		}
+			}
+			
+		}
+		
+		//end
 		return $reviews;
 	}
 
