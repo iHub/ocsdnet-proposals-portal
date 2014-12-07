@@ -64,7 +64,7 @@
             foreach ($reviewers[$proposal_id] as $key2 => $value2) {
             	if (!empty($value2->first_name)) { 
 					
-                ?><a href="<?php echo site_url("coordinators/remove_advisor/$proposal_id/$value2->id") ?>"><i class="fa fa-times">&nbsp;<?php echo $value2->first_name." ".$value2->last_name ?></i></a>
+                ?><a href="<?php echo site_url("coordinators/remove_advisor/$proposal_id/$value2->id") ?>" onclick="return confirm('Are you sure you want to delete this advisor?')"><i class="fa fa-times">&nbsp;<?php echo $value2->first_name." ".$value2->last_name ?></i></a>
            <br><?php  
 				}
             	?>
@@ -86,4 +86,10 @@
 </table>
 </div>
 </div>
+<script>
+	var el = document.getElementById('frm_assign_advisor');
 
+	el.addEventListener('submit', function() {
+		return confirm('Re-assigning this Concept Note will negate the review carried out by the current advisor. Are you sure you wish to re-assign the concept note?');
+	}, false);
+</script>
