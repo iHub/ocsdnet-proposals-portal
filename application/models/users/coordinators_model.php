@@ -38,7 +38,7 @@ class Coordinators_model extends CI_Model {
 
 	function get_completes($incompletes = NULL, $column = NULL, $order = NULL, $reviewed = NULL) {
 		$sql = "SELECT u.id, u.first_name, u.last_name, u.organization, p.id as proposal_id, 
-				p.study_title, p.countries_covered, p.reviewer_id
+				p.study_title, p.countries_covered, p.reviewer_id, p.award_status, p.review_status
 				FROM users u
 				INNER JOIN  proposals p ON u.id = p.researcher_id
 				WHERE u.user_role_id = 3 
@@ -70,6 +70,9 @@ class Coordinators_model extends CI_Model {
 				$temp["study_title"] = $row -> study_title;
 				$temp["countries_covered"] = $row -> countries_covered;
 				$temp["reviewer_id"] = $row -> reviewer_id;
+				$temp["award_status"] = $row->award_status;
+				$temp["review_status"] = $row->review_status;
+				
 
 				if (isset($row -> reviewer_id)) {
 					$this -> db -> select("first_name, last_name");
