@@ -76,25 +76,35 @@
             foreach ($reviewers[$proposal_id] as $key2 => $value2) {
             	if ($value2->status == 0) {
             		 
-					echo $value2->last_name."-&nbsppending<br>";
+					echo $value2->last_name."-&nbspPending<br>";
 				}elseif ($value2->status == 1) {
             		 
-					echo $value2->last_name."-&nbspincomplete<br>";
+					echo $value2->last_name."-&nbspPartially&nbspreviewed<br>";
 				}elseif ($value2->status == 2) {
             		 
-					echo $value2->last_name."-&nbspcomplete<br>";
+					echo $value2->last_name."-&nbspReview&nbspcompleted<br>";
 				}else{
             		 
-					echo $value2->last_name."-&nbsppending<br>";
+					echo $value2->last_name."-&nbspPending<br>";
 				}
             	?>
            <?php } ?>
             </td>
-            <td><?php echo $completes[$i]["award_status"]; ?></td>
+            <td><?php
+            if ($completes[$i]["award_status"] == 0) {
+					echo "Under&nbspReview<br>";
+				}elseif ($completes[$i]["award_status"] == 1) {
+					echo "Partially&nbspfunded<br>";
+				}elseif ($completes[$i]["award_status"] == 2) {
+					echo "Fully&nbspfunded<br>";
+				}else{
+					echo "Not&nbspfunded";
+				} ?>
+            </td>
             <!-- <td><?php echo $completes[$i]["organization"]; ?></td> -->
             <?php $reviewer_id = $completes[$i]["reviewer_id"] ?>
             
-            <td><a href="<?php echo site_url("coordinators/preview/$proposal_id") ?>" class="btn btn-success btn-sm">Preview</a></td>
+            <td><a href="<?php echo site_url("coordinators/preview/$proposal_id") ?>" class="btn btn-success btn-sm">Review</a></td>
             <!-- <td><a href="<?php echo site_url("coordinators/assign_advisor/$proposal_id") ?>" class="btn btn-info btn-sm"><?php echo ($reviewer_id > 0 ? "Re-assign" : "Assign") ?></a></td> -->
             <!-- <td><a href="<?php echo site_url("coordinators/preview/$proposal_id") ?>" class="btn btn-success btn-sm">Preview</a></td> -->
         </tr>
