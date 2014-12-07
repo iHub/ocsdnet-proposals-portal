@@ -15,8 +15,8 @@ include ("review_nav_bar.php");
 		   
 	<div class="form-fields">
 		 			
-	   <?php foreach($questions as $question_id=>$question_data): ?>
 			<div  class="form-group">
+	   <?php foreach($questions as $question_id=>$question_data): ?>
 				  <label class="panel-heading">Q: <?php echo $questions[$question_id]["question"] ?> </label>
 				  <?php foreach ($reviewss as $key => $reviews) {?>
 				  <?php $type_id = $questions[$question_id]["type_id"]; ?>
@@ -70,8 +70,8 @@ include ("review_nav_bar.php");
 				  
 			</div>
 			</div>
-			</div>
 	<?php } endforeach; ?>
+			</div>
 	
 </div>
 <div class="form-group">
