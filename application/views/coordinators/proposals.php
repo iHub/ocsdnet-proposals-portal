@@ -45,7 +45,7 @@
              <th data-filterable="true" data-sortable="true" data-direction="desc">Researcher Name</th>
                       <th data-direction="asc" data-filterable="true" data-sortable="true">Project Title</th>
                       <th data-filterable="true" data-sortable="true">Country</th>
-                      <th data-filterable="false" >Advisor Assigned</th>
+                      <th data-filterable="false" >Advisors Assigned</th>
                       <th data-filterable="true" >Review Status</th>
                       <th data-filterable="true" >Award Status</th>
                       <th >Review</th>
@@ -60,12 +60,13 @@
             <td><?php echo $completes[$i]["study_title"]; ?></td>
             <td><?php echo $completes[$i]["countries_covered"]; ?></td>
             <td><?php echo (isset($completes[$i]["advisor"]) ? $completes[$i]["advisor"] : "" ); ?></td>
-            <td><?php echo $completes[$i]["organization"]; ?></td>
             <td><?php echo $completes[$i]["review_status"]; ?></td>
             <td><?php echo $completes[$i]["award_status"]; ?></td>
+            <!-- <td><?php echo $completes[$i]["organization"]; ?></td> -->
             <?php $proposal_id = $completes[$i]["proposal_id"]; ?>
             <?php $reviewer_id = $completes[$i]["reviewer_id"] ?>
             
+            <td><a href="<?php echo site_url("coordinators/preview/$proposal_id") ?>" class="btn btn-success btn-sm">Preview</a></td>
             <!-- <td><a href="<?php echo site_url("coordinators/assign_advisor/$proposal_id") ?>" class="btn btn-info btn-sm"><?php echo ($reviewer_id > 0 ? "Re-assign" : "Assign") ?></a></td> -->
             <!-- <td><a href="<?php echo site_url("coordinators/preview/$proposal_id") ?>" class="btn btn-success btn-sm">Preview</a></td> -->
         </tr>
