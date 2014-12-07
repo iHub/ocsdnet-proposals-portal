@@ -33,7 +33,7 @@ class Coordinators extends CI_Controller {
 		$this -> data['active_menu'] = 1;
 		$this -> data["table_headers"] = $this -> table_headers();
 		$this -> data['completes'] = $this -> coordinators_model -> get_completes();
-		$this -> template -> load('user', "coordinators/proposals", $this -> data);
+		$this -> template -> load('advisor', "coordinators/proposals", $this -> data);
 	}
     
 	//Order by columns
