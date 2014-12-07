@@ -32,7 +32,17 @@ class Coordinators extends CI_Controller {
 
 		$this -> data['active_menu'] = 1;
 		$this -> data["table_headers"] = $this -> table_headers();
-		$this -> data['completes'] = $this -> coordinators_model -> get_completes();
+		$completes = $this -> coordinators_model -> get_completes();
+		//reviewers
+		$this -> data['completes'] = $completes;
+		//reviewers
+		foreach ($completes as $key => $value) {
+			
+			$reviewers  = $this -> coordinators_model -> fetch_reviewers($value['proposal_id']);
+			print_r($reviewers);
+			
+		}
+		exit;
 		$this -> template -> load('advisor', "coordinators/proposals", $this -> data);
 	}
     
