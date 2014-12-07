@@ -243,7 +243,87 @@ class Coordinators_model extends CI_Model {
 		return $response_message;
 
 	}
+	
+		function save_advisor($proposal_id) {
+		$reviewer_id = $_POST['advisor'];
+		
+		$this -> db -> select("id");
+		$this -> db -> from("proposal_reviewers");
+		$this -> db -> where("reviewer_id", $reviewer_id);
+		$this -> db -> where("proposal_id", $proposal_id);
+		$query = $this -> db -> get();
 
+		if ($query -> num_rows() > 0) {
+		}else{
+		$data['proposal_id'] = $proposal_id;
+		$data['reviewer_id'] = $reviewer_id;
+		$this -> db -> insert("proposal_reviewers", $data);
+		}
+
+		//Get advisor name
+
+		$this -> db -> select("first_name, last_name, email");
+		$this -> db -> from("users");
+		$this -> db -> where("id", $reviewer_id);
+		$query = $this -> db -> get();
+
+		$names = "";
+		$email = "";
+		if ($query -> num_rows() > 0) {
+			$row = $query -> row();
+			$names = $row -> first_name . " " . $row -> last_name;
+			$email = $row -> email;
+		}
+
+		//Email advisor
+		$message = "Hello $names" . "\r\n";
+		
+		$message .= "\r\n";
+		$message .= "\r\n";
+		
+		$re_assigned = FALSE;
+		if ($re_assigned) {
+			$message .= "The coordinators have assigned you a concept note from your colleague to review. 
+			This may have occurred because your colleague has not completed all of their reviews or because the 
+			coordinators would like to distribute the concept notes more equally by thematic areas. " . "\r\n";
+
+		} else {
+			$message .= "The coordinators have assigned you with a new concept note to review. " . "\r\n";
+
+		}
+
+		$message .= "\r\n";
+		
+
+		$message .= "Please login to the portal to review the concept note(s) assigned to you and submit your reviews here: " . "\r\n";
+
+		$message .= "\r\n";
+
+		$message .= "http://www.apply.ocsdnet.org" . "\r\n";
+
+		$message .= "\r\n";
+		
+		$message .= "We look forward to receiving your review." . "\r\n";
+
+		$message .= "\r\n";
+
+		$message .= "Thank you," . "\r\n";
+		
+		$message .= "\r\n";
+
+		$message .= "OCSDNet Team" . "\r\n";
+
+		$message = str_replace("\r\n", "<br>", $message);
+
+		$subject = "";
+
+		$subject = ($re_assigned ? " OCSDNet Concept Note Assignment Change" : "OCSDNet Concept Note Assigned to You");
+
+		$this -> send_email($message, $email, $subject);
+
+		return TRUE;
+
+	}
 	function get_study($id) {
 		$this -> db -> where("id", $id);
 		$query = $this -> db -> get("proposals");

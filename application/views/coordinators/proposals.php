@@ -69,7 +69,7 @@
 				}
             	?>
            <?php } ?> 
-           <a href="<?php echo site_url("coordinators/add_advisor/$proposal_id") ?>"><i class="fa fa-plus-square"></i></a>
+           <a href="<?php echo site_url("coordinators/assign_advisor/$proposal_id") ?>"><i class="fa fa-plus-square"></i></a>
             			</td>
             <td><?php echo $completes[$i]["review_status"]; ?></td>
             <td><?php echo $completes[$i]["award_status"]; ?></td>

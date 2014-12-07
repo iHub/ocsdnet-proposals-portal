@@ -187,7 +187,7 @@ class Coordinators extends CI_Controller {
 		$this -> data['proposal_id'] = $this -> uri -> segment(3);
 		$this -> data['advisors'] = $this -> coordinators_model -> fetch_advisors();
 		$this -> data["study_data"] = $this -> coordinators_model -> get_study($this -> data['proposal_id']);
-		$this -> template -> load('user', "coordinators/assign_advisors", $this -> data);
+		$this -> template -> load('advisor', "coordinators/assign_advisors", $this -> data);
 	}
 	
 		function remove_advisor() {
@@ -203,16 +203,8 @@ class Coordinators extends CI_Controller {
 		$this -> data['active_menu'] = 1;
 		$proposal_id = $_POST['proposal_id'];
 		$this -> data['proposal_id'] = $proposal_id;
-		$msg = $this -> coordinators_model -> save_assignment($proposal_id);
-		$this -> data["study_data"] = $this -> coordinators_model -> get_study($proposal_id);
-		$this -> data['assignment_msg'] = $msg;
-		$this -> data['advisors'] = $this -> coordinators_model -> fetch_advisors();
-		if($msg){
-			redirect("coordinators");
-		}else{
-		$this -> template -> load('user', "coordinators/assign_advisors", $this -> data);
-		}
-
+		$msg = $this -> coordinators_model -> save_advisor($proposal_id);
+		redirect("coordinators");
 	}
 
 	//Validations: Validate addition of system user

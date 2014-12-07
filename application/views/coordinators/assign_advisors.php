@@ -15,7 +15,7 @@
 			
 			<?php $reviewer = $study_data['reviewer']; ?>
 			
-			<h5><?php echo "The current advisor is: $reviewer"; ?></h5>
+			<h5><?php echo "Assign an advisor"; ?></h5>
 			<?php endif; ?>
 			
 			
@@ -27,8 +27,8 @@
 				<div class="form-fields">
 					
 					<div class="form-group">
-						<label class="control-label"><?php echo (isset($study_data['reviewer']) ? "Re-assign advisor" : "Assign advisor") ?> </label>
-						<?php echo form_dropdown("advisor", $advisors, "large"); ?>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="control-label"><?php echo (isset($study_data['reviewer']) ? "Assign advisor" : "Assign advisor") ?> </label>
+						&nbsp;&nbsp;&nbsp;&nbsp;<?php echo form_dropdown("advisor", $advisors, "large"); ?>
 					</div>
 					
 					<div class="form-group">
