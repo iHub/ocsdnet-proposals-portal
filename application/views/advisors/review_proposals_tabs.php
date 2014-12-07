@@ -12,7 +12,7 @@
 </div> -->
 <div class="main-container wide-container">
 	<!-- navigation -->
-<?php include_once("nav_bar.php"); ?>
+<?php include_once("review_nav_bar.php"); ?>
         
   
 <style> <?php echo (isset($css) ? $css : ""); ?> </style>
@@ -22,7 +22,6 @@
         
         <div class="container-fluid">
             <h3>Proposal Review Form</h3>
-
             <div class="tab1"><?php include_once("reviewed-tabs/tab1.php"); ?></div>
             <div class="tab2"><?php include_once("reviewed-tabs/tab2.php"); ?></div>
             <div class="tab3"><?php include_once("reviewed-tabs/tab3.php"); ?></div>

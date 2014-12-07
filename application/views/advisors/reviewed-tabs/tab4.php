@@ -79,6 +79,12 @@ include ("review_nav_bar.php");
     </div>
 </div>
 </form>
+    <div class="col-md-12">
+    	<a href="<?php echo site_url('advisors/review_proposal_tab/5'); ?>"><button class="btn btn-primary">Next</button></a>
+        
+		</div>
+		
+		
 <br />
 <br /><br /><br />
 	

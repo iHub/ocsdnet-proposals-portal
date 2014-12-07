@@ -45,7 +45,35 @@ class Coordinators extends CI_Controller {
 		
 		$this -> template -> load('advisor', "coordinators/proposals", $this -> data);
 	}
-    
+    //save coodinators comment
+
+	function save_coordinators_comment() {
+		$proposal_id = $this -> session -> userdata("proposal_id");
+		$user_data = $this->session->userdata("user_data");
+        $user_id = $user_data['id'];
+		$result = $this -> coordinators_model -> save_coordinators_comment($proposal_id,$user_id);
+				//Save tab
+		redirect("coordinators");
+	}
+	//review
+	
+	function review_proposal() {
+		$tab_id = 1;
+		$id = $this -> uri -> segment(3);
+		$this -> data['tab_menu'] = 1;
+		$this -> data['active_menu'] = 1;
+		$this -> data["css"] = div_selector($this -> tab_divs, ".tab1");
+		$this -> data["tab_data"] = $this -> advisors_model -> get_tab_data($tab_id);
+		$this -> session -> unset_userdata("proposal_id");
+		//$rewiew_data = $this -> advisors_model -> get_review_data($id);
+		$this -> data['review_data'] = $this -> advisors_model -> get_review_data($id);
+		$this -> session -> set_userdata("proposal_id", $id);
+		$reviews = $this -> advisors_model -> get_all_proposal_reviews($id);
+		$this -> data["reviewss"] = $reviews;
+		//print_r($reviews);
+		//exit;
+		$this -> template -> load('advisor', "advisors/review_proposals_tabs", $this -> data);
+	}
 	//Order by columns
 	function order_by() {
 		$column = $this -> uri -> segment(3);

@@ -208,9 +208,17 @@ class Advisors_model extends CI_Model {
 			$data["completed_timestamp"] = time();
 			$data["review_status"] = "complete";
 			$data["review_status"] = "complete";
-			$data["reviewer_comments"] = $_POST["reviewer_comments"];
 			$this -> db -> where("id", $proposal_id);
 			$this -> db -> update("proposals", $data);
+			
+			
+			$data["reviewer_comments"] = $_POST["reviewer_comments"];
+			$user_data = $this->session->userdata("user_data");
+        	$user_id = $user_data['id'];
+			$this -> db -> where("proposal_id", $proposal_id);
+			$this -> db -> where("reviewer_id", $user_id);
+			$this -> db -> update("proposal_reviewers", $data);
+			
 		}
 	}
 
@@ -344,8 +352,19 @@ class Advisors_model extends CI_Model {
 			$query = $this -> db -> get("users");
 			if ($query -> num_rows() > 0) {
 				$reviews[$key]['advisor_details'] = $query -> row_array();
+				//advisor's comment
+			$this -> db -> select("reviewer_comments");
+			$this -> db -> where("proposal_id", $proposal_id);
+			$this -> db -> where("reviewer_id", $value);
+			$query = $this -> db -> get("proposal_reviewers");
+			foreach ($query->result() as $key2 => $value2) {
+				$reviews[$key]['advisor_details']['comment'] = $value2->reviewer_comments;
+				
 			}
-		
+			
+			}
+		//print_r($reviews[$key]['advisor_details']);
+		//exit;
 		$this -> db -> where("proposal_id", $proposal_id);
 		$this -> db -> where("reviewer_id", $value);
 		$query = $this -> db -> get("proposal_reviews");
@@ -367,6 +386,7 @@ class Advisors_model extends CI_Model {
 		return $reviews;
 	}
 
+	
 	function old_rows($ids, $proposal_id) {
 		$question_ids = array();
 		$proposal_review_ids = array();

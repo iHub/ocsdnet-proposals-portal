@@ -12,7 +12,7 @@ class Advisors extends CI_Controller {
 
 		$role_id = $user_data['user_role_id'];
 
-		if ($role_id == 2) {
+		if ($role_id == 2 || $role_id==1) {
 			$this -> load -> library('email');
 			$this -> data['active_menu'] = NULL;
 			$this -> load -> library('password');

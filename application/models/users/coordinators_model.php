@@ -94,7 +94,14 @@ class Coordinators_model extends CI_Model {
 			return $data;
 		}
 	}
-
+//advisor's comment
+	function save_coordinators_comment($proposal_id,$user_id){
+			$data['reviewer_comments'] = $_POST['c_comment'];
+			$data['award_status'] = $_POST['funded'];
+			$this -> db -> where("id", $proposal_id);
+			return $this -> db -> update("proposals", $data);
+			
+	}
 	//get_advisors();
 	function fetch_advisors() {
 		$this -> db -> select("id, first_name, last_name");

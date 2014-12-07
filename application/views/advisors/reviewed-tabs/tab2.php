@@ -74,12 +74,12 @@ include ("review_nav_bar.php");
 			</div>
 	
 </div>
-<div class="form-group">
-    <div class="col-md-12">
-    </div>
-</div>
+
 </form>
-<br />
-<br /><br /><br />
+    <div class="col-md-12">
+    	<a href="<?php echo site_url('advisors/review_proposal_tab/3'); ?>"><button class="btn btn-primary">Next</button></a>
+        
+</div>
+		</div>
 	
  

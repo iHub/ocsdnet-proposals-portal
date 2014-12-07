@@ -104,7 +104,7 @@
             <!-- <td><?php echo $completes[$i]["organization"]; ?></td> -->
             <?php $reviewer_id = $completes[$i]["reviewer_id"] ?>
             
-            <td><a href="<?php echo site_url("coordinators/preview/$proposal_id") ?>" class="btn btn-success btn-sm">Review</a></td>
+            <td><a href="<?php echo site_url("advisors/review_proposal/$proposal_id") ?>" class="btn btn-success btn-sm">Review</a></td>
             <!-- <td><a href="<?php echo site_url("coordinators/assign_advisor/$proposal_id") ?>" class="btn btn-info btn-sm"><?php echo ($reviewer_id > 0 ? "Re-assign" : "Assign") ?></a></td> -->
             <!-- <td><a href="<?php echo site_url("coordinators/preview/$proposal_id") ?>" class="btn btn-success btn-sm">Preview</a></td> -->
         </tr>
