@@ -32,7 +32,42 @@ class Advisors_model extends CI_Model {
 		$this -> session -> set_flashdata('advisor_message', 'User details updated...!');
 
 	}
+	function get_reviewer_proposals($reviewer_id){
+		$this -> db -> select("id,proposal_id, reviewer_id, review_status");
+		$this -> db -> from("proposal_reviewers");
+		$this -> db -> where("reviewer_id", $reviewer_id);
+		$query = $this -> db -> get();
+		$proposals = array();
+		$proposals_ids = array();
+		
+		if ($query -> num_rows() > 0) {
+			$proposals_ids = $query -> result_array();
+		}
+		//print_r($proposals_ids);
+		//exit;
+		foreach ($proposals_ids as $key => $value) {
+		$this -> db -> select("id, study_title, reviewer_id, review_status,researcher_id");
+		$this -> db -> where("id", $value['proposal_id']);
+		$query = $this -> db -> get("proposals");
 
+		if ($query -> num_rows() > 0) {
+			
+			
+		$prp =  $query ->row_array();
+		$this -> db -> where("id", $prp['researcher_id']);
+		$query = $this -> db -> get("users");
+		$prp['researcher'] = $query -> row_array();
+		$prp['reviewer'] = $value;
+			
+			array_push($proposals,$prp);
+			//$proposals[$key]['researcher'] = $query -> row_array();
+		}
+		
+		}
+		
+		return $proposals;
+		
+	}
 	//Get proposals assigned to this user
 	function get_proposals($reviewer_id) {
 		$this -> db -> select("id, study_title, reviewer_id, review_status,researcher_id");
@@ -259,7 +294,13 @@ class Advisors_model extends CI_Model {
 		}
 
 	}
-
+	function update_review_status($proposal_id,$user_id,$status){
+		$data['review_status'] = $status;
+		
+		$this -> db -> where("proposal_id", $proposal_id);
+		$this -> db -> where("reviewer_id", $user_id);
+		return $this -> db -> update("proposal_reviewers", $data);
+	}
 	//Saved proposals
 	function get_proposal_review($proposal_id) {
 		$user_data = $this->session->userdata("user_data");

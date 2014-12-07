@@ -65,13 +65,26 @@
             <td><?php echo $proposals[$i]["study_title"]; ?></td>
             <?php $id = $proposals[$i]["id"]; ?>
             <?php $proposal_id = $proposals[$i]["id"]; ?>
-             <?php $status = strcasecmp($proposals[$i]["review_status"], "complete")==0; ?>
-            <td>&nbsp;<?php echo ( $status ? "Completed" : "Pending"); ?></td>
-            <?php if($status): ?>
+             <?php 
+             $status = $proposals[$i]['reviewer']["review_status"]; ?>
+            <td>&nbsp;<?php
+            
+            if ($status == 0) {
+					echo "Pending<br>";
+				}elseif ($status == 1) {
+					echo "Partially&nbspreviewed<br>";
+				}elseif ($status == 2) {
+					echo "Review&nbspcompleted<br>";
+				}else{
+					echo "Pending<br>";
+				}
+            ?>
+            </td>
+            <?php if($status==2) { ?>
             <td><a href="<?php echo site_url("advisors/review_proposal/$id") ?>" class="btn btn-success btn-sm">View review</a></td>
-            <?php else: ?>
+            <?php }else{ ?>
             <td><a href="<?php echo site_url("advisors/review/$id") ?>" class="btn btn-warning btn-sm">Edit review</a></td>
-            <?php endif; ?>
+            <?php }; ?>
             <td><a href="<?php echo site_url("advisors/print_preview_proposal/$id") ?>" class="btn btn-primary btn-sm">Download</a></td>
                        
         </tr>

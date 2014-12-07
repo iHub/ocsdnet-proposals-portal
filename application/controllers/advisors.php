@@ -34,7 +34,7 @@ class Advisors extends CI_Controller {
 		$user_data = $this -> session -> userdata("user_data");
 		$reviewer_id = $user_data['id'];
 		$this -> data["reviewer_status"] = $this -> advisors_model -> reviewer_status($reviewer_id);
-		$this -> data["proposals"] = $this -> advisors_model -> get_proposals($reviewer_id);
+		$this -> data["proposals"] = $this -> advisors_model -> get_reviewer_proposals($reviewer_id);
 		$this -> template -> load('advisor', "advisors/reviewer_proposals", $this -> data);
 	}
 
@@ -61,6 +61,10 @@ class Advisors extends CI_Controller {
 	function review() {
 		$tab_id = 1;
 		$id = $this -> uri -> segment(3);
+		//set the review_status to 1
+		$user_data = $this->session->userdata("user_data");
+        $user_id = $user_data['id'];
+		$result = $this -> advisors_model -> update_review_status($id,$user_id,1);
 		$this -> data['tab_menu'] = 1;
 		$this -> data['active_menu'] = 1;
 		$this -> data["css"] = div_selector($this -> tab_divs, ".tab1");
@@ -146,6 +150,11 @@ class Advisors extends CI_Controller {
 
 		if ($valid) {
 			if ($tab_id == 5) {
+				//update status
+				
+		$user_data = $this->session->userdata("user_data");
+        $user_id = $user_data['id'];
+		$result = $this -> advisors_model -> update_review_status($proposal_id,$user_id,2);
 				//Save tab
 				$this -> advisors_model -> submit_review();
 				redirect("advisors");
