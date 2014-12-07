@@ -112,6 +112,34 @@ class Coordinators_model extends CI_Model {
 		return $advisors;
 
 	}
+	
+	//fetch proposal advisors
+		function fetch_reviewers($proposal_id) {
+		$this -> db -> select("reviewer_id,review_status");
+		$this -> db -> from("proposal_reviewers");
+		$this -> db -> where("proposal_id", $proposal_id);
+		$query = $this -> db -> get();
+		$reviewers = array();
+		if ($query -> num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				$status = $row->review_status;
+				$this -> db -> select("id, first_name, last_name");
+				$this -> db -> from("users");
+				$this -> db -> where("id", $row->reviewer_id);
+				$query = $this -> db -> get();
+				if ($query -> num_rows() > 0) {
+				foreach ($query->result() as $row2) {
+				
+				$reviewers[$row2 -> id] = $row2;
+				$reviewers[$row2 -> id]->status = $status;
+				}
+				}
+			}
+		}
+
+		return $reviewers;
+
+	}
 
 	function save_assignment($proposal_id) {
 		$re_assigned = false;
