@@ -53,7 +53,7 @@
 	var el = document.getElementById('frm_assign_advisor');
 
 	el.addEventListener('submit', function() {
-		return confirm('Re-assigning this Concept Note will negate the review carried out by the current advisor. Are you sure you wish to re-assign the concept note?');
+		return confirm('Are you sure you wish to Assign the concept note?');
 	}, false);
 </script>
 <?php endif; ?>

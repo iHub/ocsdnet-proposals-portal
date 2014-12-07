@@ -71,7 +71,25 @@
            <?php } ?> 
            <a href="<?php echo site_url("coordinators/assign_advisor/$proposal_id") ?>"><i class="fa fa-plus-square"></i></a>
             			</td>
-            <td><?php echo $completes[$i]["review_status"]; ?></td>
+            <td>
+            <?php 
+            foreach ($reviewers[$proposal_id] as $key2 => $value2) {
+            	if ($value2->status == 0) {
+            		 
+					echo $value2->last_name."-&nbsppending<br>";
+				}elseif ($value2->status == 1) {
+            		 
+					echo $value2->last_name."-&nbspincomplete<br>";
+				}elseif ($value2->status == 2) {
+            		 
+					echo $value2->last_name."-&nbspcomplete<br>";
+				}else{
+            		 
+					echo $value2->last_name."-&nbsppending<br>";
+				}
+            	?>
+           <?php } ?>
+            </td>
             <td><?php echo $completes[$i]["award_status"]; ?></td>
             <!-- <td><?php echo $completes[$i]["organization"]; ?></td> -->
             <?php $reviewer_id = $completes[$i]["reviewer_id"] ?>
