@@ -115,7 +115,7 @@ class Coordinators_model extends CI_Model {
 	
 	//fetch proposal advisors
 		function fetch_reviewers($proposal_id) {
-		$this -> db -> select("reviewer_id,review_status");
+		$this -> db -> select("id,reviewer_id,review_status");
 		$this -> db -> from("proposal_reviewers");
 		$this -> db -> where("proposal_id", $proposal_id);
 		$query = $this -> db -> get();
@@ -140,7 +140,14 @@ class Coordinators_model extends CI_Model {
 		return $reviewers;
 
 	}
-
+	
+	function remove_advisors($proposal_id,$reviewer_id){
+		$this -> db -> where("proposal_id", $proposal_id);
+		$this -> db -> where("reviewer_id", $reviewer_id);
+		return $this -> db -> delete("proposal_reviewers");
+		
+	}
+	
 	function save_assignment($proposal_id) {
 		$re_assigned = false;
 

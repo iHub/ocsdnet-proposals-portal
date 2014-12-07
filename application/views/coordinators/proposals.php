@@ -55,15 +55,25 @@
     	<?php for($i=0; $i<count($completes); $i++): 
     		?>
         <tr>
+            <?php $proposal_id = $completes[$i]["proposal_id"]; ?>
             <td><?php echo $i + 1; ?></td>
             <td><?php echo $completes[$i]["first_name"]." ".$completes[$i]["last_name"]; ?></td>
             <td><?php echo $completes[$i]["study_title"]; ?></td>
             <td><?php echo $completes[$i]["countries_covered"]; ?></td>
-            <td><?php echo (isset($completes[$i]["advisor"]) ? $completes[$i]["advisor"] : "" ); ?></td>
+            <td><?php 
+            foreach ($reviewers[$proposal_id] as $key2 => $value2) {
+            	if (!empty($value2->first_name)) { 
+					
+                ?><a href="<?php echo site_url("coordinators/remove_advisor/$proposal_id/$value2->id") ?>"><i class="fa fa-times">&nbsp;<?php echo $value2->first_name." ".$value2->last_name ?></i></a>
+           <br><?php  
+				}
+            	?>
+           <?php } ?> 
+           <a href="<?php echo site_url("coordinators/add_advisor/$proposal_id") ?>"><i class="fa fa-plus-square"></i></a>
+            			</td>
             <td><?php echo $completes[$i]["review_status"]; ?></td>
             <td><?php echo $completes[$i]["award_status"]; ?></td>
             <!-- <td><?php echo $completes[$i]["organization"]; ?></td> -->
-            <?php $proposal_id = $completes[$i]["proposal_id"]; ?>
             <?php $reviewer_id = $completes[$i]["reviewer_id"] ?>
             
             <td><a href="<?php echo site_url("coordinators/preview/$proposal_id") ?>" class="btn btn-success btn-sm">Preview</a></td>

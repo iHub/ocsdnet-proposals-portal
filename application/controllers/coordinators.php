@@ -36,13 +36,13 @@ class Coordinators extends CI_Controller {
 		//reviewers
 		$this -> data['completes'] = $completes;
 		//reviewers
+		$reviewers = array();
 		foreach ($completes as $key => $value) {
 			
-			$reviewers  = $this -> coordinators_model -> fetch_reviewers($value['proposal_id']);
-			print_r($reviewers);
-			
+			$reviewers[$value['proposal_id']]  = $this -> coordinators_model -> fetch_reviewers($value['proposal_id']);
 		}
-		exit;
+		$this -> data['reviewers'] = $reviewers;
+		
 		$this -> template -> load('advisor', "coordinators/proposals", $this -> data);
 	}
     
@@ -188,6 +188,15 @@ class Coordinators extends CI_Controller {
 		$this -> data['advisors'] = $this -> coordinators_model -> fetch_advisors();
 		$this -> data["study_data"] = $this -> coordinators_model -> get_study($this -> data['proposal_id']);
 		$this -> template -> load('user', "coordinators/assign_advisors", $this -> data);
+	}
+	
+		function remove_advisor() {
+		
+		$proposal_id = $this -> uri -> segment(3);
+		$reviewer_id = $this -> uri -> segment(4);
+		$msg = $this -> coordinators_model -> remove_advisors($proposal_id,$reviewer_id);
+		redirect("coordinators");
+
 	}
 
 	function save_assignment() {
