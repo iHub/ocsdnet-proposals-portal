@@ -2,21 +2,21 @@
 
 Class User_model extends CI_Model {
 
-	function __construct() {
-		parent::__construct();
-	}
+    function __construct() {
+        parent::__construct();
+    }
 
-	public function save($data, $id = 0) {
-		if ($id) {
-			$this->db->where("id", $id);
-			$this->db->update('users', $data);
+    public function save($data, $id = 0) {
+        if ($id) {
+            $this->db->where("id", $id);
+            $this->db->update('users', $data);
             return $id;
-		} else {
-			$this->db->insert("users", $data);
-			return $this->db->insert_id();
-		}
+        } else {
+            $this->db->insert("users", $data);
+            return $this->db->insert_id();
+        }
 
-	}
+    }
     function get_collaborators($id) {
         $users = array();
         $this -> db -> where("researcher_id", $id);
@@ -70,3 +70,6 @@ Class User_model extends CI_Model {
         return $users;
     }
 }
+
+
+

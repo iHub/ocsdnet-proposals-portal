@@ -4,8 +4,8 @@ class Registration_model extends CI_Model {
     function __construct() {
         parent::__construct();
     }
-	
-	//Register new account
+    
+    //Register new account
     function register_account($role_id) {
         $data = array();
         $plain_password = $_POST['password'];
@@ -14,31 +14,34 @@ class Registration_model extends CI_Model {
         $data['password'] = $hashed;
         $data['email'] = $email;
         $data['created'] = time();
-		 $data['user_role_id'] = $role_id; //Researcher role
+         $data['user_role_id'] = $role_id; //Researcher role
         $query = $this -> db -> insert("users", $data);
         if ($this -> db -> affected_rows() > 0) {
             //Email user
             $message = "Dear esteemed colleague " . "\r\n";
             $message .= "Thank you for registering for an account with the Open and Collaborative Science in Development Network. 
-            			This email has been sent to confirm your registration." . "\r\n";
-						
+                        This email has been sent to confirm your registration." . "\r\n";
+                        
             $message .="To access your account, please follow this link or copy and paste it in your browser: ";
             
             $message .= base_url() . "\r\n";
             
             // $message .= "Your username is: " . $data['email'] . "\r\n";
             // $message .= "Your password is: " . $plain_password . "\r\n";
+<<<<<<< HEAD
+=======
             
+>>>>>>> 0cab48cb2e5a5e49c9725bb59dd53b4120d02688
             $message .="Use your email and password to login ";
             
             $message .="If you experience any problems please contact us at info@ocsdnet.org" . "\r\n";
             
             $message .="Best Regards," . "\r\n";
-			
-			$message .="OCSDNet Team" . "\r\n";
+            
+            $message .="OCSDNet Team" . "\r\n";
             
             $message = str_replace("\r\n", "<br>", $message);
-			
+            
             //Email user
             $this -> send_email($message, $email, "OCSDNet Registration");
             $this -> session -> set_flashdata('message', 'Check your email for your registration details.');

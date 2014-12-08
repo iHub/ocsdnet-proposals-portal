@@ -145,7 +145,8 @@
                                            <a href="<?php echo base_url(); ?>public/templates/CVTemplate.docx" class="btn btn-default " download>Download CV Template</a><br/><br/>
                                                                       <input type="file" name="qualification" /><br/>
                                           
-                                           <button type="submit" class="btn btn-default">Save and Add New</button>                                           
+                                           <button type="submit" class="btn btn-default">Save and Add New</button> 
+                                            <a href="<?php echo base_url();?>index.php/proposal" class="btn btn-default pull-right" > Back </a>                                           
                                           </div>
                                           
                                         </fieldset>

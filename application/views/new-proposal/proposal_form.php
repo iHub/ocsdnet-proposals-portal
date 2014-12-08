@@ -294,6 +294,7 @@
                                      <input type="file" name="researchercv"/><br/>
                                                                              
                                     <button type="submit" class="btn btn-default">Save</button>
+
                                     </div>
                                 </fieldset>
 
