@@ -47,6 +47,7 @@
     </header>
 <div class="container">
     <div class="">
+
 <div class="col-md-12">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
@@ -113,6 +114,7 @@
     <!-- Collaborators -->
   <div class="">
     <div class="col-md-12">
+
         <div class="proposal-section"> 
             <table class="table table-striped table-bordered table-condensed table-hover">
         <tbody>
