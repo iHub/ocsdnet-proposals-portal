@@ -211,7 +211,7 @@ class Advisors_model extends CI_Model {
 			$this -> db -> where("id", $proposal_id);
 			$this -> db -> update("proposals", $data);
 			
-			
+			$data = array();
 			$data["reviewer_comments"] = $_POST["reviewer_comments"];
 			$user_data = $this->session->userdata("user_data");
         	$user_id = $user_data['id'];
@@ -248,12 +248,13 @@ class Advisors_model extends CI_Model {
 		foreach ($_POST as $key => $value) {
 			$data['option_id'] = $value;
 			$data['reviewer_id'] = $user_id;
-			$this -> db -> insert('proposal_reviews', $data);
+			//$this -> db -> insert('proposal_reviews', $data);
 
 		}
 		//comments
 		foreach ($comments as $key => $value) {
 			//$data['option_id'] = $value;
+			$data = array();
 			$data['reviewer_id'] = $user_id;
 			$data['question_id'] = $key;
 			$data['comment'] = $value;
