@@ -28,10 +28,11 @@ class Registration_model extends CI_Model {
             
             // $message .= "Your username is: " . $data['email'] . "\r\n";
             // $message .= "Your password is: " . $plain_password . "\r\n";
-<<<<<<< HEAD
-=======
-            
->>>>>>> 0cab48cb2e5a5e49c9725bb59dd53b4120d02688
+
+
+
+
+
             $message .="Use your email and password to login ";
             
             $message .="If you experience any problems please contact us at info@ocsdnet.org" . "\r\n";

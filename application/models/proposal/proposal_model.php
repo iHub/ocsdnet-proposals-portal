@@ -1,6 +1,7 @@
 <?php
 class Proposal_model extends CI_Model {
 
+
     function __construct() {
         parent::__construct();
     }
@@ -414,7 +415,8 @@ class Proposal_model extends CI_Model {
         }
 
     }
-    public function updateStatus($id,$data){
+     public function updateStatus($id,$data){
+
         $this->db->where("id", $id);
         $this->db->update('proposals', $data);
             return $id;
