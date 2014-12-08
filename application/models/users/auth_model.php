@@ -7,11 +7,15 @@ class Auth_model extends CI_Model {
     //User login
     function login($table) {
 
+
         $this->db->select('*');
         $this->db->where('email', $_POST['email']);
         $query = $this->db->get($table);
         $row = $query->row();
+       // print_r($row);
+
         $user_data = array();
+
 
         $this->session->unset_userdata("user_data");
 
@@ -37,10 +41,6 @@ class Auth_model extends CI_Model {
                     break;
                 case '4':
                     redirect('admin');
-
-                default:
-                    redirect('auth');
-                    break;
             }
         } else {
             $this->session->set_flashdata('message', 'Sorry, wrong username/password OR you haven’t created an account yet. Click on "register" if this is your first time.');
@@ -93,6 +93,7 @@ class Auth_model extends CI_Model {
             $this->session->set_flashdata('message', 'Password reset.');
         }
     }
+
 
 
 }

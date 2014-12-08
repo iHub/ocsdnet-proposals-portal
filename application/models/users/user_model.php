@@ -53,6 +53,44 @@ Class User_model extends CI_Model {
            
         }
 
+    }
+        function get_collaborators($id) {
+        $users = array();
+        $this -> db -> where("researcher_id", $id);
+        $this -> db -> where("user_role_id", 5);
+        $query = $this -> db -> get("users");
+
+        if ($query -> num_rows() > 0) {
+            
+                $users = $query -> result_array();
+           
+        }
+
+        return $users;
+    }
+    public function getUser($id){
+        $this -> db -> where("id", $id);
+        
+        $query = $this -> db -> get("users");
+        $user="";
+        if ($query -> num_rows() > 0) {
+            $user = $query ->row_array();
+        }
+        return $user;
+    }
+    public function getproposing($id){
+        $users = array();
+        $this -> db -> where("researcher_id", $id);
+        $this -> db -> where("user_role_id", 6);
+        $query = $this -> db -> get("users");
+
+        if ($query -> num_rows() > 0) {
+            
+                $users = $query -> row_array();
+           
+        }
+
+
         return $users;
     }
     public function getparticipating($id){
@@ -69,6 +107,9 @@ Class User_model extends CI_Model {
 
         return $users;
     }
+
+
+
 }
 
 

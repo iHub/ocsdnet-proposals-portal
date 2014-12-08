@@ -1,6 +1,7 @@
 <?php
 class Budget_model extends CI_Model {
 
+
     function __construct() {
         parent::__construct();
     }
@@ -9,7 +10,8 @@ class Budget_model extends CI_Model {
             $this->db->insert("budgets", $data);
             return $this->db->insert_id();
     }
-    public function update($data,$id){
+   
+        public function update($data,$id){
             $this->db->where("id", $id);
             $this->db->update('budgets', $data);
             return $id;
