@@ -2,8 +2,5 @@ error.log
 access.log
 
 /nbproject/private/
-application/config/database.php
-
-application/config/config.php
 
 
