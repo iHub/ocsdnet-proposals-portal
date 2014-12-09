@@ -55,9 +55,9 @@ $active_record = TRUE;
  */
  
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'leo';
-$db['default']['password'] = '12345';
-$db['default']['database'] = 'ocsdnet_upgrade';  
+$db['default']['username'] = 'ocsdnet_proposal';
+$db['default']['password'] = 'OCSDNet2014';
+$db['default']['database'] = 'ocsdnet_proposal';  
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
