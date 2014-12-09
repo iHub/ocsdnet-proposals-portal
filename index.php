@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 //Date Timezone fix
 if( ! ini_get('date.timezone') )
 {

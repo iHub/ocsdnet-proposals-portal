@@ -1,25 +1,26 @@
 <?php
 
 class Proposal extends CI_Controller {
-
+    
     public function __construct() {
         parent::__construct();
         //$user_data = $this -> session -> userdata("user_data");
-
+        
         $this->load->model("proposal/proposal_model");
         $this->load->model("users/user_model");
         $this->load->model("proposal/budget_model");
+       
     }
 
     public function index() {
-
+        
         $user_data = $this->session->userdata("user_data");
-
+        
         $id = $user_data['id'];
         $this->data['active_menu'] = 1;
         $this->data['form'] = $this->proposal_model->get_researchers($id);
         $proposal = $this->proposal_model->get_proposals($id);
-
+        
         $data = array();
         if ($proposal) {
             $data = $proposal[0];
