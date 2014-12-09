@@ -50,7 +50,7 @@
 <section class="main">
         <!-- the component -->
         <div class="wrapper">
-          <div class="inner">
+          <div class="inner" style="display: none">
           </div>
         </div>
 </section> 
